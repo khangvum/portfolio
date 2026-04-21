@@ -5,7 +5,6 @@ import {
   Typography,
   Button,
   Box,
-  Container,
   IconButton,
   Drawer,
   List,
@@ -18,41 +17,59 @@ import "./Navbar.css";
 
 const Navbar = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
-  const navItems = ["Home", "Projects", "Experience", "Contact"];
+
+  const navItems = [
+    { label: "About", id: "about" },
+    { label: "Projects", id: "projects" },
+    { label: "Experience", id: "experience" },
+    { label: "Contact", id: "contact" },
+  ];
 
   const handleDrawerToggle = () => {
     setMobileOpen(!mobileOpen);
   };
 
   return (
-    <AppBar position="sticky" color="primary" elevation={0} className="navbar-root">
-  {/* Replace Container with Box for full-width control */}
-  <Box sx={{ width: '100%', px: { xs: 2, md: 4 } }}> 
-    <Toolbar disableGutters>
-      <Typography variant="h6" className="nav-brand" sx={{ flexGrow: 1 }}>
-        Khang Vu
-      </Typography>
+    <AppBar
+      position="sticky"
+      color="primary"
+      elevation={0}
+      className="navbar-root"
+    >
+      <Box sx={{ width: "100%", px: { xs: 2, md: 4 } }}>
+        <Toolbar disableGutters>
+          <Typography variant="h6" className="nav-brand" sx={{ flexGrow: 1 }}>
+            Khang Vu
+          </Typography>
 
-      {/* Desktop Menu */}
-      <Box sx={{ display: { xs: "none", md: "flex" }, alignItems: 'center' }}>
-        {navItems.map((item) => (
-          <Button key={item} color="inherit" className="nav-link">
-            {item}
-          </Button>
-        ))}
+          {/* Desktop Menu */}
+          <Box
+            sx={{ display: { xs: "none", md: "flex" }, alignItems: "center" }}
+          >
+            {navItems.map((item) => (
+              <Button 
+                key={item.id} 
+                color="inherit" 
+                className="nav-link"
+                component="a"
+                href={`#${item.id}`}
+              >
+                {item.label}
+              </Button>
+            ))}
+          </Box>
+
+          {/* Mobile Hamburger */}
+          <IconButton
+            color="inherit"
+            aria-label="Open Drawer"
+            onClick={handleDrawerToggle}
+            sx={{ display: { md: "none" } }}
+          >
+            <MenuIcon />
+          </IconButton>
+        </Toolbar>
       </Box>
-
-      {/* Mobile Hamburger */}
-      <IconButton
-        color="inherit"
-        aria-label="Open Drawer"
-        onClick={handleDrawerToggle}
-        sx={{ display: { md: "none" } }}
-      >
-        <MenuIcon />
-      </IconButton>
-    </Toolbar>
-  </Box>
 
       {/* Mobile Drawer */}
       <Drawer
@@ -73,15 +90,20 @@ const Navbar = () => {
         <Box sx={{ pt: 2 }}>
           <List>
             {navItems.map((item) => (
-              <ListItem key={item} disablePadding>
-                <ListItemButton onClick={handleDrawerToggle} sx={{ py: 1.5 }}>
-                  <ListItemText 
-                    primary={item}
-                    primarytypographyprops={{ 
+              <ListItem key={item.id} disablePadding>
+                <ListItemButton 
+                  onClick={handleDrawerToggle} 
+                  sx={{ py: 1.5 }}
+                  component="a"
+                  href={`#${item.id}`}
+                >
+                  <ListItemText
+                    primary={item.label}
+                    primaryytypographyprops={{
                       className: "nav-link",
                       textAlign: "center",
-                      variant: "body1"
-                    }} 
+                      variant: "body1",
+                    }}
                   />
                 </ListItemButton>
               </ListItem>
