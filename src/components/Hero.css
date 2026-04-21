@@ -14,7 +14,7 @@
 .hero-title {
   font-family: 'Cinzel', serif !important;
   font-weight: 700 !important;
-  font-size: clamp(2.5rem, 8vw, 4.5rem) !important; /* Scales font: min 2.5rem, grows with screen, max 4.5rem */
+  font-size: clamp(2.5rem, 8vw, 4.2rem) !important; /* Scales font: min 2.5rem, grows with screen, max 4.2rem */
   text-shadow: 2px 2px 8px rgba(0,0,0,0.5) !important;
   margin-bottom: 1rem !important;
 }
