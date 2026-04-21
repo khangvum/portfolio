@@ -7,7 +7,7 @@ const Hero = () => {
     <Box component="section" className="hero-root" id="home">
       <Container maxWidth="lg">
         <Typography variant="h1" className="hero-title">
-          From Infrastructure to Automation
+          Infrastructure & Automation
         </Typography>
 
         <Box className="hero-divider" />
