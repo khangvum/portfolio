@@ -6,6 +6,7 @@
   color: #00391b !important;
   width: 100% !important;
   overflow: hidden;
+  border-bottom: 8px solid #B87F0D !important; /* Gold Base */
   /* Ensures the container is a stacking context */
   z-index: 1; 
 }
@@ -151,12 +152,6 @@
   font-weight: 700 !important;
   padding: 10px 24px !important;
   text-transform: uppercase !important;
-}
-
-@media (max-width: 1440px) {
-  .about-bio, .about-list {
-    max-width: 90%;
-  }
 }
 
 @media (max-width: 1024px) {

@@ -35,12 +35,13 @@ const About = () => {
           <Grid
             xs={12}
             lg={6}
-            md={6}
+            sm={6}
             sx={{
               display: "flex",
               flexDirection: "column",
               justifyContent: "center",
               alignItems: "flex-start",
+              width: { xs: "100%", md: "45%" },
             }}
           >
             <Typography variant="h2" className="about-name">
@@ -92,11 +93,12 @@ const About = () => {
           <Grid
             xs={12}
             lg={6}
-            md={6}
+            sm={6}
             sx={{
               display: "flex",
               flexDirection: "column",
               justifyContent: "center",
+              width: { xs: "100%", md: "45%" },
             }}
           >
             <Box className="stats-container" sx={{ width: "100%" }}>
