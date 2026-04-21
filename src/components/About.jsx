@@ -34,6 +34,7 @@ const About = () => {
           {/* Left Column: Biography */}
           <Grid
             xs={12}
+            lg={7}
             md={6}
             sx={{
               display: "flex",
@@ -51,7 +52,6 @@ const About = () => {
               automation:
             </Typography>
 
-            {/* Styled via .about-list in CSS */}
             <Box component="ul" className="about-list">
               <li>
                 • Engineer robust test suites using <strong>C#</strong>,{" "}
@@ -91,6 +91,7 @@ const About = () => {
           {/* Right Column: Stats Cards */}
           <Grid
             xs={12}
+            lg={5}
             md={6}
             sx={{
               display: "flex",
