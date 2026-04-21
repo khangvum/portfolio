@@ -1,16 +1,10 @@
-# React + Vite
+# Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A comprehensive **_portfolio_** demonstrating **_educational background_** and **_technical expertise_** deployed as a **_webpage_** using **_React_** and **_Vite_**. This site showcases **_core proficiencies_** in **_front-end development_** and **_responsive design principles_**, establishing a **_public-facing resource_** for professional engagement and **_global accessibility_** via **_Github Pages_**.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-
-## React Compiler
-
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+-   **_Responsive design_** ensuring **_cross-device compatibility_** across **_desktop_**, **_tablet_**, and **_mobile_** environments.
+-   **_Clean_** and **_semantic React component architecture_**, ensuring **_logical content hierarchy_** for **_maximal accessibility compliance_**.
+-   **_Modular CSS styling_** promoting **_maintainability_** and **_scalability_** of the codebase.
+-   **_Static site architecture_** for **_rapid loading time_**, while offering **_interactive CSS effects_**.
