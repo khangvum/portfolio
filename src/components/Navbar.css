@@ -16,10 +16,26 @@
   font-family: 'Lora', serif !important;
   text-transform: uppercase !important;
   letter-spacing: 1px !important;
+  color: #ffffff !important;
+  transition: all 0.3s ease-in-out !important;
+  position: relative;
+}
+
+.nav-link:hover {
+  color: #B87F0D !important;
+  background-color: rgba(184, 127, 13, 0.05) !important;
+}
+
+.nav-link:hover::after {
+  width: 70%;
 }
 
 .navbar-root .MuiButton-root {
   margin-left: 1rem !important;
+}
+
+.MuiListItemButton-root:hover .nav-link {
+  color: #B87F0D !important;
 }
 
 @media (min-width: 600px) {
