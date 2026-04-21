@@ -36,10 +36,6 @@
   border-bottom: #00391b 1px solid !important;
 }
 
-.about-root .MuiGrid-container {
-  flex-wrap: nowrap !important; 
-}
-
 .about-bio {
   font-family: 'Lora', serif !important;
   font-size: 1.1rem !important;

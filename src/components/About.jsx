@@ -34,7 +34,7 @@ const About = () => {
           {/* Left Column: Biography */}
           <Grid
             xs={12}
-            lg={7}
+            lg={6}
             md={6}
             sx={{
               display: "flex",
@@ -91,7 +91,7 @@ const About = () => {
           {/* Right Column: Stats Cards */}
           <Grid
             xs={12}
-            lg={5}
+            lg={6}
             md={6}
             sx={{
               display: "flex",
