@@ -1,0 +1,124 @@
+import React from "react";
+import { Box, Container, Grid, Typography, Button } from "@mui/material";
+import "./About.css";
+
+const About = () => {
+  const stats = [
+    {
+      label: "Cumulative GPA",
+      value: "4.20",
+      detail: "Dean's Honour Roll | F2023, W2024, F2024, S2025",
+    },
+    {
+      label: "Co-op Terms",
+      value: "3",
+      detail: "Infrastructure & Networking, Operations, and Automation Testing",
+    },
+    {
+      label: "Languages",
+      value: "3",
+      detail: "English, French, and Vietnamese",
+    },
+    {
+      label: "International Awards",
+      value: "2",
+      detail:
+        "International Vietnam Language Excellence Entrance Award | CA$2000\nKaren L. Monahan International Award | CA$750",
+    },
+  ];
+
+  return (
+    <Box component="section" className="about-root" id="about">
+      <Container maxWidth="xl">
+        <Grid container spacing={10} sx={{ py: 1 }}>
+          {/* Left Column: Biography */}
+          <Grid
+            xs={12}
+            md={6}
+            sx={{
+              display: "flex",
+              flexDirection: "column",
+              justifyContent: "center",
+              alignItems: "flex-start",
+            }}
+          >
+            <Typography variant="h2" className="about-name">
+              Khang Vu
+            </Typography>
+            <Typography variant="body1" className="about-bio">
+              A Computer Programming and Analysis student at Fanshawe College
+              with a specialized background in enterprise systems and
+              automation:
+            </Typography>
+
+            {/* Styled via .about-list in CSS */}
+            <Box component="ul" className="about-list">
+              <li>
+                • Engineer robust test suites using <strong>C#</strong>,{" "}
+                <strong>Selenium</strong>, and <strong>NUnit/MSTest</strong>.
+              </li>
+              <li>
+                • Architect hybrid infrastructure with <strong>Ansible</strong>,{" "}
+                <strong>Terraform</strong>, and{" "}
+                <strong>VMware ESXi/Hyper-V</strong>.
+              </li>
+              <li>
+                • Optimize enterprise operations via{" "}
+                <strong>Microsoft Intune</strong>, <strong>Entra ID</strong>,
+                and <strong>PowerShell</strong>.
+              </li>
+            </Box>
+
+            <Box className="about-actions">
+              <Button
+                variant="contained"
+                className="about-btn-primary"
+                href="#contact"
+              >
+                Get In Touch
+              </Button>
+              <Button
+                variant="outlined"
+                className="about-btn-secondary"
+                href="https://github.com/khangvum"
+                target="_blank"
+              >
+                GitHub
+              </Button>
+            </Box>
+          </Grid>
+
+          {/* Right Column: Stats Cards */}
+          <Grid
+            xs={12}
+            md={6}
+            sx={{
+              display: "flex",
+              flexDirection: "column",
+              justifyContent: "center",
+            }}
+          >
+            <Box className="stats-container" sx={{ width: "100%" }}>
+              {stats.map((stat, index) => (
+                <Box key={index} className="stat-card">
+                  <Typography className="stat-value">{stat.value}</Typography>
+                  <Box>
+                    <Typography className="stat-label">{stat.label}</Typography>
+                    <Typography
+                      className="stat-detail"
+                      sx={{ whiteSpace: "pre-line" }}
+                    >
+                      {stat.detail}
+                    </Typography>
+                  </Box>
+                </Box>
+              ))}
+            </Box>
+          </Grid>
+        </Grid>
+      </Container>
+    </Box>
+  );
+};
+
+export default About;
