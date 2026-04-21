@@ -11,6 +11,7 @@ function App() {
       <CssBaseline />
 
       <Navbar />
+      <Hero />
     </ThemeProvider>
   );
 }
