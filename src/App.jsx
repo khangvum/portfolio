@@ -12,6 +12,11 @@ function App() {
 
       <Navbar />
       <Hero />
+
+      {/* Placeholder for content to check the background color */}
+      <Box sx={{ p: 5, bgcolor: "background.default" }}>
+        <p>If the Bishop Green bar above touches both edges, we win.</p>
+      </Box>
     </ThemeProvider>
   );
 }

@@ -1,0 +1,47 @@
+name: GitHub Pages Deployment
+
+on:
+  push:
+    branches: ["master"]
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+jobs:
+  site_build:
+    name: Portfolio Build Process
+    runs-on: ubuntu-latest
+    steps:
+      - name: Repository Checkout
+        uses: actions/checkout@v4
+
+      - name: Node.js Environment Setup
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: "npm"
+
+      - name: Dependency Installation
+        run: npm install
+
+      - name: Production Build Execution
+        run: npm run build
+
+      - name: Build Artifact Upload
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: "./dist"
+
+  site_deployment:
+    name: GitHub Pages Deployment Execution
+    needs: site_build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: GitHub Pages Deployment
+        id: deployment
+        uses: actions/deploy-pages@v4
