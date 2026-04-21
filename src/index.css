@@ -9,8 +9,8 @@ html, body, #root {
   height: 100%;
   margin: 0;
   padding: 0;
-  /* This prevents the "shifting" when content grows */
-  overflow-x: hidden; 
+  overflow-x: hidden; /* Prevents the "shifting" when content grows */
+  scroll-behavior: smooth;
 }
 
 * {
