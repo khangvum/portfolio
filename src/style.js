@@ -9,7 +9,7 @@ const style = createTheme({
       contrastText: '#ffffff',
     },
     secondary: {
-      main: '#D4AF37', // Gold accent
+      main: '#B87F0D', // Gold accent
     },
     background: {
       default: '#f4f1ea', // Parchment/Off-white background

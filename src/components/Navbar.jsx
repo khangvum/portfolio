@@ -82,7 +82,7 @@ const Navbar = () => {
               bgcolor: "primary.main",
               color: "white",
               width: 150,
-              borderLeft: "3px solid #D4AF37",
+              borderLeft: "3px solid #B87F0D",
             },
           },
         }}

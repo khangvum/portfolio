@@ -7,7 +7,7 @@
   color: white !important;
   padding: 80px 0 !important;
   text-align: center !important;
-  border-bottom: 8px solid #D4AF37 !important; /* Gold Base */
+  border-bottom: 8px solid #B87F0D !important; /* Gold Base */
   margin: 0 !important;
 }
 
@@ -22,7 +22,7 @@
 .hero-divider {
   width: 70px !important;
   height: 4px !important;
-  background-color: #D4AF37 !important;
+  background-color: #B87F0D !important;
   margin: 0 auto 2rem auto !important;
 }
 
@@ -42,10 +42,10 @@
   padding: 14px 40px !important;
   font-weight: 700 !important;
   letter-spacing: 1px !important;
-  background-color: #D4AF37 !important; /* Force Gold */
+  background-color: #B87F0D !important; /* Force Gold */
   color: #00391b !important; /* Dark Green Text for contrast */
 }
 
 .hero-button:hover {
-  background-color: #f1c40f !important; /* Brighter gold on hover */
+  background-color: #D4AF37 !important; /* Brighter gold on hover */
 }
