@@ -2,10 +2,10 @@ import React from "react";
 import { ThemeProvider, CssBaseline, Box } from "@mui/material";
 import style from "./style";
 import About from "./components/About";
+import Experience from "./components/Experience";
 import Hero from "./components/Hero";
 import Navbar from "./components/Navbar";
 
-// import Experience from "./components/Experience";
 // import Projects from "./components/Projects";
 // import Contact from "./components/Contact";
 
@@ -23,10 +23,10 @@ function App() {
           <About />
         </Box>
 
-        {/* <Box id="experience">
+        <Box id="experience">
           <Experience />
         </Box> 
-        */}
+       
 
         {/* <Box id="projects">
           <Projects />
