@@ -60,8 +60,7 @@ const About = () => {
               </li>
               <li>
                 • Architect hybrid infrastructure with <strong>Ansible</strong>,{" "}
-                <strong>Terraform</strong>, and{" "}
-                <strong>VMware ESXi/Hyper-V</strong>.
+                <strong>Terraform</strong>, <strong>VMware ESXi</strong>, and{" "}<strong>Hyper-V</strong>.
               </li>
               <li>
                 • Optimize enterprise operations via{" "}
