@@ -1,8 +1,11 @@
 import React from "react";
 import { Box, Container, Grid, Typography, Button } from "@mui/material";
+import { useTheme } from "@mui/material/styles";
 import "./About.css";
 
 const About = () => {
+  const theme = useTheme();
+
   const stats = [
     {
       label: "Cumulative GPA",
@@ -28,7 +31,17 @@ const About = () => {
   ];
 
   return (
-    <Box component="section" className="about-root" id="about">
+    <Box
+      component="section"
+      className="about-root"
+      id="about"
+      style={{
+        "--primary-main": theme.palette.primary.main,
+        "--primary-dark": theme.palette.primary.dark,
+        "--secondary-main": theme.palette.secondary.main,
+        "--bg-parchment": theme.palette.background.default,
+      }}
+    >
       <Container maxWidth="xl">
         <Grid container spacing={4} sx={{ py: 1, mx: 4 }}>
           {/* Left Column: Biography */}
@@ -60,7 +73,8 @@ const About = () => {
               </li>
               <li>
                 • Architect hybrid infrastructure with <strong>Ansible</strong>,{" "}
-                <strong>Terraform</strong>, <strong>VMware ESXi</strong>, and{" "}<strong>Hyper-V</strong>.
+                <strong>Terraform</strong>, <strong>VMware ESXi</strong>, and{" "}
+                <strong>Hyper-V</strong>.
               </li>
               <li>
                 • Optimize enterprise operations via{" "}

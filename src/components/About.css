@@ -1,12 +1,12 @@
 /* 1. Main Section Container */
 .about-root {
   position: relative;
-  background-color: #F9F7F2 !important;
+  background-color: var(--bg-parchment) !important;
   padding: 80px 0 !important;
   color: #00391b !important;
   width: 100% !important;
   overflow: hidden;
-  border-bottom: 8px solid #B87F0D !important; /* Gold Base */
+  border-bottom: 8px solid var(--secondary-main) !important; /* Gold Base */
   /* Ensures the container is a stacking context */
   z-index: 1; 
 }
@@ -32,14 +32,16 @@
   font-family: 'Cinzel', serif !important;
   font-weight: 700 !important;
   font-size: clamp(2.5rem, 5vw, 3.5rem) !important;
+  color: var(--primary-dark);
   margin-bottom: 1rem !important;
   line-height: 1.1 !important;
-  border-bottom: #00391b 1px solid !important;
+  border-bottom: var(--primary-dark) 1px solid !important;
 }
 
 .about-bio {
   font-family: 'Lora', serif !important;
   font-size: 1.1rem !important;
+  color: var(--primary-dark);
   line-height: 1.7 !important;
   max-width: 600px !important;
   margin-bottom: 1.5rem !important;
@@ -52,7 +54,7 @@
   list-style: none !important;
   font-family: "Lora", serif !important;
   font-size: 1.05rem !important;
-  color: #2c3e50 !important;
+  color: var(--primary-dark) !important;
 }
 
 .about-list li {
@@ -61,14 +63,14 @@
 }
 
 .about-list strong {
-  color: #00391b !important;
+  color: var(--primary-dark) !important;
   font-weight: 700 !important;
 }
 
-.about-list li:hover strong {
-  color: #B87F0D !important;
+/* .about-list li:hover strong {
+  color: var(--secondary-main) !important;
   transition: color 0.3s ease;
-}
+} */
 
 /* 5. Stats Grid & Cards */
 .stats-container {
@@ -79,7 +81,7 @@
 
 .stat-card {
   background-color: rgba(255, 255, 255, 1) !important; 
-  border-left: 5px solid #006241 !important;
+  border-left: 5px solid var(--primary-dark) !important;
   padding: 22px !important;
   display: flex !important;
   flex-direction: row !important;
@@ -93,13 +95,13 @@
 /* Card Hover Logic */
 .stat-card:hover {
   transform: translateX(12px) !important;
-  border-left-color: #B87F0D !important;
+  border-left-color: var(--secondary-main) !important;
 }
 
 /* Sync Value and Label to Gold on Card Hover */
 .stat-card:hover .stat-value,
 .stat-card:hover .stat-label {
-  color: #B87F0D !important;
+  color: var(--secondary-main) !important;
   transition: color 0.4s ease !important;
 }
 
@@ -107,7 +109,7 @@
   font-family: 'Cinzel', serif !important;
   font-size: 2.2rem !important;
   font-weight: 700 !important;
-  color: #006241 !important;
+  color: var(--primary-dark) !important;
   min-width: 85px !important;
   text-align: center !important;
   transition: color 0.4s ease !important;
@@ -119,7 +121,7 @@
   font-size: 0.85rem !important;
   text-transform: uppercase !important;
   letter-spacing: 1.5px !important;
-  color: #00391b !important;
+  color: var(--primary-dark) !important;
   transition: color 0.4s ease !important;
 }
 
@@ -137,7 +139,7 @@
 }
 
 .about-btn-primary {
-  background-color: #006241 !important;
+  background-color: var(--primary-main) !important;
   color: #ffffff !important;
   border-radius: 0 !important;
   font-weight: 700 !important;
@@ -146,8 +148,8 @@
 }
 
 .about-btn-secondary {
-  border: 1px solid #006241 !important;
-  color: #006241 !important;
+  border: 1px solid var(--primary-main) !important;
+  color: var(--primary-main) !important;
   border-radius: 0 !important;
   font-weight: 700 !important;
   padding: 10px 24px !important;
