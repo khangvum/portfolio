@@ -1,6 +1,9 @@
 import { useState } from "react";
-import { ThemeProvider, CssBaseline, Box } from "@mui/material";
+import { ThemeProvider, CssBaseline, Box, Fab, Menu, MenuItem } from "@mui/material";
+import PaletteIcon from '@mui/icons-material/Palette';
+
 import { seasons } from "./theme";
+
 import About from "./components/About";
 import Experience from "./components/Experience";
 import Hero from "./components/Hero";
@@ -10,7 +13,16 @@ import Navbar from "./components/Navbar";
 // import Contact from "./components/Contact";
 
 function App() {
-  const [currentSeason, setCurrentSeason] = useState('EASTER');
+  const [currentSeason, setCurrentSeason] = useState('ORDINARY');
+  const [anchorElement, setAnchorElement] = useState(null);
+
+  const handleOpen = (e) => setAnchorElement(e.currentTarget);
+  const handleClose = () => setAnchorElement(null);
+
+  const selectSeason = (season) => {
+    setCurrentSeason(season);
+    handleClose();
+  };
 
   return (
     <ThemeProvider theme={seasons[currentSeason]}>
@@ -40,6 +52,30 @@ function App() {
         <Contact />
       </Box> 
       */}
+
+      <Box sx={{ position: 'fixed', bottom: 24, right: 24, zIndex: 999 }}>
+        <Fab color="secondary" onClick={handleOpen} size="medium">
+          <PaletteIcon />
+        </Fab>
+        <Menu
+          anchorEl={anchorElement}
+          open={Boolean(anchorElement)}
+          onClose={handleClose}
+          transformOrigin={{ vertical: 'bottom', horizontal: 'right' }}
+          anchorOrigin={{ vertical: 'top', horizontal: 'right' }}
+        >
+          {Object.keys(seasons).map((key) => (
+            <MenuItem 
+              key={key} 
+              onClick={() => selectSeason(key)}
+              selected={currentSeason === key}
+              sx={{ fontFamily: 'Cinzel', fontSize: '0.8rem' }}
+            >
+              {key}
+            </MenuItem>
+          ))}
+        </Menu>
+      </Box>
     </ThemeProvider>
   );
 }
