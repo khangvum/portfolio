@@ -150,25 +150,10 @@
   transition: background-size 0.3s ease, color 0.3s ease;
 }
 
-/* .job-link::after {
-  content: '';
-  position: absolute;
-  width: 0;
-  height: 1px;
-  bottom: -2px;
-  left: 0;
-  background-color: #B87F0D;
-  transition: width 0.3s ease;
-} */
-
 .job-link:hover {
   color: #d4a017 !important;
   background-size: 100% 1px;
 }
-
-/* .job-link:hover::after {
-  width: 100%;
-} */
 
 .job-points i {
   font-style: italic;
