@@ -28,7 +28,6 @@
 
 .hero-subtitle {
   font-family: 'Lora', serif !important;
-  font-style: italic !important;
   font-weight: 400 !important;
   font-size: clamp(1.25rem, 4vw, 1.5rem) !important; /* Scales between 1rem on mobile and 1.5rem on desktop */
   max-width: 700px !important;
