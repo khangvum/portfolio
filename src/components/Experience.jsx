@@ -52,7 +52,7 @@ const Experience = () => {
 
   return (
     <Box component="section" className="exp-root" id="experience">
-      <Container maxWidth="lg">
+      <Container maxWidth="xl">
         <Typography variant="h2" className="exp-header">
           Professional Experience
         </Typography>

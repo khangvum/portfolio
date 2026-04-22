@@ -139,14 +139,18 @@
 
 .job-link {
   color: #B87F0D !important;
-  text-decoration: none;
+  text-decoration: none !important;
   font-weight: 100 !important;
   position: relative;
-  display: inline-block;
-  transition: color 0.3s ease;
+  display: inline;
+  background-image: linear-gradient(#B87F0D, #B87F0D);
+  background-position: 0% 100%;
+  background-repeat: no-repeat;
+  background-size: 0% 1px;
+  transition: background-size 0.3s ease, color 0.3s ease;
 }
 
-.job-link::after {
+/* .job-link::after {
   content: '';
   position: absolute;
   width: 0;
@@ -155,15 +159,16 @@
   left: 0;
   background-color: #B87F0D;
   transition: width 0.3s ease;
-}
+} */
 
 .job-link:hover {
   color: #d4a017 !important;
+  background-size: 100% 1px;
 }
 
-.job-link:hover::after {
+/* .job-link:hover::after {
   width: 100%;
-}
+} */
 
 .job-points i {
   font-style: italic;
