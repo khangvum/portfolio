@@ -18,33 +18,42 @@ export const seasons = {
   }),
   ADVENT: createTheme({
     palette: {
-      primary: { main: "#4B0082", dark: "#2E0854" }, // Purple
-      secondary: { main: "#E0C097" }, // Rose/Champagne
+      primary: { main: "#4B0082", dark: "#1A0F24" }, // Purple
+      secondary: { main: "#D4AF37" }, // Rose/Champagne
       background: { default: "#f0edf5" },
     },
     typography: baseTypography,
   }),
   LENT: createTheme({
     palette: {
-      primary: { main: "#5D3FD3", dark: "#301934" }, // Deep Violet
-      secondary: { main: "#A9A9A9" }, // Ash/Grey
-      background: { default: "#ebebeb" },
+      primary: { main: "#432E54", dark: "#301934" }, // Deep Violet
+      secondary: { main: "#D4AF37" },
+      background: { default: "#E8E6E1" },
     },
     typography: baseTypography,
   }),
   ROSE: createTheme({
     palette: {
       primary: { main: "#964B58", dark: "#5E2F37" }, // Dusty Liturgical Rose
-      secondary: { main: "#D4AF37" }, // Antique Gold to complement the Rose
+      secondary: { main: "#D4AF37" },
       background: { default: "#f7f2f2" },
     },
     typography: baseTypography,
   }),
-  EASTER: createTheme({
+  MARTYRDOM: createTheme({
     palette: {
-      primary: { main: "#ffffff", dark: "#e0e0e0" }, // White/Silver
-      secondary: { main: "#FFD700" }, // Bright Gold
-      background: { default: "#ffffff" },
+      // A deep, rich crimson
+      primary: { main: "#8B0000", dark: "#4A0404" }, 
+      secondary: { main: "#D4AF37" },
+      background: { default: "#f5f2f2" },
+    },
+    typography: baseTypography,
+  }),
+  SOLEMNITIES: createTheme({
+    palette: {
+      primary: { main: "#dfded8", dark: "#2C2C2C" }, // White/Grey
+      secondary: { main: "#D4AF37" },
+      background: { default: "#FFFAF0" },
     },
     typography: baseTypography,
   }),
