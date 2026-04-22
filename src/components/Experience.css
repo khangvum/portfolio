@@ -1,14 +1,14 @@
 .exp-root {
-  background-color: #00391b !important;
-  color: #F9F7F2 !important;
+  background-color: var(--primary-dark) !important;
+  color: var(--text-parchment) !important;
   overflow: hidden;
-  border-bottom: 8px solid #B87F0D !important; /* Gold Base */
+  border-bottom: 8px solid var(--secondary-main) !important;
 }
 
 .exp-header {
   font-family: 'Cinzel', serif !important;
   font-weight: 700 !important;
-  color: #B87F0D !important;
+  color: var(--secondary-main) !important;
   font-size: clamp(2.5rem, 5vw, 3.5rem) !important;
   text-align: center;
   margin: 80px 0 !important;
@@ -39,7 +39,7 @@
 .timeline-date {
   font-family: 'Cinzel', serif !important;
   font-weight: 700 !important;
-  color: #B87F0D !important;
+  color: var(--secondary-main) !important;
   font-size: 1.1rem !important;
   display: block;
 }
@@ -47,7 +47,7 @@
 .timeline-location {
   font-family: 'Lora', serif !important;
   font-size: 0.85rem !important;
-  color: rgba(249, 247, 242, 0.5);
+  color: color-mix(in srgb, var(--text-parchment), transparent 50%);
   text-transform: uppercase;
 }
 
@@ -62,19 +62,20 @@
 .timeline-dot {
   width: 42px;
   height: 42px;
-  background-color: #B87F0D;
+  background-color: var(--secondary-main);
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
   z-index: 2;
-  box-shadow: 0 0 15px rgba(184, 127, 13, 0.4);
+  box-shadow: 0 0 15px color-mix(in srgb, var(--secondary-main), transparent 60%);
 }
 
 .timeline-line {
   width: 2px;
   flex-grow: 1;
-  background-color: rgba(184, 127, 13, 0.3);
+  /* 0.3 opacity */
+  background-color: color-mix(in srgb, var(--secondary-main), transparent 70%);
   margin: 10px 0;
 }
 
@@ -87,14 +88,15 @@
 
 .timeline-content {
   background-color: rgba(255, 255, 255, 0.1);
-  border: 1px solid rgba(184, 127, 13, 0.1);
+  /* 0.1 opacity */
+  border: 1px solid color-mix(in srgb, var(--secondary-main), transparent 90%);
   padding: 25px 30px;
   border-radius: 4px 30px 4px 4px;
   transition: all 0.3s ease;
 }
 
 .timeline-content:hover {
-  border-color: #B87F0D;
+  border-color: var(--secondary-main);
   background-color: rgba(255, 255, 255, 0.15);
   transform: translateX(10px);
 }
@@ -102,7 +104,7 @@
 .job-title {
   font-family: 'Cinzel', serif !important;
   font-weight: 700 !important;
-  color: #B87F0D !important;
+  color: var(--secondary-main) !important;
 }
 
 .job-company {
@@ -111,7 +113,8 @@
   letter-spacing: 1px;
   font-size: 0.9rem;
   margin-bottom: 15px !important;
-  color: rgba(249, 247, 242, 0.8);
+  /* Keeping 0.8 opacity for company name */
+  color: color-mix(in srgb, var(--text-parchment), transparent 20%);
 }
 
 .job-points {
@@ -133,17 +136,17 @@
   content: "»";
   position: absolute;
   left: -20px;
-  color: #B87F0D;
+  color: var(--secondary-main) !important;
   font-weight: 700;
 }
 
 .job-link {
-  color: #B87F0D !important;
+  color: var(--secondary-main) !important;
   text-decoration: none !important;
   font-weight: 100 !important;
   position: relative;
   display: inline;
-  background-image: linear-gradient(#B87F0D, #B87F0D);
+  background-image: linear-gradient(var(--secondary-main), var(--secondary-main));
   background-position: 0% 100%;
   background-repeat: no-repeat;
   background-size: 0% 1px;
@@ -151,7 +154,7 @@
 }
 
 .job-link:hover {
-  color: #d4a017 !important;
+  color: var(--secondary-light) !important;
   background-size: 100% 1px;
 }
 

@@ -1,9 +1,11 @@
 import React from "react";
 import { Box, Container, Typography } from "@mui/material";
 import BusinessCenterIcon from "@mui/icons-material/BusinessCenter";
+import { useTheme } from "@mui/material/styles";
 import "./Experience.css";
 
 const Experience = () => {
+  const theme = useTheme();
   const jobs = [
     {
       title: "Automation Test Developer",
@@ -51,7 +53,17 @@ const Experience = () => {
   ];
 
   return (
-    <Box component="section" className="exp-root" id="experience">
+    <Box
+      component="section"
+      className="exp-root"
+      id="experience"
+      style={{
+        "--primary-dark": theme.palette.primary.dark,
+        "--secondary-main": theme.palette.secondary.main,
+        "--secondary-light": "#d4a017", // Lighter gold for hover
+        "--text-parchment": "#F9F7F2",
+      }}
+    >
       <Container maxWidth="xl">
         <Typography variant="h2" className="exp-header">
           Professional Experience
