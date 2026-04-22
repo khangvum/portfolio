@@ -1,35 +1,38 @@
 .hero-root {
   width: 100% !important;
-  /* Bishop Green gradient with a subtle texture */
-  background-color: #006241 !important;
-  background-image: linear-gradient(rgba(0, 57, 27, 0.85), rgba(0, 98, 65, 0.75)), 
-                    url("https://www.transparenttextures.com/patterns/stucco.png") !important;
-  color: white !important;
+  background-color: var(--primary-main) !important;
+  background-image: linear-gradient(color-mix(in srgb, var(--primary-dark), transparent 15%),
+      color-mix(in srgb, var(--primary-main), transparent 25%)),
+    url("https://www.transparenttextures.com/patterns/stucco.png") !important;
+  color: var(--text-parchment) !important;
   padding: 80px 0 !important;
   text-align: center !important;
-  border-bottom: 8px solid #B87F0D !important; /* Gold Base */
+  border-bottom: 8px solid var(--secondary-main) !important;
+  /* Gold Base */
   margin: 0 !important;
 }
 
 .hero-title {
   font-family: 'Cinzel', serif !important;
   font-weight: 700 !important;
-  font-size: clamp(2.5rem, 8vw, 4.2rem) !important; /* Scales font: min 2.5rem, grows with screen, max 4.2rem */
-  text-shadow: 2px 2px 8px rgba(0,0,0,0.5) !important;
+  font-size: clamp(2.5rem, 8vw, 4.2rem) !important;
+  /* Scales font: min 2.5rem, grows with screen, max 4.2rem */
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5) !important;
   margin-bottom: 1rem !important;
 }
 
 .hero-divider {
   width: 70px !important;
   height: 4px !important;
-  background-color: #B87F0D !important;
+  background-color: var(--secondary-main) !important;
   margin: 0 auto 2rem auto !important;
 }
 
 .hero-subtitle {
   font-family: 'Lora', serif !important;
   font-weight: 400 !important;
-  font-size: clamp(1.25rem, 4vw, 1.5rem) !important; /* Scales between 1rem on mobile and 1.5rem on desktop */
+  font-size: clamp(1.25rem, 4vw, 1.5rem) !important;
+  /* Scales between 1rem on mobile and 1.5rem on desktop */
   max-width: 700px !important;
   margin: 0 auto 3.5rem auto !important;
   opacity: 0.9 !important;
@@ -37,14 +40,18 @@
 }
 
 .hero-button {
-  border-radius: 0 !important; /* Square institutional look */
+  border-radius: 0 !important;
+  /* Square institutional look */
   padding: 14px 40px !important;
   font-weight: 700 !important;
   letter-spacing: 1px !important;
-  background-color: #B87F0D !important; /* Force Gold */
-  color: #00391b !important; /* Dark Green Text for contrast */
+  background-color: var(--secondary-main) !important;
+  /* Force Gold */
+  color: var(--primary-dark) !important;
+  /* Dark Green Text for contrast */
 }
 
 .hero-button:hover {
-  background-color: #D4AF37 !important; /* Brighter gold on hover */
+  background-color: var(--secondary-light) !important;
+  /* Brighter gold on hover */
 }
