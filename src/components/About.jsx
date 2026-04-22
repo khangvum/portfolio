@@ -30,7 +30,7 @@ const About = () => {
   return (
     <Box component="section" className="about-root" id="about">
       <Container maxWidth="xl">
-        <Grid container spacing={10} sx={{ py: 1 }}>
+        <Grid container spacing={4} sx={{ py: 1, mx: 4 }}>
           {/* Left Column: Biography */}
           <Grid
             xs={12}
@@ -98,7 +98,7 @@ const About = () => {
               display: "flex",
               flexDirection: "column",
               justifyContent: "center",
-              width: { xs: "100%", md: "45%" },
+              width: { xs: "100%", md: "50%" },
             }}
           >
             <Box className="stats-container" sx={{ width: "100%" }}>
