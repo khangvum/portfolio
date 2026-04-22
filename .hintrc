@@ -1,0 +1,19 @@
+{
+  "extends": [
+    "development"
+  ],
+  "hints": {
+    "compat-api/css": [
+      "default",
+      {
+        "ignore": [
+          "color: color-mix(in srgb, var(--text-parchment), transparent 20%)",
+          "background-color: color-mix(in srgb, var(--secondary-main), transparent 70%)",
+          "border: 1px solid color-mix(in srgb, var(--secondary-main), transparent 90%)",
+          "color: color-mix(in srgb, var(--text-parchment), transparent 50%)",
+          "background-color: color-mix(in srgb, var(--secondary-main), transparent 90%)"
+        ]
+      }
+    ]
+  }
+}
