@@ -140,7 +140,7 @@
 
 .about-btn-primary {
   background-color: var(--primary-main) !important;
-  color: #ffffff !important;
+  color: var(--text-button) !important;
   border-radius: 0 !important;
   font-weight: 700 !important;
   padding: 10px 24px !important;
@@ -148,8 +148,8 @@
 }
 
 .about-btn-secondary {
-  border: 1px solid var(--primary-main) !important;
-  color: var(--primary-main) !important;
+  border: 1px solid var(--primary-dark) !important;
+  color: var(--primary-dark) !important;
   border-radius: 0 !important;
   font-weight: 700 !important;
   padding: 10px 24px !important;

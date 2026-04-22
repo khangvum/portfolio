@@ -12,11 +12,14 @@ import {
   ListItemButton,
   ListItemText,
 } from "@mui/material";
+import { useTheme } from "@mui/material/styles";
 import MenuIcon from "@mui/icons-material/Menu";
+
 import "./Navbar.css";
 
 const Navbar = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
+  const theme = useTheme();
 
   const navItems = [
     { label: "About", id: "about" },
@@ -35,6 +38,15 @@ const Navbar = () => {
       color="primary"
       elevation={0}
       className="navbar-root"
+      style={{
+        "--primary-main": theme.palette.primary.main,
+        "--secondary-main": theme.palette.secondary.main,
+        "--nav-text":
+          theme.palette.primary.main === "#dfded8"
+            ? theme.palette.primary.dark
+            : "#ffffff",
+        backgroundColor: "var(--primary-main)",
+      }}
     >
       <Box sx={{ width: "100%", px: { xs: 2, md: 4 } }}>
         <Toolbar disableGutters>
@@ -47,9 +59,9 @@ const Navbar = () => {
             sx={{ display: { xs: "none", md: "flex" }, alignItems: "center" }}
           >
             {navItems.map((item) => (
-              <Button 
-                key={item.id} 
-                color="inherit" 
+              <Button
+                key={item.id}
+                color="inherit"
                 className="nav-link"
                 component="a"
                 href={`#${item.id}`}
@@ -91,8 +103,8 @@ const Navbar = () => {
           <List>
             {navItems.map((item) => (
               <ListItem key={item.id} disablePadding>
-                <ListItemButton 
-                  onClick={handleDrawerToggle} 
+                <ListItemButton
+                  onClick={handleDrawerToggle}
                   sx={{ py: 1.5 }}
                   component="a"
                   href={`#${item.id}`}

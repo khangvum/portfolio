@@ -1,8 +1,8 @@
 .hero-root {
   width: 100% !important;
   background-color: var(--primary-main) !important;
-  background-image: linear-gradient(color-mix(in srgb, var(--primary-dark), transparent 15%),
-      color-mix(in srgb, var(--primary-main), transparent 25%)),
+  background-image: linear-gradient(color-mix(in srgb, var(--primary-dark), transparent 10%),
+      color-mix(in srgb, var(--primary-main), transparent 65%)),
     url("https://www.transparenttextures.com/patterns/stucco.png") !important;
   color: var(--text-parchment) !important;
   padding: 80px 0 !important;

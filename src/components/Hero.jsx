@@ -1,6 +1,7 @@
 import React from "react";
 import { Box, Container, Typography, Button } from "@mui/material";
 import { useTheme } from "@mui/material/styles";
+
 import "./Hero.css";
 
 const Hero = () => {

@@ -1,6 +1,7 @@
 import React from "react";
 import { Box, Container, Grid, Typography, Button } from "@mui/material";
 import { useTheme } from "@mui/material/styles";
+
 import "./About.css";
 
 const About = () => {
@@ -40,6 +41,10 @@ const About = () => {
         "--primary-dark": theme.palette.primary.dark,
         "--secondary-main": theme.palette.secondary.main,
         "--bg-parchment": theme.palette.background.default,
+        "--text-button":
+          theme.palette.primary.main === "#dfded8"
+            ? "var(--primary-dark)"
+            : "#ffffff",
       }}
     >
       <Container maxWidth="xl">
