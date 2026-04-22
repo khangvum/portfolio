@@ -1,6 +1,6 @@
-import React from "react";
+import { useState } from "react";
 import { ThemeProvider, CssBaseline, Box } from "@mui/material";
-import style from "./style";
+import { seasons } from "./theme";
 import About from "./components/About";
 import Experience from "./components/Experience";
 import Hero from "./components/Hero";
@@ -10,8 +10,10 @@ import Navbar from "./components/Navbar";
 // import Contact from "./components/Contact";
 
 function App() {
+  const [currentSeason, setCurrentSeason] = useState('EASTER');
+
   return (
-    <ThemeProvider theme={style}>
+    <ThemeProvider theme={seasons[currentSeason]}>
       <CssBaseline />
       
       {/* Navbar */}
