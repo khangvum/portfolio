@@ -19,10 +19,10 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background-image: url('../assets/stained-glass.jpg');
+  background-image: url('https://www.transparenttextures.com/patterns/stucco.png');
   background-size: cover;
   background-position: center;
-  opacity: 0.1;
+  opacity: 0.25;
   pointer-events: none;
   z-index: -1; /* Moves the image Behind everything else in the section */
 }
