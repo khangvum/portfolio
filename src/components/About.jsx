@@ -92,7 +92,9 @@ const About = () => {
               <Button
                 variant="contained"
                 className="about-btn-primary"
-                href="#contact"
+                href={`${import.meta.env.BASE_URL}Khang-Vu-resume.pdf`}
+                target="_blank"
+                rel="noopener noreferrer"
               >
                 Resume
               </Button>
