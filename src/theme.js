@@ -51,7 +51,7 @@ export const seasons = {
   }),
   SOLEMNITIES: createTheme({
     palette: {
-      primary: { main: "#dfded8", dark: "#2C2C2C" }, // White/Grey
+      primary: { main: "#f2efde", dark: "#2C2C2C" }, // White/Grey
       secondary: { main: "#D4AF37" },
       background: { default: "#FFFAF0" },
     },

@@ -42,7 +42,7 @@ const About = () => {
         "--secondary-main": theme.palette.secondary.main,
         "--bg-parchment": theme.palette.background.default,
         "--text-button":
-          theme.palette.primary.main === "#dfded8"
+          theme.palette.primary.main === "#f2efde"
             ? "var(--primary-dark)"
             : "#ffffff",
       }}

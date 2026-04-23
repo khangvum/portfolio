@@ -42,7 +42,7 @@ const Navbar = () => {
         "--primary-main": theme.palette.primary.main,
         "--secondary-main": theme.palette.secondary.main,
         "--nav-text":
-          theme.palette.primary.main === "#dfded8"
+          theme.palette.primary.main === "#f2efde"
             ? theme.palette.primary.dark
             : "#ffffff",
         backgroundColor: "var(--primary-main)",
@@ -93,7 +93,7 @@ const Navbar = () => {
             sx: {
               bgcolor: "primary.main",
               color:
-                theme.palette.primary.main === "#dfded8"
+                theme.palette.primary.main === "#f2efde"
                   ? "primary.dark"
                   : "#ffffff",
               width: 150,
