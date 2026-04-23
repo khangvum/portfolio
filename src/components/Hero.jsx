@@ -36,8 +36,9 @@ const Hero = () => {
           color="secondary"
           size="large"
           className="hero-button"
+          href="mailto:manhkhang0305@gmail.com"
         >
-          View My Work
+          Get in Touch
         </Button>
       </Container>
     </Box>
