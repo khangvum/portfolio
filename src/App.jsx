@@ -8,12 +8,13 @@ import About from "./components/About";
 import Experience from "./components/Experience";
 import Hero from "./components/Hero";
 import Navbar from "./components/Navbar";
-
 // import Projects from "./components/Projects";
 // import Contact from "./components/Contact";
 
+import { getLiturgicalSeason } from "./utils/liturgical-utils";
+
 function App() {
-  const [currentSeason, setCurrentSeason] = useState('ORDINARY');
+  const [currentSeason, setCurrentSeason] = useState(getLiturgicalSeason());
   const [anchorElement, setAnchorElement] = useState(null);
 
   const handleOpen = (e) => setAnchorElement(e.currentTarget);
