@@ -94,7 +94,7 @@ const About = () => {
                 className="about-btn-primary"
                 href="#contact"
               >
-                Get In Touch
+                Resume
               </Button>
               <Button
                 variant="outlined"
@@ -103,6 +103,14 @@ const About = () => {
                 target="_blank"
               >
                 GitHub
+              </Button>
+              <Button
+                variant="outlined"
+                className="about-btn-secondary"
+                href="https://www.linkedin.com/in/khangvum/"
+                target="_blank"
+              >
+                LinkedIn
               </Button>
             </Box>
           </Grid>
