@@ -8,7 +8,7 @@ import About from "./components/About";
 import Experience from "./components/Experience";
 import Hero from "./components/Hero";
 import Navbar from "./components/Navbar";
-// import Projects from "./components/Projects";
+import Projects from "./components/Projects";
 // import Contact from "./components/Contact";
 
 import { getLiturgicalSeason } from "./utils/liturgical-utils";
@@ -28,8 +28,7 @@ function App() {
   return (
     <ThemeProvider theme={seasons[currentSeason]}>
       <CssBaseline />
-      
-      {/* Navbar */}
+
       <Navbar />
       <Hero />
 
@@ -43,10 +42,10 @@ function App() {
         </Box> 
        
 
-        {/* <Box id="projects">
+        <Box id="projects">
           <Projects />
         </Box> 
-        */}
+       
       </Box>
 
       {/* <Box id="contact" component="footer">
