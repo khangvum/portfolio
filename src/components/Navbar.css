@@ -3,6 +3,7 @@
   left: 0 !important;
   right: 0 !important;
   border-bottom: 3px solid var(--secondary-main) !important;
+  padding: 0 24px !important;
 }
 
 .nav-brand {
@@ -36,7 +37,11 @@
   color: var(--secondary-main) !important;
 }
 
-@media (min-width: 600px) {
+@media (max-width: 600px) {
+  .navbar-root {
+    padding: 0 16px !important;
+  }
+
   .nav-brand {
     font-size: 1.25rem !important;
   }
