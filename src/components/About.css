@@ -21,7 +21,7 @@
   background-image: url('../assets/stucco.png');
   background-size: cover;
   background-position: center;
-  opacity: 0.25;
+  opacity: 0.4;
   pointer-events: none;
   z-index: -1; /* Moves the image Behind everything else in the section */
 }
