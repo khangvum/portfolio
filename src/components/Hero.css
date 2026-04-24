@@ -8,7 +8,7 @@
   color: var(--text-parchment) !important;
   padding: 75px 0 !important;
   text-align: center !important;
-  border-bottom: 8px solid var(--secondary-main) !important;
+  border-bottom: 6px solid var(--secondary-main) !important;
   margin: 0 !important;
   overflow: hidden;
 }
@@ -49,8 +49,8 @@
 }
 
 .hero-divider {
-  width: 70px !important;
-  height: 4px !important;
+  width: 100px !important;
+  height: 3px !important;
   background-color: var(--secondary-main) !important;
   margin: 0 auto 2rem auto !important;
 }

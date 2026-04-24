@@ -2,7 +2,7 @@
   background-color: var(--primary-dark) !important;
   color: var(--text-parchment) !important;
   overflow: hidden;
-  border-bottom: 8px solid var(--secondary-main) !important;
+  border-bottom: 6px solid var(--secondary-main) !important;
 }
 
 .exp-header {

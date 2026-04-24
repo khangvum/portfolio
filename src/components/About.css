@@ -6,7 +6,7 @@
   color: #00391b !important;
   width: 100% !important;
   overflow: hidden;
-  border-bottom: 8px solid var(--secondary-main) !important; /* Gold Base */
+  border-bottom: 6px solid var(--secondary-main) !important; /* Gold Base */
   /* Ensures the container is a stacking context */
   z-index: 1; 
 }
@@ -176,10 +176,28 @@
   }
 }
 
-@media (min-width: 900px) {
+@media (max-width: 900px) {
   .stats-container {
     width: 100% !important;
     max-width: 550px !important; 
     align-self: flex-end;
+  }
+
+  .about-list {
+    margin-bottom: 0rem !important;
+  }
+}
+
+@media (max-width: 400px) {
+  .about-actions {
+    flex-direction: column !important;
+    gap: 10px !important;
+    width: 100% !important;
+  }
+
+  .about-btn-primary,
+  .about-btn-secondary {
+    width: 100% !important;
+    text-align: center !important;
   }
 }
