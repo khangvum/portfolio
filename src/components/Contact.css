@@ -1,0 +1,91 @@
+.contact-root {
+  background-color: var(--contact-bg) !important;
+  color: var(--text-color) !important;
+  padding: 80px 0 30px 0 !important;
+  position: relative;
+  overflow: hidden;
+}
+
+.contact-root::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url('../assets/stucco.png');
+  background-size: cover;
+  opacity: 0.1;
+  /* Subtler than Projects to keep text legible */
+  pointer-events: none;
+}
+
+.contact-header {
+  text-align: center;
+  margin-bottom: 40px;
+  position: relative;
+  z-index: 1;
+}
+
+.contact-title {
+  font-family: 'Cinzel', serif !important;
+  font-weight: 700 !important;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: var(--secondary-gold);
+  margin-bottom: 16px !important;
+}
+
+.contact-subtitle {
+  font-family: 'Lora', serif !important;
+  max-width: 600px;
+  margin: 0 auto !important;
+  opacity: 0.9;
+  font-style: italic;
+}
+
+.contact-links {
+  position: relative;
+  z-index: 1;
+  margin-bottom: 40px !important;
+  justify-content: center !important;
+}
+
+.contact-icon-btn {
+  color: var(--text-parchment) !important;
+  border: 1.5px solid rgba(255, 255, 255, 0.45) !important;
+  background-color: color-mix(in srgb, var(--contact-btn-bg), transparent 25%) !important;
+  padding: 12px !important;
+  transition: all 0.3s ease-in-out !important;
+}
+
+.contact-icon-btn:hover {
+  color: var(--secondary-gold) !important;
+  border-color: var(--secondary-gold) !important;
+  background-color: color-mix(in srgb, var(--secondary-gold), transparent 90%) !important;
+  transform: translateY(-3px);
+}
+
+.contact-footer-note {
+  text-align: center;
+  border-top: 1px solid color-mix(in srgb, var(--secondary-gold), transparent 40%);
+  padding-top: 30px;
+  opacity: 0.8;
+  position: relative;
+  z-index: 1;
+}
+
+.contact-footer-note .MuiTypography-caption {
+  font-family: 'Cinzel', serif !important;
+  letter-spacing: 2px;
+}
+
+@media (max-width: 600px) {
+  .contact-title {
+    font-size: 1.8rem !important;
+  }
+
+  .contact-root {
+    padding: 60px 0 30px 0 !important;
+  }
+}

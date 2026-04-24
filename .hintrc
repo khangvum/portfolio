@@ -11,7 +11,10 @@
           "background-color: color-mix(in srgb, var(--secondary-main), transparent 70%)",
           "border: 1px solid color-mix(in srgb, var(--secondary-main), transparent 90%)",
           "color: color-mix(in srgb, var(--text-parchment), transparent 50%)",
-          "background-color: color-mix(in srgb, var(--secondary-main), transparent 90%)"
+          "background-color: color-mix(in srgb, var(--secondary-main), transparent 90%)",
+          "background-color: color-mix(in srgb, var(--secondary-gold), transparent 90%)",
+          "border-top: 1px solid color-mix(in srgb, var(--secondary-gold), transparent 40%)",
+          "background-color: color-mix(in srgb, var(--contact-btn-bg), transparent 25%)"
         ]
       }
     ]

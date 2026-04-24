@@ -1,6 +1,13 @@
 import { useState } from "react";
-import { ThemeProvider, CssBaseline, Box, Fab, Menu, MenuItem } from "@mui/material";
-import PaletteIcon from '@mui/icons-material/Palette';
+import {
+  ThemeProvider,
+  CssBaseline,
+  Box,
+  Fab,
+  Menu,
+  MenuItem,
+} from "@mui/material";
+import PaletteIcon from "@mui/icons-material/Palette";
 
 import { seasons } from "./theme";
 
@@ -9,7 +16,7 @@ import Experience from "./components/Experience";
 import Hero from "./components/Hero";
 import Navbar from "./components/Navbar";
 import Projects from "./components/Projects";
-// import Contact from "./components/Contact";
+import Contact from "./components/Contact";
 
 import { getLiturgicalSeason } from "./utils/liturgical-utils";
 
@@ -39,21 +46,18 @@ function App() {
 
         <Box id="experience">
           <Experience />
-        </Box> 
-       
+        </Box>
 
         <Box id="projects">
           <Projects />
-        </Box> 
-       
+        </Box>
+
+        <Box id="contact" component="footer">
+          <Contact />
+        </Box>
       </Box>
 
-      {/* <Box id="contact" component="footer">
-        <Contact />
-      </Box> 
-      */}
-
-      <Box sx={{ position: 'fixed', bottom: 24, right: 24, zIndex: 999 }}>
+      <Box sx={{ position: "fixed", bottom: 24, right: 24, zIndex: 999 }}>
         <Fab color="secondary" onClick={handleOpen} size="medium">
           <PaletteIcon />
         </Fab>
@@ -61,15 +65,15 @@ function App() {
           anchorEl={anchorElement}
           open={Boolean(anchorElement)}
           onClose={handleClose}
-          transformOrigin={{ vertical: 'bottom', horizontal: 'right' }}
-          anchorOrigin={{ vertical: 'top', horizontal: 'right' }}
+          transformOrigin={{ vertical: "bottom", horizontal: "right" }}
+          anchorOrigin={{ vertical: "top", horizontal: "right" }}
         >
           {Object.keys(seasons).map((key) => (
-            <MenuItem 
-              key={key} 
+            <MenuItem
+              key={key}
               onClick={() => selectSeason(key)}
               selected={currentSeason === key}
-              sx={{ fontFamily: 'Cinzel', fontSize: '0.8rem' }}
+              sx={{ fontFamily: "Cinzel", fontSize: "0.8rem" }}
             >
               {key}
             </MenuItem>
