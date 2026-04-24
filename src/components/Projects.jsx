@@ -29,7 +29,7 @@ const Projects = () => {
       subtitle: "Dictum",
       desc: "An automated operating system (OS) deployment solution utilizing answer files.",
       tech: ["Batchfile", "PowerShell", "XML", "YAML"],
-      link: "https://github.com/khangvum",
+      link: "https://github.com/khangvum/answer-files",
     },
     {
       num: "III",
@@ -37,7 +37,7 @@ const Projects = () => {
       subtitle: "Calculus",
       desc: "A Windows console application that evaluates mathematical expressions involving multiple operators and functions.",
       tech: ["C++", "C"],
-      link: "https://github.com/khangvum",
+      link: "https://github.com/khangvum/exprevaluator",
     },
     {
       num: "IV",
@@ -45,7 +45,7 @@ const Projects = () => {
       subtitle: "Systema",
       desc: "A NixOS 25.11 configuration tailored for running within Windows Subsystem for Linux (WSL).",
       tech: ["Nix", "Bash"],
-      link: "https://github.com/khangvum",
+      link: "https://github.com/khangvum/nixos-wsl",
     },
     {
       num: "V",
@@ -53,7 +53,7 @@ const Projects = () => {
       subtitle: "Elementa",
       desc: "A Python program that balances chemical equations by determining the correct stoichiometric coefficients for each reactant and product.",
       tech: ["Python", "Jupyter Notebook"],
-      link: "https://github.com/khangvum",
+      link: "https://github.com/khangvum/chemicalbalancer",
     },
   ];
 
