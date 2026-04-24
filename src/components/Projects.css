@@ -153,6 +153,8 @@
   background-color: transparent !important;
   color: var(--chip-bg) !important;
   font-weight: 700 !important;
+
+  transition: transform 0.2s ease, box-shadow 0.2s ease !important;
 }
 
 .project-chip::before {
@@ -162,6 +164,19 @@
   background-color: var(--primary-main);
   opacity: 0.75;
   z-index: -1;
+
+  transition: background-color 0.3s ease, opacity 0.3s ease;
+}
+
+.project-chip:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1) !important;
+}
+
+.project-chip:hover::before {
+  /* Golden color on hover */
+  background-color: var(--secondary-main);
+  opacity: 0.9;
 }
 
 /* Responsive: 2 columns for tablet, 1 for mobile */
