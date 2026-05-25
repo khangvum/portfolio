@@ -3,16 +3,36 @@ const FIXED_SOLEMNITIES = [
   { month: 0, day: 1, theme: "SOLEMNITIES" },   // Mary, Mother of God (Jan 1)
   { month: 0, day: 6, theme: "SOLEMNITIES" },   // Epiphany (Jan 6)
   { month: 0, day: 25, theme: "SOLEMNITIES" },  // Conversion of St. Paul (Jan 25)
+  { month: 1, day: 2, theme: "SOLEMNITIES" },   // Presentation of the Lord / Candlemas (Feb 2)
   { month: 2, day: 19, theme: "SOLEMNITIES" },  // St. Joseph (March 19)
   { month: 2, day: 25, theme: "SOLEMNITIES" },  // Annunciation (March 25)
+  { month: 3, day: 25, theme: "MARTYRDOM" },    // St. Mark the Evangelist (April 25)
+  { month: 4, day: 3, theme: "MARTYRDOM" },     // Sts. Philip and James, Apostles (May 3)
+  { month: 4, day: 14, theme: "MARTYRDOM" },    // St. Matthias, Apostle (May 14)
   { month: 5, day: 24, theme: "MARTYRDOM" },    // Birth of St. John the Baptist (June 24)
   { month: 5, day: 29, theme: "MARTYRDOM" },    // Sts. Peter and Paul (June 29)
+  { month: 6, day: 3, theme: "MARTYRDOM" },     // St. Thomas, Apostle (July 3)
+  { month: 6, day: 22, theme: "SOLEMNITIES" },  // St. Mary Magdalene (July 22)
+  { month: 6, day: 25, theme: "MARTYRDOM" },    // St. James, Apostle (July 25)
   { month: 7, day: 6, theme: "SOLEMNITIES" },   // Transfiguration (Aug 6)
+  { month: 7, day: 10, theme: "MARTYRDOM" },    // St. Lawrence, Deacon & Martyr (Aug 10)
   { month: 7, day: 15, theme: "SOLEMNITIES" },  // Assumption (Aug 15)
+  { month: 7, day: 24, theme: "MARTYRDOM" },    // St. Bartholomew, Apostle (Aug 24)
+  { month: 7, day: 29, theme: "MARTYRDOM" },    // Passion/Beheading of St. John the Baptist (Aug 29)
+  { month: 8, day: 8, theme: "SOLEMNITIES" },   // Nativity of the Blessed Virgin Mary (Sept 8)
+  { month: 8, day: 14, theme: "SOLEMNITIES" },  // Exaltation of the Holy Cross (Sept 14)
+  { month: 8, day: 21, theme: "MARTYRDOM" },    // St. Matthew, Apostle & Evangelist (Sept 21)
+  { month: 8, day: 29, theme: "SOLEMNITIES" },  // Sts. Michael, Gabriel, and Raphael, Archangels (Sept 29)
+  { month: 9, day: 18, theme: "MARTYRDOM" },    // St. Luke, Evangelist (Oct 18)
+  { month: 9, day: 28, theme: "MARTYRDOM" },    // Sts. Simon and Jude, Apostles (Oct 28)
   { month: 10, day: 1, theme: "SOLEMNITIES" },  // All Saints (Nov 1)
   { month: 10, day: 2, theme: "SOLEMNITIES" },  // All Souls (Nov 2)
+  { month: 10, day: 9, theme: "SOLEMNITIES" },  // Dedication of the Lateran Basilica (Nov 9)
   { month: 10, day: 24, theme: "MARTYRDOM" },   // Vietnamese Martyrs (Nov 24)
   { month: 11, day: 8, theme: "SOLEMNITIES" },  // Immaculate Conception (Dec 8)
+  { month: 11, day: 26, theme: "MARTYRDOM" },   // St. Stephen, First Martyr (Dec 26)
+  { month: 11, day: 27, theme: "SOLEMNITIES" }, // St. John, Apostle & Evangelist (Dec 27)
+  { month: 11, day: 28, theme: "MARTYRDOM" },   // Holy Innocents (Dec 28)
 ];
 
 export const getEaster = (year) => {
@@ -52,6 +72,12 @@ export const getLiturgicalSeason = (date = new Date()) => {
   const ashWednesday = new Date(easter);
   ashWednesday.setDate(easter.getDate() - 46);
 
+  const trinitySunday = new Date(pentecost);
+  trinitySunday.setDate(pentecost.getDate() + 7); // 1 week after Pentecost
+
+  const corpusChristi = new Date(pentecost);
+  corpusChristi.setDate(pentecost.getDate() + 14); // 2 weeks after Pentecost
+
   const christmas = new Date(year, 11, 25);
   const epiphany = new Date(year + 1, 0, 6);
 
@@ -78,6 +104,12 @@ export const getLiturgicalSeason = (date = new Date()) => {
   // 3. SOLEMNITIES (White/Gold) - Eastertide & Christmastide
   if (today >= easter && today < pentecost) return "SOLEMNITIES";
   if (today >= christmas && today < epiphany) return "SOLEMNITIES";
+  if (
+    today.getTime() === trinitySunday.getTime() ||
+    today.getTime() === corpusChristi.getTime()
+  ) {
+    return "SOLEMNITIES"; // Returns White/Gold
+  }
 
   // 4. LENT (Violet/Plum)
   if (today >= ashWednesday && today < easter) return "LENT";
