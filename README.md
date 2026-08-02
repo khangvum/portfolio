@@ -11,21 +11,11 @@ A comprehensive **_portfolio_** demonstrating **_educational background_** and *
 
 ## Project Execution
 
-### Server
-
-Navigate to the `server/` directory and run:
-
-```cmd
-npm run watch
-```
-
-### Client
-
-Navigate to the `client/` directory and run:
+Run the development server:
 
 ```cmd
 npm run dev
 ```
 
 >   [!NOTE]
->   `npm install` must be run in both directories before the first run to install necessary dependencies.
+>   `npm install` must be executed before the first run to install necessary dependencies.
