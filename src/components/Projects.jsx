@@ -40,6 +40,14 @@ const Projects = () => {
     },
     {
       num: "IV",
+      title: "Reqnroll Automation",
+      subtitle: "Automata",
+      desc: "A browser-based test automation solution utilizing Reqnroll (BDD) and Selenium WebDriver, driven by the MSTest framework and structured around the Page Object Model (POM) architectural pattern.",
+      tech: ["C#", "Gherkin", "MSTest", "Selenium", "GitHub Actions"],
+      link: "https://github.com/khangvum/reqnroll-automation",
+    },
+    {
+      num: "V",
       title: "NixOS-WSL Configuration",
       subtitle: "Systema",
       desc: "A NixOS 25.11 configuration tailored for running within Windows Subsystem for Linux (WSL).",
@@ -47,7 +55,7 @@ const Projects = () => {
       link: "https://github.com/khangvum/nixos-wsl",
     },
     {
-      num: "V",
+      num: "VI",
       title: "Chemical Equation Balancer",
       subtitle: "Elementa",
       desc: "A Python program that balances chemical equations by determining the correct stoichiometric coefficients for each reactant and product.",
