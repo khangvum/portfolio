@@ -11,7 +11,7 @@ const About = () => {
     {
       label: "Cumulative GPA",
       value: "4.20",
-      detail: "Dean's Honour Roll | F2023, W2024, F2024, S2025",
+      detail: "Dean's Honour Roll | F2023, W2024, F2024, S2025, W2026",
     },
     {
       label: "Co-op Terms",
