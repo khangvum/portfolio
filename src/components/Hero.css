@@ -26,7 +26,7 @@
   background-position: center;
 
   /* Low opacity for the image only */
-  opacity: 0.075;
+  opacity: 0.15;
 
   /* Allows the image to 'mix' with the gradient/color behind it */
   mix-blend-mode: overlay;
