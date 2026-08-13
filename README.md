@@ -8,3 +8,24 @@ A comprehensive **_portfolio_** demonstrating **_educational background_** and *
 -   **_Clean_** and **_semantic React component architecture_**, ensuring **_logical content hierarchy_** for **_maximal accessibility compliance_**.
 -   **_Modular CSS styling_** promoting **_maintainability_** and **_scalability_** of the codebase.
 -   **_Static site architecture_** for **_rapid loading time_**, while offering **_interactive CSS effects_**.
+
+## Project Execution
+
+### Server
+
+Navigate to the `server/` directory and run:
+
+```cmd
+npm run watch
+```
+
+### Client
+
+Navigate to the `client/` directory and run:
+
+```cmd
+npm run dev
+```
+
+>   [!NOTE]
+>   `npm install` must be run in both directories before the first run to install necessary dependencies.
