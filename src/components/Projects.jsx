@@ -43,7 +43,7 @@ const Projects = () => {
       title: "Reqnroll Automation",
       subtitle: "Automata",
       desc: "A browser-based test automation solution utilizing Reqnroll (BDD) and Selenium WebDriver, driven by the MSTest framework and structured around the Page Object Model (POM) architectural pattern.",
-      tech: ["C#", "Gherkin", "MSTest", "Selenium WebDriver", "GitHub Actions"],
+      tech: ["C#", "Gherkin", "MSTest", "Selenium", "GitHub Actions"],
       link: "https://github.com/khangvum/reqnroll-automation",
     },
     {
