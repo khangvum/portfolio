@@ -43,7 +43,7 @@ const Contact = () => {
         </Box>
 
         <Grid container spacing={4} className="contact-links">
-          <Grid item>
+          <Grid item="true">
             <IconButton
               component={Link}
               href="https://github.com/khangvum"
@@ -53,7 +53,7 @@ const Contact = () => {
               <GitHubIcon />
             </IconButton>
           </Grid>
-          <Grid item>
+          <Grid item="true">
             <IconButton
               component={Link}
               href="https://linkedin.com/in/khangvum"
@@ -63,7 +63,7 @@ const Contact = () => {
               <LinkedInIcon />
             </IconButton>
           </Grid>
-          <Grid item>
+          <Grid item="true">
             <IconButton
               component={Link}
               href="mailto:manhkhang0305@gmail.com"
