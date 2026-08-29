@@ -59,7 +59,7 @@ export const getEaster = (year) => {
   return new Date(year, month - 1, day);
 };
 
-export const getLiturgicalSeason = (date = new Date()) => {
+export const getStaticLiturgicalSeason = (date = new Date()) => {
   const year = date.getFullYear();
   const month = date.getMonth();
   const day = date.getDate();
