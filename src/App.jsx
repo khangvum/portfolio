@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import {
   ThemeProvider,
   CssBaseline,
@@ -6,6 +6,7 @@ import {
   Fab,
   Menu,
   MenuItem,
+  CircularProgress,
 } from "@mui/material";
 import PaletteIcon from "@mui/icons-material/Palette";
 
@@ -18,11 +19,27 @@ import Navbar from "./components/Navbar";
 import Projects from "./components/Projects";
 import Contact from "./components/Contact";
 
-import { getLiturgicalSeason } from "./utils/liturgical-utils";
+import { fetchApiLiturgicalSeason } from "./services/litcal";
 
 function App() {
-  const [currentSeason, setCurrentSeason] = useState(getLiturgicalSeason());
+  // 1. Initialize as null so we know we are waiting for the API
+  const [currentSeason, setCurrentSeason] = useState(null);
   const [anchorElement, setAnchorElement] = useState(null);
+
+  useEffect(() => {
+    let isMounted = true;
+
+    // 2. Fetch API (service handles fallback internally)
+    fetchApiLiturgicalSeason().then((season) => {
+      if (isMounted) {
+        setCurrentSeason(season);
+      }
+    });
+
+    return () => {
+      isMounted = false;
+    };
+  }, []);
 
   const handleOpen = (e) => setAnchorElement(e.currentTarget);
   const handleClose = () => setAnchorElement(null);
@@ -32,8 +49,25 @@ function App() {
     handleClose();
   };
 
+  // 3. Prevent theme flash by waiting until currentSeason is determined
+  if (!currentSeason) {
+    return (
+      <Box
+        sx={{
+          display: "flex",
+          height: "100vh",
+          alignItems: "center",
+          justifyContent: "center",
+          backgroundColor: "#121212",
+        }}
+      >
+        <CircularProgress color="secondary" />
+      </Box>
+    );
+  }
+
   return (
-    <ThemeProvider theme={seasons[currentSeason]}>
+    <ThemeProvider theme={seasons[currentSeason] || seasons.ORDINARY}>
       <CssBaseline />
 
       <Navbar />
