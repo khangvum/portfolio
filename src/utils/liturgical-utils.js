@@ -41,6 +41,11 @@ const FIXED_SOLEMNITIES = [
   { month: 11, day: 28, theme: "MARTYRDOM" },   // Holy Innocents (Dec 28)
 ];
 
+/**
+ * Calculates the date of Easter for a given year.
+ * @param {*} year - The year for which to calculate Easter.
+ * @returns {Date} - The date of Easter Sunday for the specified year.
+ */
 export const getEaster = (year) => {
   const a = year % 19,
     b = Math.floor(year / 100),
@@ -59,6 +64,11 @@ export const getEaster = (year) => {
   return new Date(year, month - 1, day);
 };
 
+/**
+ * Gets the static liturgical season for a given date.
+ * @param {*} date - The date for which to determine the liturgical season.
+ * @returns {string} - The liturgical season for the specified date.
+ */
 export const getStaticLiturgicalSeason = (date = new Date()) => {
   const year = date.getFullYear();
   const month = date.getMonth();
