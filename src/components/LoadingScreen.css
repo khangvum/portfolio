@@ -21,9 +21,9 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background-image: url('../assets/stucco.png');
+  background-image: url('../assets/stained-glass.jpg');
   background-size: cover;
-  opacity: 0.12;
+  opacity: 0.1;
   pointer-events: none;
 }
 
