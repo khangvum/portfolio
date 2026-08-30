@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, type MouseEvent, type CSSProperties } from "react";
 import {
   ThemeProvider,
   CssBaseline,
@@ -9,8 +9,7 @@ import {
 } from "@mui/material";
 import PaletteIcon from "@mui/icons-material/Palette";
 
-import { seasons } from "./theme";
-
+import { seasons, type SeasonKey } from "./theme";
 import About from "./components/About";
 import Experience from "./components/Experience";
 import Hero from "./components/Hero";
@@ -18,49 +17,61 @@ import Navbar from "./components/Navbar";
 import Projects from "./components/Projects";
 import Contact from "./components/Contact";
 import LoadingScreen from "./components/LoadingScreen";
-
 import { fetchApiLiturgicalSeason } from "./services/litcal";
 
 function App() {
-  const [currentSeason, setCurrentSeason] = useState(null);
-  const [anchorElement, setAnchorElement] = useState(null);
+  const [currentSeason, setCurrentSeason] = useState<SeasonKey | null>(null);
+  const [anchorElement, setAnchorElement] = useState<HTMLElement | null>(null);
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     let isMounted = true;
 
-    fetchApiLiturgicalSeason().then((season) => {
-      if (isMounted) {
-        setCurrentSeason(season);
-        // Triggers fade-out before unmounting the loading screen
-        setTimeout(() => setIsLoading(false), 300);
-      }
-    });
+    fetchApiLiturgicalSeason()
+      .then((season) => {
+        if (isMounted) {
+          setCurrentSeason(season as SeasonKey);
+          setTimeout(() => setIsLoading(false), 300);
+        }
+      })
+      .catch(() => {
+        if (isMounted) {
+          setTimeout(() => setIsLoading(false), 300);
+        }
+      });
 
     return () => {
       isMounted = false;
     };
   }, []);
 
-  const handleOpen = (e) => setAnchorElement(e.currentTarget);
+  const handleOpen = (event: MouseEvent<HTMLElement>) => {
+    setAnchorElement(event.currentTarget);
+  };
+
   const handleClose = () => setAnchorElement(null);
 
-  const selectSeason = (season) => {
+  const selectSeason = (season: SeasonKey) => {
     setCurrentSeason(season);
     handleClose();
   };
+
+  const menuThemeStyle = {
+    "--primary-main": seasons.ORDINARY.palette.primary.main,
+    "--secondary-main": seasons.ORDINARY.palette.secondary.main,
+  } as CSSProperties;
 
   return (
     <>
       {isLoading && <LoadingScreen isFading={Boolean(currentSeason)} />}
 
-      <ThemeProvider theme={seasons[currentSeason] || seasons.ORDINARY}>
+      <ThemeProvider theme={seasons[currentSeason ?? "ORDINARY"]}>
         <CssBaseline />
 
-        <Navbar />
-        <Hero />
+        <Box component="main" style={menuThemeStyle}>
+          <Navbar />
+          <Hero />
 
-        <Box component="main">
           <Box id="about">
             <About />
           </Box>
@@ -89,7 +100,7 @@ function App() {
             transformOrigin={{ vertical: "bottom", horizontal: "right" }}
             anchorOrigin={{ vertical: "top", horizontal: "right" }}
           >
-            {Object.keys(seasons).map((key) => (
+            {(Object.keys(seasons) as SeasonKey[]).map((key) => (
               <MenuItem
                 key={key}
                 onClick={() => selectSeason(key)}
