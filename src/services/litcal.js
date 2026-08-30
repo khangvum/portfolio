@@ -1,6 +1,39 @@
 import { getStaticLiturgicalSeason } from "../utils/liturgical-utils";
 
 /**
+ * Gets the day of the week (0 = Sunday, 6 = Saturday) for a Date object in a specific time zone.
+ * @param {Date} date - Target date object.
+ * @param {string} timeZone - IANA time zone string.
+ * @returns {number} - Day index from 0 (Sunday) to 6 (Saturday).
+ */
+const getDayOfWeekInTimeZone = (date, timeZone) => {
+  // Uses native Intl.DateTimeFormat to resolve the weekday string in the target time zone
+  const formatter = new Intl.DateTimeFormat("en-US", {
+    timeZone,
+    weekday: "short",
+  });
+  const dayStr = formatter.format(date);
+  const days = { Sun: 0, Mon: 1, Tue: 2, Wed: 3, Thu: 4, Fri: 5, Sat: 6 };
+  return days[dayStr] ?? date.getDay();
+};
+
+/**
+ * Gets the local hour (0-23) for a Date object in a specific time zone.
+ * @param {Date} date - Target date object.
+ * @param {string} timeZone - IANA time zone string.
+ * @returns {number} - Hour integer in 24-hour format.
+ */
+const getHourInTimeZone = (date, timeZone) => {
+  // Uses native Intl.DateTimeFormat to compute 24-hour time in the target time zone
+  const formatter = new Intl.DateTimeFormat("en-US", {
+    timeZone,
+    hour: "numeric",
+    hour12: false,
+  });
+  return parseInt(formatter.format(date), 10);
+};
+
+/**
  * Fetches the liturgical season from the LitCal v5 API, with a fallback to static calculation.
  * @param {Date} date - The date for which to fetch the liturgical season.
  * @param {string} [timeZone] - Optional IANA time zone string. Defaults to the browser's current time zone.
@@ -66,8 +99,18 @@ export const fetchApiLiturgicalSeason = async (
   date = new Date(),
   timeZone = Intl.DateTimeFormat().resolvedOptions().timeZone,
 ) => {
+  // Check if today is Saturday after 4:00 PM (16:00) to account for Sunday anticipatory Vigil
+  const localDay = getDayOfWeekInTimeZone(date, timeZone);
+  const localHour = getHourInTimeZone(date, timeZone);
+  const isSaturdayVigil = localDay === 6 && localHour >= 16;
+
+  const targetDate = new Date(date);
+  if (isSaturdayVigil) {
+    targetDate.setDate(targetDate.getDate() + 1);
+  }
+
   // 1. Fetch the LitCal v5 API for the given year
-  const year = date.getFullYear();
+  const year = targetDate.getFullYear();
   const url = `https://litcal.johnromanodorazio.com/api/v5/calendar/${year}?year_type=CIVIL`;
 
   // 2. Set up a timeout to abort the fetch if it takes too long
@@ -89,7 +132,7 @@ export const fetchApiLiturgicalSeason = async (
         : Object.values(data.litcal || data);
 
     // Get the target date formatted in the specified time zone
-    const targetIsoDate = getIsoDateInTimeZone(date, timeZone);
+    const targetIsoDate = getIsoDateInTimeZone(targetDate, timeZone);
 
     // Filter events matching targetIsoDate in the same time zone
     const todayEvents = calendarArray.filter((event) => {
@@ -111,7 +154,7 @@ export const fetchApiLiturgicalSeason = async (
 
       if (mappedTheme) {
         console.log(
-          `[LitCal] [${timeZone}] Matched "${primaryEvent.name || primaryEvent.event_key}" - Theme: ${mappedTheme}`,
+          `[LitCal] [${timeZone}] ${isSaturdayVigil ? "(Saturday Vigil >=4PM) " : ""}Matched "${primaryEvent.name || primaryEvent.event_key}" - Theme: ${mappedTheme}`,
         );
         return mappedTheme;
       }
@@ -121,7 +164,7 @@ export const fetchApiLiturgicalSeason = async (
     console.warn(
       `[LitCal] No event found for ${targetIsoDate} in ${timeZone}. Using local fallback.`,
     );
-    return getStaticLiturgicalSeason(date);
+    return getStaticLiturgicalSeason(targetDate);
   } catch (error) {
     console.warn(
       "[LitCal] API error or timeout. Using local fallback:",
