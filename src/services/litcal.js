@@ -1,68 +1,86 @@
 import { getStaticLiturgicalSeason } from "../utils/liturgical-utils";
 
 /**
- * Maps a LitCal v5 API event to a theme key.
- * @param {*} event - The LitCal event object.
- * @returns {string|null} - The corresponding theme key or null if no match is found.
+ * Fetches the liturgical season from the LitCal v5 API, with a fallback to static calculation.
+ * @param {Date} date - The date for which to fetch the liturgical season.
+ * @param {string} [timeZone] - Optional IANA time zone string. Defaults to the browser's current time zone.
+ * @returns {Promise<string>} - A promise that resolves to the liturgical season key.
  */
-const mapLitCalToTheme = (event) => {
+const getIsoDateInTimeZone = (dateInput, timeZone) => {
+  const d =
+    typeof dateInput === "number"
+      ? new Date(dateInput > 1e11 ? dateInput : dateInput * 1_000)
+      : dateInput;
+
+  // Uses native Intl.DateTimeFormat to compute YYYY-MM-DD in the target time zone
+  const formatter = new Intl.DateTimeFormat("en-CA", {
+    timeZone,
+    year: "numeric",
+    month: "2-digit",
+    day: "2-digit",
+  });
+
+  return formatter.format(d); // Outputs "YYYY-MM-DD" reliably
+};
+
+/**
+ * Maps a LitCal event to a liturgical season theme based on its color and date.
+ * @param {*} event - The LitCal event object containing color and date information.
+ * @param {*} userTimeZone - The IANA time zone string to interpret the event date correctly.
+ * @returns {string|null} - The liturgical season theme key, or null if no match is found.
+ */
+const mapLitCalToTheme = (event, userTimeZone) => {
   if (!event) return null;
 
-  // Normalize color property to an array of lowercase strings
   const colors = (Array.isArray(event.color) ? event.color : [event.color])
     .filter(Boolean)
     .map((c) => String(c).toLowerCase());
 
-  if (colors.includes("rose") || colors.includes("4")) {
-    return "ROSE";
-  }
-  if (colors.includes("red") || colors.includes("2")) {
-    return "MARTYRDOM";
-  }
+  if (colors.includes("rose") || colors.includes("4")) return "ROSE";
+  if (colors.includes("red") || colors.includes("2")) return "MARTYRDOM";
+
   if (
     colors.includes("purple") ||
     colors.includes("violet") ||
     colors.includes("1")
   ) {
-    const eventDate = event.date ? new Date(event.date * 1000) : new Date();
-    const month = eventDate.getUTCMonth(); // 0 = Jan, 10 = Nov, 11 = Dec
+    // Determine month based on the specified time zone
+    const eventIso = getIsoDateInTimeZone(event.date, userTimeZone);
+    const month = parseInt(eventIso.split("-")[1], 10) - 1; // 0-indexed month
 
-    // Nov (10) and Dec (11) purple > ADVENT
-    // All other months (Feb-Apr) > LENT
     return month === 10 || month === 11 ? "ADVENT" : "LENT";
   }
-  if (colors.includes("white") || colors.includes("3")) {
-    return "SOLEMNITIES";
-  }
-  if (colors.includes("green") || colors.includes("0")) {
-    return "ORDINARY";
-  }
+
+  if (colors.includes("white") || colors.includes("3")) return "SOLEMNITIES";
+  if (colors.includes("green") || colors.includes("0")) return "ORDINARY";
 
   return null;
 };
 
 /**
- * Fetches the liturgical season for a given date from the LitCal API.
- * @param {Date} date - The date for which to fetch the liturgical season.
- * @returns {Promise<string|null>} - A promise resolving to the liturgical season or null if not found.
+ * Fetches the liturgical season dynamically based on the requested or user time zone.
+ * @param {Date} date - Target date object.
+ * @param {string} [timeZone] - Optional IANA time zone string. Defaults to the browser's current time zone.
  */
-export const fetchApiLiturgicalSeason = async (date = new Date()) => {
+export const fetchApiLiturgicalSeason = async (
+  date = new Date(),
+  timeZone = Intl.DateTimeFormat().resolvedOptions().timeZone,
+) => {
+  // 1. Fetch the LitCal v5 API for the given year
   const year = date.getFullYear();
   const url = `https://litcal.johnromanodorazio.com/api/v5/calendar/${year}?year_type=CIVIL`;
 
-  // Set a timeout for the fetch request to avoid hanging indefinitely
+  // 2. Set up a timeout to abort the fetch if it takes too long
   const controller = new AbortController();
-  const timeoutId = setTimeout(() => controller.abort(), 3000); // 3 second limit
+  const timeoutId = setTimeout(() => controller.abort(), 3_000);
 
+  // 3. Attempt to fetch and process the API response
   try {
-    // Fetch the API data with the abort signal
     const response = await fetch(url, { signal: controller.signal });
     clearTimeout(timeoutId);
 
-    // Check if the response is OK (status 200-299)
     if (!response.ok) throw new Error(`Status ${response.status}`);
 
-    // Parse the JSON response and handle different structures
     const data = await response.json();
     const calendarArray = Array.isArray(data)
       ? data
@@ -70,36 +88,44 @@ export const fetchApiLiturgicalSeason = async (date = new Date()) => {
         ? data.litcal
         : Object.values(data.litcal || data);
 
-    // Convert the target date to ISO format for comparison
-    const targetIsoDate = `${date.getFullYear()}-${String(date.getMonth() + 1).padStart(2, "0")}-${String(date.getDate()).padStart(2, "0")}`;
+    // Get the target date formatted in the specified time zone
+    const targetIsoDate = getIsoDateInTimeZone(date, timeZone);
 
-    // Filter events for the target date and sort by grade to find the highest priority event
+    // Filter events matching targetIsoDate in the same time zone
     const todayEvents = calendarArray.filter((event) => {
       if (!event.date) return false;
-      let eventIsoDate = "";
-      if (typeof event.date === "number") {
-        const timestampMs = event.date > 1e11 ? event.date : event.date * 1000;
-        const d = new Date(timestampMs);
-        eventIsoDate = `${d.getUTCFullYear()}-${String(d.getUTCMonth() + 1).padStart(2, "0")}-${String(d.getUTCDate()).padStart(2, "0")}`;
-      } else if (typeof event.date === "string") {
-        eventIsoDate = event.date.split("T")[0];
-      }
+
+      const eventIsoDate =
+        typeof event.date === "string"
+          ? event.date.split("T")[0]
+          : getIsoDateInTimeZone(event.date, timeZone);
+
       return eventIsoDate === targetIsoDate;
     });
 
-    // If there are events for today, sort them by grade and map the highest priority event to a theme
+    // Sort events by grade and map to theme
     if (todayEvents.length > 0) {
       todayEvents.sort((a, b) => (b.grade || 0) - (a.grade || 0));
-      const mappedTheme = mapLitCalToTheme(todayEvents[0]);
-      if (mappedTheme) return mappedTheme;
+      const primaryEvent = todayEvents[0];
+      const mappedTheme = mapLitCalToTheme(primaryEvent, timeZone);
+
+      if (mappedTheme) {
+        console.log(
+          `[LitCal] [${timeZone}] Matched "${primaryEvent.name || primaryEvent.event_key}" - Theme: ${mappedTheme}`,
+        );
+        return mappedTheme;
+      }
     }
 
+    // If no matching event is found, use a local fallback
+    console.warn(
+      `[LitCal] No event found for ${targetIsoDate} in ${timeZone}. Using local fallback.`,
+    );
     return getStaticLiturgicalSeason(date);
   } catch (error) {
-    // Handle fetch errors, timeouts, or other issues gracefully by falling back to the static liturgical season
     console.warn(
-      "[LitCal] API timeout or fetch error. Resorting to local fallback:",
-      error,
+      "[LitCal] API error or timeout. Using local fallback:",
+      error.message || error,
     );
     return getStaticLiturgicalSeason(date);
   }
