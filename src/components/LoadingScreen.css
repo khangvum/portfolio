@@ -10,6 +10,8 @@
   left: 0;
   z-index: 9999;
   overflow: hidden;
+  transition: opacity 0.3s ease-in-out;
+  opacity: 1;
 }
 
 .loading-root::after {
@@ -22,6 +24,11 @@
   background-image: url('../assets/stucco.png');
   background-size: cover;
   opacity: 0.12;
+  pointer-events: none;
+}
+
+.loading-root.fade-out {
+  opacity: 0;
   pointer-events: none;
 }
 

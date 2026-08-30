@@ -2,9 +2,9 @@ import React from "react";
 import { Box, CircularProgress, Typography } from "@mui/material";
 import "./LoadingScreen.css";
 
-const LoadingScreen = () => {
+const LoadingScreen = ({ isFading }) => {
   return (
-    <Box className="loading-root">
+    <Box className={`loading-root ${isFading ? "fade-out" : ""}`}>
       <Box className="loading-content">
         <Typography variant="h4" className="loading-title">
           Loading...
