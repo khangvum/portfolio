@@ -37,7 +37,7 @@ const About = () => {
       label: "International Awards",
       value: "2",
       detail:
-        "International Vietnam Language Excellence Entrance Award | CA$2000\nKaren L. Monahan International Award | CA$750",
+        "International Vietnam Language Excellence Entrance Award | CA$2,000\nKaren L. Monahan International Award | CA$750",
     },
   ];
 
@@ -72,7 +72,7 @@ const About = () => {
             <Box component="ul" className="about-list">
               <li>
                 • Engineer robust test suites using <strong>C#</strong>,{" "}
-                <strong>Selenium</strong>, <strong>.NET</strong>, and{" "}
+                <strong>.NET</strong>, <strong>Selenium</strong>, and{" "}
                 <strong>NUnit/MSTest</strong>.
               </li>
               <li>
