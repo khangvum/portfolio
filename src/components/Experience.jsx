@@ -11,10 +11,16 @@ const Experience = () => {
     {
       title: "Automation Test Developer",
       company: "CARFAX Canada",
-      period: "May 2026 - Present",
+      period: "May 2026 - Aug 2026",
       location: "London, ON",
       points: [
-        "Engineered automated test cases with Selenium WebDriver and NUnit/MSTest",
+        {
+          text: "Engineered automated test cases with C#, .NET, Selenium WebDriver, and NUnit/MSTest",
+          linkText: "khangvum/reqnroll-automation",
+          linkUrl: "https://github.com/khangvum/reqnroll-automation",
+        },
+        "Automated 60+ API endpoints in Postman using JWT, Auth0, and web service tokens",
+        "Automated daily CI/CD pipeline schedules and report generation in Azure Pipelines for release readiness",
       ],
     },
     {

@@ -32,19 +32,19 @@ const Projects = () => {
     },
     {
       num: "III",
+      title: "Reqnroll Automation",
+      subtitle: "Automata",
+      desc: "A browser-based test automation solution utilizing Reqnroll (BDD) and Selenium WebDriver, driven by the MSTest framework and structured around the Page Object Model (POM) architectural pattern.",
+      tech: ["C#", ".NET", "Gherkin", "MSTest", "Selenium", "GitHub Actions"],
+      link: "https://github.com/khangvum/reqnroll-automation",
+    },
+    {
+      num: "IV",
       title: "Expression Evaluator",
       subtitle: "Calculus",
       desc: "A Windows console application that evaluates mathematical expressions involving multiple operators and functions.",
       tech: ["C++", "C"],
       link: "https://github.com/khangvum/exprevaluator",
-    },
-    {
-      num: "IV",
-      title: "Reqnroll Automation",
-      subtitle: "Automata",
-      desc: "A browser-based test automation solution utilizing Reqnroll (BDD) and Selenium WebDriver, driven by the MSTest framework and structured around the Page Object Model (POM) architectural pattern.",
-      tech: ["C#", "Gherkin", "MSTest", "Selenium", "GitHub Actions"],
-      link: "https://github.com/khangvum/reqnroll-automation",
     },
     {
       num: "V",

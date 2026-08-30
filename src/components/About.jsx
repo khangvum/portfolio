@@ -63,7 +63,7 @@ const About = () => {
             }}
           >
             <Typography variant="h2" className="about-name">
-              Khang Vu
+              About Me
             </Typography>
             <Typography variant="body1" className="about-bio">
               A Computer Programming and Analysis student at Fanshawe College
@@ -74,7 +74,8 @@ const About = () => {
             <Box component="ul" className="about-list">
               <li>
                 • Engineer robust test suites using <strong>C#</strong>,{" "}
-                <strong>Selenium</strong>, and <strong>NUnit/MSTest</strong>.
+                <strong>Selenium</strong>, <strong>.NET</strong>, and{" "}
+                <strong>NUnit/MSTest</strong>.
               </li>
               <li>
                 • Architect hybrid infrastructure with <strong>Ansible</strong>,{" "}

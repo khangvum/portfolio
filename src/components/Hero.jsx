@@ -22,13 +22,13 @@ const Hero = () => {
     >
       <Container maxWidth="lg">
         <Typography variant="h1" className="hero-title">
-          Infrastructure & Automation
+          Khang Vu
         </Typography>
 
         <Box className="hero-divider" />
 
         <Typography variant="h5" className="hero-subtitle">
-          Automation Test Developer | CARFAX Canada
+          Developer | Automation | Infrastructure as Code
         </Typography>
 
         <Button
