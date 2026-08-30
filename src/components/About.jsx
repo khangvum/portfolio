@@ -74,7 +74,7 @@ const About = () => {
             <Box component="ul" className="about-list">
               <li>
                 • Engineer robust test suites using <strong>C#</strong>,{" "}
-                <strong>Selenium</strong>, and <strong>NUnit/MSTest</strong>.
+                <strong>Selenium</strong>, <strong>.NET</strong>,{" "}and <strong>NUnit/MSTest</strong>.
               </li>
               <li>
                 • Architect hybrid infrastructure with <strong>Ansible</strong>,{" "}
