@@ -73,6 +73,12 @@ export const getEaster = (year: number): Date => {
   return new Date(year, month - 1, day);
 };
 
+/**
+ * Gets the ISO date string (YYYY-MM-DD) for a given date in the specified time zone.
+ * @param dateInput - The date input (Date object, timestamp, or string).
+ * @param timeZone - The time zone to use for the date.
+ * @returns The ISO date string in the specified time zone.
+ */
 export const getStaticLiturgicalSeason = (
   date = new Date(),
 ): LiturgicalSeason => {

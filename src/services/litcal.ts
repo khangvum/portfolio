@@ -26,6 +26,12 @@ const days: Record<string, number> = {
   Sat: 6,
 };
 
+/**
+ * Gets the current liturgical season based on the provided date and time zone.
+ * @param date - The date for which to determine the liturgical season.
+ * @param timeZone - The time zone to use for the date.
+ * @returns The liturgical season.
+ */
 const getDayOfWeekInTimeZone = (date: Date, timeZone: string): number => {
   const formatter = new Intl.DateTimeFormat("en-US", {
     timeZone,
@@ -35,6 +41,12 @@ const getDayOfWeekInTimeZone = (date: Date, timeZone: string): number => {
   return days[dayStr] ?? date.getDay();
 };
 
+/**
+ * Gets the hour of the day in the specified time zone.
+ * @param date - The date for which to determine the hour.
+ * @param timeZone - The time zone to use for the date.
+ * @returns The hour of the day (0-23).
+ */
 const getHourInTimeZone = (date: Date, timeZone: string): number => {
   const formatter = new Intl.DateTimeFormat("en-US", {
     timeZone,
@@ -44,6 +56,12 @@ const getHourInTimeZone = (date: Date, timeZone: string): number => {
   return parseInt(formatter.format(date), 10);
 };
 
+/**
+ * Gets the ISO date string (YYYY-MM-DD) for a given date in the specified time zone.
+ * @param dateInput - The date input (Date object, timestamp, or string).
+ * @param timeZone - The time zone to use for the date.
+ * @returns The ISO date string in the specified time zone.
+ */
 const getIsoDateInTimeZone = (
   dateInput: Date | number | string,
   timeZone: string,
@@ -63,6 +81,12 @@ const getIsoDateInTimeZone = (
   return formatter.format(d);
 };
 
+/**
+ * Maps a LitCalEvent to a LiturgicalSeason based on its color and date.
+ * @param event - The LitCalEvent to map.
+ * @param userTimeZone - The user's time zone for date calculations.
+ * @returns The corresponding LiturgicalSeason or null if no match is found.
+ */
 const mapLitCalToTheme = (
   event: LitCalEvent | null | undefined,
   userTimeZone: string,
@@ -98,6 +122,13 @@ const mapLitCalToTheme = (
   return null;
 };
 
+/**
+ * Fetches the liturgical season from the LitCal API for a given date and time zone.
+ * If the API call fails or times out, it falls back to a static calculation.
+ * @param date - The date for which to fetch the liturgical season (default: current date).
+ * @param timeZone - The time zone to use for the date (default: user's local time zone).
+ * @returns A promise that resolves to the liturgical season.
+ */
 export const fetchApiLiturgicalSeason = async (
   date = new Date(),
   timeZone = Intl.DateTimeFormat().resolvedOptions().timeZone,
