@@ -18,6 +18,7 @@ import Hero from "./components/Hero";
 import Navbar from "./components/Navbar";
 import Projects from "./components/Projects";
 import Contact from "./components/Contact";
+import LoadingScreen from "./components/LoadingScreen";
 
 import { fetchApiLiturgicalSeason } from "./services/litcal";
 
@@ -51,19 +52,7 @@ function App() {
 
   // 3. Prevent theme flash by waiting until currentSeason is determined
   if (!currentSeason) {
-    return (
-      <Box
-        sx={{
-          display: "flex",
-          height: "100vh",
-          alignItems: "center",
-          justifyContent: "center",
-          backgroundColor: "#121212",
-        }}
-      >
-        <CircularProgress color="secondary" />
-      </Box>
-    );
+    return <LoadingScreen />;
   }
 
   return (

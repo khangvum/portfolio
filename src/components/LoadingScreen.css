@@ -1,0 +1,48 @@
+.loading-root {
+  display: flex;
+  height: 100vh;
+  width: 100vw;
+  align-items: center;
+  justify-content: center;
+  background-color: #121212;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+  overflow: hidden;
+}
+
+.loading-root::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url('../assets/stucco.png');
+  background-size: cover;
+  opacity: 0.12;
+  pointer-events: none;
+}
+
+.loading-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+  position: relative;
+  z-index: 1;
+}
+
+.loading-title {
+  font-family: 'Cinzel', serif !important;
+  font-weight: 700 !important;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: #d4af37; /* Warm gold accent matching your theme palette */
+  text-align: center;
+}
+
+.loading-spinner {
+  color: #d4af37 !important;
+}
