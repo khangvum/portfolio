@@ -2,16 +2,26 @@ import {
   Box,
   Container,
   Typography,
-  Grid,
   Card,
   Chip,
   CardActionArea,
 } from "@mui/material";
 import { useTheme } from "@mui/material/styles";
+import type { CSSProperties } from "react";
 import "./Projects.css";
 
 const Projects = () => {
   const theme = useTheme();
+  const styleVars = {
+    "--primary-main": theme.palette.primary.main,
+    "--primary-dark": theme.palette.primary.dark,
+    "--secondary-main": theme.palette.secondary.main,
+    "--bg-parchment": theme.palette.background.default,
+    "--chip-bg":
+      theme.palette.primary.main === "#f2efde"
+        ? "var(--primary-dark)"
+        : "#ffffff",
+  } as CSSProperties;
 
   const myProjects = [
     {
@@ -69,16 +79,7 @@ const Projects = () => {
       component="section"
       className="projects-root"
       id="projects"
-      style={{
-        "--primary-main": theme.palette.primary.main,
-        "--primary-dark": theme.palette.primary.dark,
-        "--secondary-main": theme.palette.secondary.main,
-        "--bg-parchment": theme.palette.background.default,
-        "--chip-bg":
-          theme.palette.primary.main === "#f2efde"
-            ? "var(--primary-dark)"
-            : "#ffffff",
-      }}
+      style={styleVars}
     >
       <Container maxWidth="xl">
         <Box sx={{ textAlign: "center", mb: 10 }}>

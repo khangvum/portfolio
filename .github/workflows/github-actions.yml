@@ -24,7 +24,10 @@ jobs:
           cache: "npm"
 
       - name: Dependency Installation
-        run: npm install
+        run: npm ci
+
+      - name: TypeScript Validation
+        run: npm run type-check
 
       - name: Production Build Execution
         run: npm run build

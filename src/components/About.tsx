@@ -1,11 +1,21 @@
-import React from "react";
-import { Box, Container, Grid, Typography, Button } from "@mui/material";
+import React, { type CSSProperties } from "react";
+import { Box, Container, Typography, Button } from "@mui/material";
 import { useTheme } from "@mui/material/styles";
 
 import "./About.css";
 
 const About = () => {
   const theme = useTheme();
+  const styleVars = {
+    "--primary-main": theme.palette.primary.main,
+    "--primary-dark": theme.palette.primary.dark,
+    "--secondary-main": theme.palette.secondary.main,
+    "--bg-parchment": theme.palette.background.default,
+    "--text-button":
+      theme.palette.primary.main === "#f2efde"
+        ? "var(--primary-dark)"
+        : "#ffffff",
+  } as CSSProperties;
 
   const stats = [
     {
@@ -27,7 +37,7 @@ const About = () => {
       label: "International Awards",
       value: "2",
       detail:
-        "International Vietnam Language Excellence Entrance Award | CA$2000\nKaren L. Monahan International Award | CA$750",
+        "International Vietnam Language Excellence Entrance Award | CA$2,000\nKaren L. Monahan International Award | CA$750",
     },
   ];
 
@@ -36,24 +46,12 @@ const About = () => {
       component="section"
       className="about-root"
       id="about"
-      style={{
-        "--primary-main": theme.palette.primary.main,
-        "--primary-dark": theme.palette.primary.dark,
-        "--secondary-main": theme.palette.secondary.main,
-        "--bg-parchment": theme.palette.background.default,
-        "--text-button":
-          theme.palette.primary.main === "#f2efde"
-            ? "var(--primary-dark)"
-            : "#ffffff",
-      }}
+      style={styleVars}
     >
       <Container maxWidth="xl">
-        <Grid container spacing={4} sx={{ py: 1, mx: 4 }}>
+        <Box sx={{ py: 1, mx: 4, display: "flex", flexWrap: "wrap", gap: 4 }}>
           {/* Left Column: Biography */}
-          <Grid
-            xs={12}
-            lg={6}
-            sm={6}
+          <Box
             sx={{
               display: "flex",
               flexDirection: "column",
@@ -74,7 +72,7 @@ const About = () => {
             <Box component="ul" className="about-list">
               <li>
                 • Engineer robust test suites using <strong>C#</strong>,{" "}
-                <strong>Selenium</strong>, <strong>.NET</strong>, and{" "}
+                <strong>.NET</strong>, <strong>Selenium</strong>, and{" "}
                 <strong>NUnit/MSTest</strong>.
               </li>
               <li>
@@ -116,13 +114,10 @@ const About = () => {
                 LinkedIn
               </Button>
             </Box>
-          </Grid>
+          </Box>
 
           {/* Right Column: Stats Cards */}
-          <Grid
-            xs={12}
-            lg={6}
-            sm={6}
+          <Box
             sx={{
               display: "flex",
               flexDirection: "column",
@@ -146,8 +141,8 @@ const About = () => {
                 </Box>
               ))}
             </Box>
-          </Grid>
-        </Grid>
+          </Box>
+        </Box>
       </Container>
     </Box>
   );

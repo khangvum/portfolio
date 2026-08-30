@@ -1,4 +1,4 @@
-import React from "react";
+import React, { type CSSProperties } from "react";
 import { Box, Container, Typography } from "@mui/material";
 import BusinessCenterIcon from "@mui/icons-material/BusinessCenter";
 import { useTheme } from "@mui/material/styles";
@@ -7,6 +7,12 @@ import "./Experience.css";
 
 const Experience = () => {
   const theme = useTheme();
+  const styleVars = {
+    "--primary-dark": theme.palette.primary.dark,
+    "--secondary-main": theme.palette.secondary.main,
+    "--secondary-light": "#d4a017",
+    "--text-parchment": "#F9F7F2",
+  } as CSSProperties;
   const jobs = [
     {
       title: "Automation Test Developer",
@@ -64,12 +70,7 @@ const Experience = () => {
       component="section"
       className="exp-root"
       id="experience"
-      style={{
-        "--primary-dark": theme.palette.primary.dark,
-        "--secondary-main": theme.palette.secondary.main,
-        "--secondary-light": "#d4a017", // Lighter gold for hover
-        "--text-parchment": "#F9F7F2",
-      }}
+      style={styleVars}
     >
       <Container maxWidth="xl">
         <Typography variant="h2" className="exp-header">

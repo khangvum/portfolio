@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, type CSSProperties } from "react";
 import {
   AppBar,
   Toolbar,
@@ -20,6 +20,15 @@ import "./Navbar.css";
 const Navbar = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
   const theme = useTheme();
+  const styleVars = {
+    "--primary-main": theme.palette.primary.main,
+    "--secondary-main": theme.palette.secondary.main,
+    "--nav-text":
+      theme.palette.primary.main === "#f2efde"
+        ? theme.palette.primary.dark
+        : "#ffffff",
+    backgroundColor: "var(--primary-main)",
+  } as CSSProperties;
 
   const navItems = [
     { label: "About", id: "about" },
@@ -38,15 +47,7 @@ const Navbar = () => {
       color="primary"
       elevation={0}
       className="navbar-root"
-      style={{
-        "--primary-main": theme.palette.primary.main,
-        "--secondary-main": theme.palette.secondary.main,
-        "--nav-text":
-          theme.palette.primary.main === "#f2efde"
-            ? theme.palette.primary.dark
-            : "#ffffff",
-        backgroundColor: "var(--primary-main)",
-      }}
+      style={styleVars}
     >
       <Box sx={{ width: "100%", px: { xs: 2, md: 4 } }}>
         <Toolbar disableGutters>
@@ -114,10 +115,12 @@ const Navbar = () => {
                 >
                   <ListItemText
                     primary={item.label}
-                    primaryytypographyprops={{
-                      className: "nav-link",
-                      textAlign: "center",
-                      variant: "body1",
+                    sx={{
+                      "& .MuiTypography-root": {
+                        className: "nav-link",
+                        textAlign: "center",
+                        variant: "body1",
+                      },
                     }}
                   />
                 </ListItemButton>
