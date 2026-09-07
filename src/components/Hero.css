@@ -66,7 +66,7 @@
 }
 
 .hero-title {
-  font-family: 'Cinzel', serif !important;
+  font-family: "Cinzel", serif !important;
   font-weight: 700 !important;
   font-size: clamp(2.5rem, 6vw, 4rem) !important;
   text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5) !important;
@@ -74,14 +74,14 @@
 }
 
 .hero-divider {
-  width: 120px !important;
+  width: 340px !important;
   height: 3px !important;
   background-color: var(--secondary-main) !important;
   margin: 0 0 2rem 0 !important;
 }
 
 .hero-subtitle {
-  font-family: 'Lora', serif !important;
+  font-family: "Lora", serif !important;
   font-weight: 400 !important;
   font-size: clamp(1.15rem, 3.5vw, 1.45rem) !important;
   max-width: 650px;
@@ -119,5 +119,9 @@
 
   .hero-coat-of-arms {
     max-width: 300px;
+  }
+
+  .hero-divider {
+    width: 220px !important;
   }
 }
