@@ -6,8 +6,30 @@
   padding: 0 24px !important;
 }
 
+/* Scroll-Aware Navbar Logo */
+.nav-logo {
+  height: 0px;
+  width: 0px;
+  min-width: 0px;
+  object-fit: contain;
+  opacity: 0;
+  transform: scale(0.8);
+  transition: height 0.3s ease, width 0.3s ease, opacity 0.3s ease, transform 0.3s ease;
+  pointer-events: none;
+  overflow: hidden; /* Prevents rendering artifacts while collapsing */
+}
+
+.nav-logo.visible {
+  height: 100px;
+  width: auto;
+  min-width: 40px;
+  opacity: 1;
+  transform: scale(1);
+  pointer-events: auto;
+}
+
 .nav-brand {
-  font-family: 'Cinzel', serif !important;
+  font-family: "Cinzel", serif !important;
   letter-spacing: 2px;
   font-weight: 700;
   font-size: 1.1rem !important;
@@ -15,7 +37,7 @@
 }
 
 .nav-link {
-  font-family: 'Lora', serif !important;
+  font-family: "Lora", serif !important;
   text-transform: uppercase !important;
   letter-spacing: 1px !important;
   color: var(--nav-text) !important;
@@ -25,7 +47,7 @@
 
 .nav-link:hover {
   color: var(--secondary-main) !important;
-  background-color: color-mix(in srgb, var(--secondary-main), transparent 90%) !important;
+  background-color: rgba(var(--secondary-main-rgb), 0.1) !important;
 }
 
 .navbar-root .MuiButton-root {
@@ -44,5 +66,9 @@
 
   .nav-brand {
     font-size: 1.25rem !important;
+  }
+
+  .nav-logo {
+    height: 70px !important;
   }
 }

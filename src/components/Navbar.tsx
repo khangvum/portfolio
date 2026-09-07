@@ -1,4 +1,4 @@
-import React, { useState, type CSSProperties } from "react";
+import { useState, useEffect, type CSSProperties } from "react";
 import {
   AppBar,
   Toolbar,
@@ -19,7 +19,9 @@ import "./Navbar.css";
 
 const Navbar = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
+  const [showLogo, setShowLogo] = useState(false);
   const theme = useTheme();
+
   const styleVars = {
     "--primary-main": theme.palette.primary.main,
     "--secondary-main": theme.palette.secondary.main,
@@ -41,6 +43,30 @@ const Navbar = () => {
     setMobileOpen(!mobileOpen);
   };
 
+  useEffect(() => {
+    // Target your Hero section (or the top element of your page)
+    const heroSection =
+      document.querySelector("#hero") ||
+      document.querySelector("section") ||
+      document.body.firstElementChild;
+
+    if (!heroSection) return;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        // Show logo when Hero section is no longer intersecting near the top of the screen
+        setShowLogo(!entry.isIntersecting);
+      },
+      {
+        threshold: 0.2, // Triggers when 80% of Hero has scrolled off-screen
+      },
+    );
+
+    observer.observe(heroSection);
+
+    return () => observer.disconnect();
+  }, []);
+
   return (
     <AppBar
       position="sticky"
@@ -51,9 +77,30 @@ const Navbar = () => {
     >
       <Box sx={{ width: "100%", px: { xs: 2, md: 4 } }}>
         <Toolbar disableGutters>
-          <Typography variant="h6" className="nav-brand" sx={{ flexGrow: 1 }}>
-            Khang Vu
-          </Typography>
+          {/* Brand & Scroll-Aware Logo */}
+          <Box
+            component="a"
+            href="/"
+            sx={{
+              display: "flex",
+              alignItems: "center",
+              flexGrow: 1,
+              cursor: "pointer",
+              userSelect: "none",
+              textDecoration: "none",
+              color: "inherit",
+            }}
+          >
+            <Box
+              component="img"
+              src="/src/assets/coat-of-arms.png"
+              alt="Coat of Arms"
+              className={`nav-logo${showLogo ? " visible" : ""}`}
+            />
+            <Typography variant="h6" className="nav-brand">
+              Khang Vu
+            </Typography>
+          </Box>
 
           {/* Desktop Menu */}
           <Box
