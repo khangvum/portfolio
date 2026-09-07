@@ -20,7 +20,7 @@ const Hero = () => {
       <Container className="hero-container" maxWidth="xl">
         <Grid container spacing={4}>
           {/* Left Column: Coat of Arms */}
-          <Grid size={{ xs: 12, md: 5 }} className="hero-coat-of-arms-col">
+          <Grid size={{ xs: 12, md: 6 }} className="hero-coat-of-arms-col">
             <Box
               component="img"
               src={coatOfArms}
@@ -30,7 +30,7 @@ const Hero = () => {
           </Grid>
 
           {/* Right Column: Hero Content */}
-          <Grid size={{ xs: 12, md: 7 }} className="hero-content-col">
+          <Grid size={{ xs: 12, md: 6 }} className="hero-content-col">
             <Typography variant="h1" className="hero-title">
               Khang Vu
             </Typography>
