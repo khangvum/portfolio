@@ -16,6 +16,7 @@ import { useTheme } from "@mui/material/styles";
 import MenuIcon from "@mui/icons-material/Menu";
 
 import "./Navbar.css";
+import coatOfArms from "../assets/coat-of-arms.png";
 
 const Navbar = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -93,7 +94,7 @@ const Navbar = () => {
           >
             <Box
               component="img"
-              src="/src/assets/coat-of-arms.png"
+              src={coatOfArms}
               alt="Coat of Arms"
               className={`nav-logo${showLogo ? " visible" : ""}`}
             />
