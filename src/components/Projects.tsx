@@ -60,7 +60,7 @@ const Projects = () => {
       num: "V",
       title: "NixOS-WSL Configuration",
       subtitle: "Systema",
-      desc: "A NixOS 25.11 configuration tailored for running within Windows Subsystem for Linux (WSL).",
+      desc: "A NixOS 26.05 configuration tailored for running within Windows Subsystem for Linux (WSL).",
       tech: ["Nix", "Bash"],
       link: "https://github.com/khangvum/nixos-wsl",
     },
