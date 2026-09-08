@@ -26,11 +26,11 @@ const Projects = () => {
   const myProjects = [
     {
       num: "I",
-      title: "Homelab Automation with Ansible",
+      title: "Infrastructure as Code (IaC) Homelab",
       subtitle: "Automata",
-      desc: "A homelab configuration automation solution powered by Ansible, containerized with Docker.",
-      tech: ["Ansible", "API", "Docker", "Jinja", "PowerShell", "YAML"],
-      link: "https://github.com/khangvum/homelab-ansible-config",
+      desc: "A homelab provisioning and configuration automation solution powered by Terraform and Ansible.",
+      tech: ["Ansible", "Terraform", "API", "Docker", "Jinja", "PowerShell", "YAML"],
+      link: "https://github.com/khangvum/homelab-iac",
     },
     {
       num: "II",

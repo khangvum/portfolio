@@ -31,7 +31,7 @@ const About = () => {
     {
       label: "Languages",
       value: "3",
-      detail: "English, French, and Vietnamese",
+      detail: "English (IELTS 8.0) | French (Intermediate) | Vietnamese (Native)",
     },
     {
       label: "International Awards",
