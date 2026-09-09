@@ -45,7 +45,7 @@ const Navbar = () => {
   };
 
   useEffect(() => {
-    // Target your Hero section (or the top element of your page)
+    // Target the Hero section
     const heroSection =
       document.querySelector("#hero") ||
       document.querySelector("section") ||
@@ -78,29 +78,39 @@ const Navbar = () => {
     >
       <Box sx={{ width: "100%", px: { xs: 2, md: 4 } }}>
         <Toolbar disableGutters>
-          {/* Brand & Scroll-Aware Logo */}
+          {/* Brand & Scroll-Aware Logo Container */}
           <Box
-            component="a"
-            href="/"
             sx={{
               display: "flex",
               alignItems: "center",
-              flexGrow: 1,
-              cursor: "pointer",
-              userSelect: "none",
-              textDecoration: "none",
-              color: "inherit",
+              flexGrow: 1, // Takes up remaining space in Toolbar
             }}
           >
+            {/* Clickable Brand Link - Only wraps logo and text */}
             <Box
-              component="img"
-              src={coatOfArms}
-              alt="Coat of Arms"
-              className={`nav-logo${showLogo ? " visible" : ""}`}
-            />
-            <Typography variant="h6" className="nav-brand">
-              Khang Vu
-            </Typography>
+              component="a"
+              href="/"
+              sx={{
+                display: "inline-flex",
+                alignItems: "center",
+                gap: 1.5,
+                cursor: "pointer",
+                userSelect: "none",
+                textDecoration: "none",
+                color: "inherit",
+                width: "fit-content", // Restricts clickable area strictly to content
+              }}
+            >
+              <Box
+                component="img"
+                src={coatOfArms}
+                alt="Coat of Arms"
+                className={`nav-logo${showLogo ? " visible" : ""}`}
+              />
+              <Typography variant="h6" className="nav-brand">
+                Khang Vu
+              </Typography>
+            </Box>
           </Box>
 
           {/* Desktop Menu */}
