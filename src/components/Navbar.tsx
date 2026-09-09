@@ -93,7 +93,6 @@ const Navbar = () => {
               sx={{
                 display: "inline-flex",
                 alignItems: "center",
-                gap: 1.5,
                 cursor: "pointer",
                 userSelect: "none",
                 textDecoration: "none",
