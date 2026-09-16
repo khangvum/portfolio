@@ -101,6 +101,9 @@
 
 .hero-button:hover {
   background-color: var(--secondary-light) !important;
+  filter: brightness(0.92);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
 }
 
 /* Mobile Responsiveness (Center-align when stacked) */
