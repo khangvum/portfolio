@@ -122,6 +122,11 @@ const mapLitCalToTheme = (
   return null;
 };
 
+export interface LitCalResult {
+  season: LiturgicalSeason;
+  name?: string;
+}
+
 /**
  * Fetches the liturgical season from the LitCal API for a given date and time zone.
  * If the API call fails or times out, it falls back to a static calculation.
@@ -132,7 +137,7 @@ const mapLitCalToTheme = (
 export const fetchApiLiturgicalSeason = async (
   date = new Date(),
   timeZone = Intl.DateTimeFormat().resolvedOptions().timeZone,
-): Promise<LiturgicalSeason> => {
+): Promise<LitCalResult> => {
   const localDay = getDayOfWeekInTimeZone(date, timeZone);
   const localHour = getHourInTimeZone(date, timeZone);
   const isSaturdayVigil = localDay === 6 && localHour >= 16;
@@ -184,20 +189,29 @@ export const fetchApiLiturgicalSeason = async (
         console.log(
           `[LitCal] [${timeZone}] ${isSaturdayVigil ? "(Saturday Vigil >=4PM) " : ""}Matched "${primaryEvent.name || primaryEvent.event_key}" - Theme: ${mappedTheme}`,
         );
-        return mappedTheme;
+
+        return {
+          season: mappedTheme,
+          name:
+            primaryEvent.name ||
+            primaryEvent.event_key ||
+            "Unknown Liturgical Event",
+        };
       }
     }
 
     console.warn(
       `[LitCal] No event found for ${targetIsoDate} in ${timeZone}. Using local fallback.`,
     );
-    return getStaticLiturgicalSeason(targetDate);
+
+    return { season: getStaticLiturgicalSeason(targetDate) };
   } catch (error: unknown) {
     const message = error instanceof Error ? error.message : String(error);
     console.warn(
       "[LitCal] API error or timeout. Using local fallback:",
       message,
     );
-    return getStaticLiturgicalSeason(date);
+
+    return { season: getStaticLiturgicalSeason(targetDate) };
   }
 };
