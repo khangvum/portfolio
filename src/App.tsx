@@ -143,6 +143,7 @@ function App() {
                       fontFamily: "Cinzel, serif",
                       fontWeight: 700,
                       fontSize: "0.9rem",
+                      color: seasons[currentSeason ?? "ORDINARY"].palette.primary.dark,
                       lineHeight: 1.2,
                       mt: 0.5,
                     }}
