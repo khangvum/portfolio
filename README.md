@@ -11,7 +11,7 @@ A comprehensive **_portfolio_** demonstrating **_educational background_** and *
 
 ## LitCal API Integration
 
-The application integrates with the **_Catholic Liturgical Calendar API_** ([`litcal.johnromanodorazio.com`](https://litcal.johnromanodorazio.com)) to programmatically retrieve calendar metadata based on the current date:
+The application integrates with the **_Catholic Liturgical Calendar API_** ([`litcal.johnromanodorazio.com`](https://litcal.johnromanodorazio.com)), developed by **_Father John R. D'Orazio_** ([@JohnRDOrazio](https://github.com/JohnRDOrazio)), to programmatically retrieve calendar metadata based on the current date:
 
 - Programmatically fetches real-time **_liturgical seasons_**, **_primary celebrations_**, and **_associated colors_** from the **_API_**.
 - Dynamically updates **_global color palettes_**, **_background accents_**, and **_theme tokens_** based on the active season.
