@@ -138,7 +138,7 @@
 }
 
 .about-btn-primary {
-  background-color: var(--secondary-main) !important;
+  background-color: color-mix(in srgb, var(--secondary-main) 85%, transparent) !important;
   color: var(--primary-dark) !important;
   border-radius: 0 !important;
   font-weight: 700 !important;
@@ -153,7 +153,7 @@
 }
 
 .about-btn-secondary {
-  background-color: color-mix(in srgb, var(--secondary-main) 35%, transparent) !important;
+  background-color: rgba(255, 255, 255, 1) !important;
   border: 1px solid var(--primary-dark) !important;
   color: var(--primary-dark) !important;
   border-radius: 0 !important;
@@ -163,7 +163,6 @@
 }
 
 .about-btn-secondary:hover {
-  background-color: color-mix(in srgb, var(--secondary-main) 50%, transparent) !important;
   border-color: var(--primary-dark) !important;
   color: var(--primary-dark) !important;
   transform: translateY(-2px);
