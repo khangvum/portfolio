@@ -2,6 +2,9 @@
 
 A comprehensive **_portfolio_** demonstrating **_educational background_** and **_technical expertise_** deployed as a **_webpage_** using **_React_** and **_Vite_**. This site showcases **_core proficiencies_** in **_front-end development_** and **_responsive design principles_**, establishing a **_public-facing resource_** for professional engagement and **_global accessibility_** via **_Github Pages_**.
 
+[![GitHub Pages Deployment](https://github.com/khangvum/portfolio/actions/workflows/github-pages.yml/badge.svg)](https://github.com/khangvum/portfolio/actions/workflows/github-pages.yml)
+[![Security Scan](https://github.com/khangvum/portfolio/actions/workflows/security.yml/badge.svg)](https://github.com/khangvum/portfolio/actions/workflows/security.yml)
+
 ## Features
 
 - **_Responsive design_** ensuring **_cross-device compatibility_** across **_desktop_**, **_tablet_**, and **_mobile_** environments.
