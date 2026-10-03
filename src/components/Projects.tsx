@@ -108,7 +108,7 @@ const Projects = () => {
       <Container maxWidth="xl">
         <Box sx={{ textAlign: "center", mb: 10 }}>
           <Typography variant="h2" className="projects-main-title">
-            Personal Projects
+            Stations of the Scripts
           </Typography>
         </Box>
 
