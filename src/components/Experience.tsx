@@ -74,7 +74,7 @@ const Experience = () => {
     >
       <Container maxWidth="xl">
         <Typography variant="h2" className="exp-header">
-          Professional Experience
+          The Book of Chronicles
         </Typography>
 
         <Box className="timeline-wrapper">
