@@ -61,7 +61,7 @@ const About = () => {
             }}
           >
             <Typography variant="h2" className="about-name">
-              About Me
+              The Genesis
             </Typography>
             <Typography variant="body1" className="about-bio">
               A Computer Programming and Analysis student at Fanshawe College
