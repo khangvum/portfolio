@@ -16,15 +16,15 @@ import {
 } from "@mui/material";
 import PaletteIcon from "@mui/icons-material/Palette";
 
-import { seasons, type SeasonKey } from "./theme";
-import About from "./components/About";
-import Experience from "./components/Experience";
-import Hero from "./components/Hero";
-import Navbar from "./components/Navbar";
-import Projects from "./components/Projects";
-import Contact from "./components/Contact";
-import LoadingScreen from "./components/LoadingScreen";
-import { fetchApiLiturgicalSeason } from "./services/litcal";
+import { seasons, type SeasonKey } from "@app/theme";
+import About from "@app/components/About";
+import Experience from "@app/components/Experience";
+import Hero from "@app/components/Hero";
+import Navbar from "@app/components/Navbar";
+import Projects from "@app/components/Projects";
+import Contact from "@app/components/Contact";
+import LoadingScreen from "@app/components/LoadingScreen";
+import { fetchApiLiturgicalSeason } from "@app/services/litcal";
 
 function App() {
   const [currentSeason, setCurrentSeason] = useState<SeasonKey | null>(null);

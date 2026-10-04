@@ -1,4 +1,4 @@
-import React, { type CSSProperties } from "react";
+import { type CSSProperties } from "react";
 import { Box, Container, Typography, Button } from "@mui/material";
 import { useTheme } from "@mui/material/styles";
 
