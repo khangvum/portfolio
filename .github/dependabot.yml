@@ -6,11 +6,31 @@ updates:
     directory: "/"
     schedule:
       interval: "weekly"
+    commit-message:
+      prefix: "chore"
+      include: "scope"
     open-pull-requests-limit: 10
+
+    # Avoid premature version TypeScript 7.x upgrades that break tooling
+    ignore:
+      - dependency-name: "typescript"
+        update-types: ["version-update:semver-major"]
+
+    # Bundle minor & patch updates into a single PR to test compatibility together
+    groups:
+      patch-and-minor-updates:
+        patterns:
+          - "*"
+        update-types:
+          - "patch"
+          - "minor"
 
   # 2. CI/CD Pipeline dependencies (.github/workflows/*.yml)
   - package-ecosystem: "github-actions"
     directory: "/"
     schedule:
       interval: "weekly"
+    commit-message:
+      prefix: "chore"
+      include: "scope"
     open-pull-requests-limit: 5
