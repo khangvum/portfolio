@@ -1,0 +1,16 @@
+name: Web Application Build
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+permissions:
+  contents: read
+
+jobs:
+  run-web-build:
+    uses: khangvum/workflows/.github/workflows/web-build.yml@main
