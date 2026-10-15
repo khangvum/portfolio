@@ -17,7 +17,7 @@ import {
 import PaletteIcon from "@mui/icons-material/Palette";
 
 import { seasons, type SeasonKey } from "./theme";
-import About from "./components/About";
+import About from "@app/components/About";
 import Experience from "./components/Experience";
 import Hero from "./components/Hero";
 import Navbar from "./components/Navbar";
