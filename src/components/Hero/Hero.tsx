@@ -1,8 +1,8 @@
-import React, { type CSSProperties } from "react";
+import { type CSSProperties } from "react";
 import { Box, Container, Typography, Button, Grid } from "@mui/material";
 import { useTheme } from "@mui/material/styles";
 
-import coatOfArms from "../assets/coat-of-arms.png";
+import coatOfArms from "@app/assets/coat-of-arms.png";
 import "./Hero.css";
 
 const Hero = () => {
