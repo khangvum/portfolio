@@ -23,7 +23,7 @@ import Hero from "@app/components/Hero";
 import Navbar from "./components/Navbar";
 import Projects from "./components/Projects";
 import Contact from "@app/components/Contact";
-import LoadingScreen from "./components/LoadingScreen";
+import LoadingScreen from "@app/components/LoadingScreen";
 import { fetchApiLiturgicalSeason } from "./services/litcal";
 
 function App() {
