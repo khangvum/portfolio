@@ -13,7 +13,7 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background-image: url('../assets/stucco.png');
+  background-image: url('@app/assets/stucco.png');
   background-size: cover;
   opacity: 0.1;
   /* Subtler than Projects to keep text legible */

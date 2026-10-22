@@ -22,7 +22,7 @@
   right: 0;
   bottom: 0;
 
-  background-image: url("../assets/stained-glass.jpg");
+  background-image: url("@app/assets/stained-glass.jpg");
   background-size: cover;
   background-position: center;
 

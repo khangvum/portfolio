@@ -16,7 +16,7 @@ import { useTheme } from "@mui/material/styles";
 import MenuIcon from "@mui/icons-material/Menu";
 
 import "./Navbar.css";
-import coatOfArms from "../assets/coat-of-arms.png";
+import coatOfArms from "@app/assets/coat-of-arms.png";
 
 const Navbar = () => {
   const [mobileOpen, setMobileOpen] = useState(false);

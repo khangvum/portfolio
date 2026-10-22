@@ -1,7 +1,7 @@
 import {
   getStaticLiturgicalSeason,
   type LiturgicalSeason,
-} from "../utils/liturgical-utils";
+} from "@app/utils/liturgical-utils";
 
 type LitCalEvent = {
   date?: string | Date | number;
