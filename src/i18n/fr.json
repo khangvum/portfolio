@@ -1,0 +1,147 @@
+{
+  "languageName": "Français",
+  "documentTitle": "Khang Vu - Portfolio",
+  "metaDescription": "Portfolio de Khang Vu : développement logiciel, automatisation et infrastructure as code.",
+  "nav": {
+    "about": "À propos",
+    "experience": "Expérience",
+    "projects": "Projets",
+    "contact": "Contact",
+    "language": "Langue",
+    "switchTo": "English",
+    "openMenu": "Ouvrir le menu de navigation"
+  },
+  "hero": {
+    "imageAlt": "Armoiries de Khang Vu",
+    "subtitle": "Développement | Automatisation | Infrastructure as Code",
+    "button": "Me contacter"
+  },
+  "about": {
+    "title": "La Genèse",
+    "biography": "Étudiant en programmation et analyse informatique au Fanshawe College, spécialisé dans les systèmes d'entreprise et l'automatisation :",
+    "skills": [
+      "Concevoir des suites de tests robustes avec C#, .NET, Selenium et NUnit/MSTest.",
+      "Architecturer des infrastructures hybrides avec Ansible, Terraform, VMware ESXi et Hyper-V.",
+      "Optimiser les opérations d'entreprise grâce à Microsoft Intune, Entra ID et PowerShell."
+    ],
+    "resume": "CV",
+    "github": "GitHub",
+    "linkedin": "LinkedIn",
+    "stats": [
+      {
+        "label": "Moyenne cumulative",
+        "detail": "Tableau d'honneur | A2023, H2024, A2024, P2025, H2026"
+      },
+      {
+        "label": "Stages coopératifs",
+        "detail": "Infrastructure et réseaux, opérations et tests automatisés"
+      },
+      {
+        "label": "Langues",
+        "detail": "Anglais (IELTS 8,0) | Français (intermédiaire) | Vietnamien (langue maternelle)"
+      },
+      {
+        "label": "Prix internationaux",
+        "detail": "Prix d'entrée pour l'excellence en vietnamien | 2 000 $ CA\nPrix international Karen L. Monahan | 750 $ CA"
+      }
+    ]
+  },
+  "experience": {
+    "title": "Le Livre des Chroniques",
+    "example": "p. ex.,",
+    "jobs": [
+      {
+        "title": "Développeur de tests automatisés",
+        "company": "CARFAX Canada",
+        "period": "mai 2026 - août 2026",
+        "location": "London, Ontario",
+        "points": [
+          {
+            "text": "Conception de tests automatisés avec C#, .NET, Selenium WebDriver et NUnit/MSTest"
+          },
+          "Automatisation de plus de 60 points d'accès API dans Postman avec JWT, Auth0 et des jetons de services web",
+          "Automatisation des planifications quotidiennes des pipelines CI/CD et de la génération de rapports dans Azure Pipelines pour préparer les mises en production"
+        ]
+      },
+      {
+        "title": "Analyste du soutien NSC - niveau 1",
+        "company": "Emco Corporation",
+        "period": "août 2025 - déc. 2025",
+        "location": "London, Ontario",
+        "points": [
+          "Gestion de l'infrastructure d'entreprise avec Entra ID (Azure AD), Intune et Exchange",
+          {
+            "text": "Automatisation des déploiements Windows avec Autopilot et des fichiers de réponses"
+          },
+          "Fourniture d'un soutien complet de niveau 1 au moyen du système de billetterie Ivanti"
+        ]
+      },
+      {
+        "title": "Systèmes d'information IoT",
+        "company": "Eramosa - une entreprise de CIMA+",
+        "period": "janv. 2025 - avr. 2025",
+        "location": "Guelph, Ontario",
+        "points": [
+          {
+            "text": "Conception d'un environnement WSL standardisé et renforcé sur le plan de la sécurité"
+          },
+          {
+            "text": "Mise en œuvre de l'infrastructure as code (IaC) avec Ansible et Terraform"
+          },
+          "Orchestration d'une infrastructure virtuelle multi-locataire sur VMware ESXi et Hyper-V"
+        ]
+      }
+    ]
+  },
+  "projects": {
+    "title": "Les Stations des Scripts",
+    "items": [
+      {
+        "title": "Configuration Ansible",
+        "description": "Solution déclarative d'automatisation de configuration propulsée par Ansible."
+      },
+      {
+        "title": "Provisionnement d'infrastructure",
+        "description": "Solution déclarative de provisionnement d'infrastructure propulsée par Terraform."
+      },
+      {
+        "title": "Collection Ansible pour Microsoft Hyper-V",
+        "description": "Collection Ansible propulsée par PowerShell pour gérer et configurer une infrastructure Hyper-V."
+      },
+      {
+        "title": "Fichiers de réponses",
+        "description": "Solution automatisée de déploiement de systèmes d'exploitation utilisant des fichiers de réponses."
+      },
+      {
+        "title": "Configuration NixOS-WSL",
+        "description": "Configuration NixOS 26.05 conçue pour fonctionner dans le sous-système Windows pour Linux (WSL)."
+      },
+      {
+        "title": "Évaluateur d'expressions",
+        "description": "Application console Windows qui évalue des expressions mathématiques comportant plusieurs opérateurs et fonctions."
+      },
+      {
+        "title": "Portfolio",
+        "description": "Portfolio présentant une formation et une expertise technique, déployé comme page web avec React et Vite."
+      },
+      {
+        "title": "Automatisation Reqnroll",
+        "description": "Solution d'automatisation de tests dans un navigateur utilisant Reqnroll (BDD) et Selenium WebDriver, propulsée par MSTest et structurée selon le modèle Page Object (POM)."
+      },
+      {
+        "title": "Équilibrage d'équations chimiques",
+        "description": "Programme Python qui équilibre des équations chimiques en déterminant les coefficients stœchiométriques de chaque réactif et produit."
+      }
+    ]
+  },
+  "contact": {
+    "title": "Le Script Final",
+    "subtitle": "Pour une demande professionnelle, un échange technique ou une collaboration, je serai toujours heureux d'échanger avec vous !",
+    "githubLabel": "Visiter le GitHub de Khang Vu",
+    "linkedinLabel": "Visiter le LinkedIn de Khang Vu",
+    "emailLabel": "Envoyer un courriel à Khang Vu",
+    "copyright": "© 2026 Khang Vu - London, Ontario"
+  },
+  "loading": "Chargement",
+  "feast": "Fête du jour"
+}
