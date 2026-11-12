@@ -1,5 +1,6 @@
 import { createTheme, type Theme } from "@mui/material/styles";
 
+/** @brief Identifier for a liturgical visual theme. */
 export type SeasonKey =
   | "ORDINARY"
   | "ADVENT"
@@ -14,6 +15,7 @@ const baseTypography = {
   h2: { fontFamily: "'Cinzel', serif", fontWeight: 600 },
 } as const;
 
+/** @brief Material UI themes keyed by liturgical season. */
 export const seasons: Record<SeasonKey, Theme> = {
   ORDINARY: createTheme({
     palette: {
