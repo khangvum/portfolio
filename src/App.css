@@ -1,0 +1,55 @@
+.palette-menu-anchor {
+  position: fixed;
+  right: 24px;
+  bottom: 24px;
+  z-index: 999;
+}
+
+.season-menu-paper {
+  min-width: 160px;
+  max-width: 240px;
+  width: auto;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  border: 2px solid var(--secondary-main) !important;
+}
+
+.season-feast {
+  padding: 8px 16px;
+}
+
+.season-feast-label {
+  display: block;
+  font-family: "Lora", serif !important;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 0.65rem !important;
+}
+
+.season-feast-name {
+  margin-top: 4px !important;
+  font-family: "Cinzel", serif !important;
+  font-weight: 700 !important;
+  font-size: 0.9rem !important;
+  color: var(--primary-dark) !important;
+  line-height: 1.2 !important;
+}
+
+.season-menu-item {
+  font-family: "Cinzel", serif !important;
+  font-size: 0.8rem !important;
+  letter-spacing: 1px !important;
+  transition: all 0.2s ease-in-out !important;
+}
+
+.season-menu-item.Mui-selected {
+  background-color: rgba(184, 127, 13, 0.12) !important;
+  font-weight: 700 !important;
+  color: var(--secondary-main) !important;
+  border-left: 4px solid var(--secondary-main);
+  padding-left: 12px !important;
+}
+
+.season-menu-item.Mui-selected:hover {
+  background-color: rgba(184, 127, 13, 0.2) !important;
+}
