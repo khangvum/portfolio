@@ -1,7 +1,5 @@
-import { type CSSProperties } from "react";
 import { Box, Container, Typography } from "@mui/material";
 import BusinessCenterIcon from "@mui/icons-material/BusinessCenter";
-import { useTheme } from "@mui/material/styles";
 
 import { useLanguage } from "@app/i18n/useLanguage";
 import { experienceMetadata } from "@app/data/experience";
@@ -9,20 +7,12 @@ import { experienceMetadata } from "@app/data/experience";
 import "./Experience.css";
 
 const Experience = () => {
-  const theme = useTheme();
   const { translations } = useLanguage();
-  const styleVars = {
-    "--primary-dark": theme.palette.primary.dark,
-    "--secondary-main": theme.palette.secondary.main,
-    "--secondary-light": "#d4a017",
-    "--text-parchment": "#F9F7F2",
-  } as CSSProperties;
   return (
     <Box
       component="section"
       className="exp-root"
       id="experience"
-      style={styleVars}
     >
       <Container maxWidth="xl">
         <Typography variant="h2" className="exp-header">

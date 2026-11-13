@@ -1,4 +1,5 @@
 .exp-root {
+  --secondary-light: #d4a017;
   background-color: var(--primary-dark) !important;
   color: var(--text-parchment) !important;
   overflow: hidden;

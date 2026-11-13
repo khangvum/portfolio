@@ -1,6 +1,4 @@
-import { type CSSProperties } from "react";
 import { Box, Container, Typography, Button } from "@mui/material";
-import { useTheme } from "@mui/material/styles";
 
 import { useLanguage } from "@app/i18n/useLanguage";
 import { aboutStatMetadata } from "@app/data/about";
@@ -8,25 +6,13 @@ import { aboutStatMetadata } from "@app/data/about";
 import "./About.css";
 
 const About = () => {
-  const theme = useTheme();
   const { locale, translations } = useLanguage();
-  const styleVars = {
-    "--primary-main": theme.palette.primary.main,
-    "--primary-dark": theme.palette.primary.dark,
-    "--secondary-main": theme.palette.secondary.main,
-    "--bg-parchment": theme.palette.background.default,
-    "--text-button":
-      theme.palette.primary.main === "#f2efde"
-        ? "var(--primary-dark)"
-        : "#ffffff",
-  } as CSSProperties;
 
   return (
     <Box
       component="section"
       className="about-root"
       id="about"
-      style={styleVars}
     >
       <Container maxWidth="xl">
         <Box sx={{ py: 1, mx: 4, display: "flex", flexWrap: "wrap", gap: 4 }}>

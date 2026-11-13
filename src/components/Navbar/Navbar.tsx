@@ -1,9 +1,4 @@
-import {
-  useState,
-  useEffect,
-  type CSSProperties,
-  type MouseEvent,
-} from "react";
+import { useState, useEffect, type MouseEvent } from "react";
 import {
   AppBar,
   Toolbar,
@@ -36,16 +31,6 @@ const Navbar = () => {
   );
   const theme = useTheme();
   const { locale, translations, setLocale } = useLanguage();
-
-  const styleVars = {
-    "--primary-main": theme.palette.primary.main,
-    "--secondary-main": theme.palette.secondary.main,
-    "--nav-text":
-      theme.palette.primary.main === "#f2efde"
-        ? theme.palette.primary.dark
-        : "#ffffff",
-    backgroundColor: "var(--primary-main)",
-  } as CSSProperties;
 
   const navItems = [
     { label: translations.nav.about, id: "about" },
@@ -100,7 +85,7 @@ const Navbar = () => {
       color="primary"
       elevation={0}
       className="navbar-root"
-      style={styleVars}
+      sx={{ backgroundColor: "primary.main" }}
     >
       <Box sx={{ width: "100%", px: { xs: 2, md: 4 } }}>
         <Toolbar disableGutters>
@@ -226,11 +211,6 @@ const Navbar = () => {
               color:
                 theme.palette.primary.main === "#f2efde"
                   ? "primary.dark"
-                  : "#ffffff",
-              "--secondary-main": theme.palette.secondary.main,
-              "--nav-text":
-                theme.palette.primary.main === "#f2efde"
-                  ? theme.palette.primary.dark
                   : "#ffffff",
               width: 150,
               borderLeft: "3px solid #B87F0D",

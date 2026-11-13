@@ -21,6 +21,7 @@ import Contact from "@app/components/Contact";
 import LoadingScreen from "@app/components/LoadingScreen";
 import { fetchApiLiturgicalSeason } from "@app/services/litcal";
 import { useLanguage } from "@app/i18n/useLanguage";
+import { getThemeStyleVars } from "@app/utils/theme-utils";
 
 function App() {
   const { locale, translations } = useLanguage();
@@ -28,6 +29,15 @@ function App() {
   const [feastName, setFeastName] = useState<string | undefined>(undefined);
   const [anchorElement, setAnchorElement] = useState<HTMLElement | null>(null);
   const [isLoading, setIsLoading] = useState(true);
+  const activeTheme = seasons[currentSeason ?? "ORDINARY"];
+
+  useEffect(() => {
+    const rootStyle = document.documentElement.style;
+
+    Object.entries(getThemeStyleVars(activeTheme)).forEach(([name, value]) => {
+      rootStyle.setProperty(name, String(value));
+    });
+  }, [activeTheme]);
 
   useEffect(() => {
     let isMounted = true;
@@ -66,7 +76,7 @@ function App() {
     <>
       {isLoading && <LoadingScreen isFading={Boolean(currentSeason)} />}
 
-      <ThemeProvider theme={seasons[currentSeason ?? "ORDINARY"]}>
+      <ThemeProvider theme={activeTheme}>
         <CssBaseline />
 
         <Box component="main">

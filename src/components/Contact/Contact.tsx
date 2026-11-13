@@ -1,34 +1,19 @@
-import { type CSSProperties } from "react";
 import { Box, Container, Typography, IconButton, Link } from "@mui/material";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import EmailIcon from "@mui/icons-material/Email";
-import { useTheme } from "@mui/material/styles";
-
 import { useLanguage } from "@app/i18n/useLanguage";
 
 import "./Contact.css";
 
 const Contact = () => {
-  const theme = useTheme();
   const { translations } = useLanguage();
-  const styleVars = {
-    "--contact-bg": theme.palette.primary.main,
-    "--contact-btn-bg": theme.palette.primary.dark,
-    "--secondary-gold": theme.palette.secondary.main,
-    "--text-parchment": "#F9F7F2",
-    "--text-color":
-      theme.palette.primary.main === "#f2efde"
-        ? "var(--primary-dark)"
-        : "#ffffff",
-  } as CSSProperties;
 
   return (
     <Box
       component="footer"
       className="contact-root"
       id="contact"
-      style={styleVars}
     >
       <Container maxWidth="md">
         <Box className="contact-header">
