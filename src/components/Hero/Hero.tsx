@@ -3,10 +3,13 @@ import { Box, Container, Typography, Button, Grid } from "@mui/material";
 import { useTheme } from "@mui/material/styles";
 
 import coatOfArms from "@app/assets/coat-of-arms.png";
+import { useLanguage } from "@app/i18n/useLanguage";
+
 import "./Hero.css";
 
 const Hero = () => {
   const theme = useTheme();
+  const { translations } = useLanguage();
   const styleVars = {
     "--primary-main": theme.palette.primary.main,
     "--primary-dark": theme.palette.primary.dark,
@@ -24,7 +27,7 @@ const Hero = () => {
             <Box
               component="img"
               src={coatOfArms}
-              alt="Khang Vu Coat of Arms"
+              alt={translations.hero.imageAlt}
               className="hero-coat-of-arms"
             />
           </Grid>
@@ -38,7 +41,7 @@ const Hero = () => {
             <Box className="hero-divider" />
 
             <Typography variant="h5" className="hero-subtitle">
-              Developer | Automation | Infrastructure as Code
+              {translations.hero.subtitle}
             </Typography>
 
             <Button
@@ -48,7 +51,7 @@ const Hero = () => {
               className="hero-button"
               href="mailto:manhkhang0305@gmail.com"
             >
-              Get in Touch
+              {translations.hero.button}
             </Button>
           </Grid>
         </Grid>

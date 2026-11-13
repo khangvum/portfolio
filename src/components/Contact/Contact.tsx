@@ -1,19 +1,17 @@
 import { type CSSProperties } from "react";
-import {
-  Box,
-  Container,
-  Typography,
-  IconButton,
-  Link,
-} from "@mui/material";
+import { Box, Container, Typography, IconButton, Link } from "@mui/material";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import EmailIcon from "@mui/icons-material/Email";
 import { useTheme } from "@mui/material/styles";
+
+import { useLanguage } from "@app/i18n/useLanguage";
+
 import "./Contact.css";
 
 const Contact = () => {
   const theme = useTheme();
+  const { translations } = useLanguage();
   const styleVars = {
     "--contact-bg": theme.palette.primary.main,
     "--contact-btn-bg": theme.palette.primary.dark,
@@ -35,18 +33,27 @@ const Contact = () => {
       <Container maxWidth="md">
         <Box className="contact-header">
           <Typography variant="h2" className="contact-title">
-            The Final Script
+            {translations.contact.title}
           </Typography>
           <Typography variant="body1" className="contact-subtitle">
-            Whether for a professional inquiry, a technical dialogue, or collaboration, I am always happy to connect!
+            {translations.contact.subtitle}
           </Typography>
         </Box>
 
-        <Box sx={{ display: "flex", justifyContent: "center", gap: 4, flexWrap: "wrap" }} className="contact-links">
+        <Box
+          sx={{
+            display: "flex",
+            justifyContent: "center",
+            gap: 4,
+            flexWrap: "wrap",
+          }}
+          className="contact-links"
+        >
           <IconButton
             component={Link}
             href="https://github.com/khangvum"
             target="_blank"
+            aria-label={translations.contact.githubLabel}
             className="contact-icon-btn"
           >
             <GitHubIcon />
@@ -55,6 +62,7 @@ const Contact = () => {
             component={Link}
             href="https://linkedin.com/in/khangvum"
             target="_blank"
+            aria-label={translations.contact.linkedinLabel}
             className="contact-icon-btn"
           >
             <LinkedInIcon />
@@ -62,6 +70,7 @@ const Contact = () => {
           <IconButton
             component={Link}
             href="mailto:manhkhang0305@gmail.com"
+            aria-label={translations.contact.emailLabel}
             className="contact-icon-btn"
           >
             <EmailIcon />
@@ -70,7 +79,7 @@ const Contact = () => {
 
         <Box className="contact-footer-note">
           <Typography variant="caption">
-            © 2026 Khang Vu - London, Ontario
+            {translations.contact.copyright}
           </Typography>
         </Box>
       </Container>
