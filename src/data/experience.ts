@@ -38,8 +38,8 @@ export const experienceMetadata: ExperienceMetadata[] = [
         linkUrl: "https://github.com/khangvum/nixos-wsl",
       },
       {
-        linkText: "khangvum/homelab-ansible-config",
-        linkUrl: "https://github.com/khangvum/homelab-ansible-config",
+        linkText: "khangvum-com/ansible-config",
+        linkUrl: "https://github.com/khangvum-com/ansible-config",
       },
       null,
     ],
