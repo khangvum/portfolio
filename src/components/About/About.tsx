@@ -5,15 +5,44 @@ import { aboutStatMetadata } from "@app/data/about";
 
 import "./About.css";
 
+const highlightedSkillTerms = [
+  "C#",
+  ".NET",
+  "Selenium",
+  "NUnit/MSTest",
+  "Ansible",
+  "Terraform",
+  "VMware ESXi",
+  "Hyper-V",
+  "Microsoft Intune",
+  "Entra ID",
+  "PowerShell",
+];
+
+const highlightSkillTerms = (skill: string) => {
+  const pattern = new RegExp(
+    `(${highlightedSkillTerms
+      .map((term) => term.replace(/[.*+?^${}()|[\]\\]/g, "\\$&"))
+      .join("|")})`,
+    "g",
+  );
+
+  return skill
+    .split(pattern)
+    .map((part, index) =>
+      highlightedSkillTerms.includes(part) ? (
+        <strong key={`${part}-${index}`}>{part}</strong>
+      ) : (
+        part
+      ),
+    );
+};
+
 const About = () => {
   const { locale, translations } = useLanguage();
 
   return (
-    <Box
-      component="section"
-      className="about-root"
-      id="about"
-    >
+    <Box component="section" className="about-root" id="about">
       <Container maxWidth="xl">
         <Box sx={{ py: 1, mx: 4, display: "flex", flexWrap: "wrap", gap: 4 }}>
           {/* Left Column: Biography */}
@@ -35,7 +64,7 @@ const About = () => {
 
             <Box component="ul" className="about-list">
               {translations.about.skills.map((skill) => (
-                <li key={skill}>• {skill}</li>
+                <li key={skill}>• {highlightSkillTerms(skill)}</li>
               ))}
             </Box>
 
