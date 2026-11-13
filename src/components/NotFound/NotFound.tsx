@@ -6,7 +6,7 @@ import { useLanguage } from "@app/i18n/useLanguage";
 import "./NotFound.css";
 
 const NotFound = () => {
-  const { locale, translations } = useLanguage();
+  const { locale, translations, setLocale } = useLanguage();
 
   return (
     <Box className="not-found-root">
@@ -23,6 +23,10 @@ const NotFound = () => {
         <Button
           component="a"
           href={getLocalePath(locale)}
+          onClick={(event) => {
+            event.preventDefault();
+            setLocale(locale);
+          }}
           className="not-found-button"
         >
           {translations.notFound.home}

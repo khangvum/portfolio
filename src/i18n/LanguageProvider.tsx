@@ -40,7 +40,16 @@ export const LanguageProvider = ({ children }: { children: ReactNode }) => {
 
   const setLocale = useCallback(
     (nextLocale: typeof locale) => {
-      if (nextLocale === locale) return;
+      if (nextLocale === locale) {
+        window.localStorage.setItem(LOCALE_STORAGE_KEY, nextLocale);
+
+        if (window.location.pathname !== getLocalePath(nextLocale)) {
+          window.location.assign(getLocalePath(nextLocale));
+        }
+
+        return;
+      }
+
       window.history.pushState({}, "", getLocalePath(nextLocale));
       window.localStorage.setItem(LOCALE_STORAGE_KEY, nextLocale);
       setLocaleState(nextLocale);
