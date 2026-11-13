@@ -13,15 +13,15 @@
   },
   "hero": {
     "imageAlt": "Armoiries de Khang Vu",
-    "subtitle": "Développement | Automatisation | Infrastructure as Code",
+    "subtitle": "Développeur | Automatisation | Infrastructure as Code",
     "button": "Me contacter"
   },
   "about": {
     "title": "La Genèse",
-    "biography": "Étudiant en programmation et analyse informatique au Fanshawe College, spécialisé dans les systèmes d'entreprise et l'automatisation :",
+    "biography": "Étudiant en programmation et analyse informatique au Fanshawe College, avec une formation spécialisée en systèmes d'entreprise et en automatisation :",
     "skills": [
       "Concevoir des suites de tests robustes avec C#, .NET, Selenium et NUnit/MSTest.",
-      "Architecturer des infrastructures hybrides avec Ansible, Terraform, VMware ESXi et Hyper-V.",
+      "Concevoir l'architecture d'infrastructures hybrides avec Ansible, Terraform, VMware ESXi et Hyper-V.",
       "Optimiser les opérations d'entreprise grâce à Microsoft Intune, Entra ID et PowerShell."
     ],
     "resume": "CV",
@@ -30,7 +30,7 @@
     "stats": [
       {
         "label": "Moyenne cumulative",
-        "detail": "Tableau d'honneur | A2023, H2024, A2024, P2025, H2026"
+        "detail": "Tableau d'honneur du doyen | A2023, H2024, A2024, É2025, H2026"
       },
       {
         "label": "Stages coopératifs",
@@ -42,7 +42,7 @@
       },
       {
         "label": "Prix internationaux",
-        "detail": "Prix d'entrée pour l'excellence en vietnamien | 2 000 $ CA\nPrix international Karen L. Monahan | 750 $ CA"
+        "detail": "Prix d'entrée international d'excellence en langue vietnamienne | 2 000 $ CA\nPrix international Karen L. Monahan | 750 $ CA"
       }
     ]
   },
@@ -57,7 +57,7 @@
         "location": "London, Ontario",
         "points": [
           {
-            "text": "Conception de tests automatisés avec C#, .NET, Selenium WebDriver et NUnit/MSTest"
+            "text": "Conception de cas de test automatisés avec C#, .NET, Selenium WebDriver et NUnit/MSTest"
           },
           "Automatisation de plus de 60 points d'accès API dans Postman avec JWT, Auth0 et des jetons de services web",
           "Automatisation des planifications quotidiennes des pipelines CI/CD et de la génération de rapports dans Azure Pipelines pour préparer les mises en production"
@@ -122,14 +122,14 @@
       },
       {
         "title": "Portfolio",
-        "description": "Portfolio présentant une formation et une expertise technique, déployé comme page web avec React et Vite."
+        "description": "Portfolio complet présentant une formation et une expertise technique, déployé comme page web avec React et Vite."
       },
       {
         "title": "Automatisation Reqnroll",
-        "description": "Solution d'automatisation de tests dans un navigateur utilisant Reqnroll (BDD) et Selenium WebDriver, propulsée par MSTest et structurée selon le modèle Page Object (POM)."
+        "description": "Solution d'automatisation de tests dans un navigateur utilisant Reqnroll (BDD) et Selenium WebDriver, propulsée par le cadre de test MSTest et structurée selon le patron de conception architectural Page Object Model (POM)."
       },
       {
-        "title": "Équilibrage d'équations chimiques",
+        "title": "Équilibreur d'équations chimiques",
         "description": "Programme Python qui équilibre des équations chimiques en déterminant les coefficients stœchiométriques de chaque réactif et produit."
       }
     ]
