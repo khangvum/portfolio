@@ -60,9 +60,11 @@ export const isSupportedLocalePath = (
 
 /** @brief Resolves the locale used during the initial application render. */
 export const getInitialLocale = (): Locale => {
+  const pathname = window.location.pathname;
   const pathLocale = getLocaleFromPath();
+  const pathSegment = pathname.split("/")[1];
 
-  if (window.location.pathname !== "/") {
+  if (supportedLocales.includes(pathSegment as Locale)) {
     return pathLocale;
   }
 
