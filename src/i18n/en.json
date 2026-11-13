@@ -151,5 +151,10 @@
     "copyright": "© 2026 Khang Vu - London, Ontario"
   },
   "loading": "Loading",
+  "notFound": {
+    "title": "Page not found",
+    "message": "The requested page does not exist.",
+    "home": "Return home"
+  },
   "feast": "Today's Feast"
 }

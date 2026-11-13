@@ -151,5 +151,10 @@
     "copyright": "© 2026 Khang Vu - Londinium, Ontario"
   },
   "loading": "Oneratur",
+  "notFound": {
+    "title": "Pagina non inventa",
+    "message": "Pagina petita non existit.",
+    "home": "Redi ad initium"
+  },
   "feast": "Festum Hodiernum"
 }
