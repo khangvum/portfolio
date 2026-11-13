@@ -1,5 +1,6 @@
 import { createTheme, type Theme } from "@mui/material/styles";
 
+/** @brief Identifier for a liturgical visual theme. */
 export type SeasonKey =
   | "ORDINARY"
   | "ADVENT"
@@ -8,12 +9,20 @@ export type SeasonKey =
   | "MARTYRDOM"
   | "SOLEMNITIES";
 
+/** @brief Shared non-seasonal colors used by the application theme bridge. */
+export const themeTokens = {
+  parchment: "#F9F7F2",
+  lightText: "#ffffff",
+  fallbackSecondaryLight: "#D4AF37",
+} as const;
+
 const baseTypography = {
   fontFamily: "'Lora', 'serif'",
   h1: { fontFamily: "'Cinzel', serif", fontWeight: 700 },
   h2: { fontFamily: "'Cinzel', serif", fontWeight: 600 },
 } as const;
 
+/** @brief Material UI themes keyed by liturgical season. */
 export const seasons: Record<SeasonKey, Theme> = {
   ORDINARY: createTheme({
     palette: {

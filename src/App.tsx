@@ -1,9 +1,4 @@
-import {
-  useState,
-  useEffect,
-  type MouseEvent,
-  type CSSProperties,
-} from "react";
+import { useState, useEffect, type MouseEvent } from "react";
 import {
   ThemeProvider,
   CssBaseline,
@@ -25,17 +20,29 @@ import Projects from "@app/components/Projects";
 import Contact from "@app/components/Contact";
 import LoadingScreen from "@app/components/LoadingScreen";
 import { fetchApiLiturgicalSeason } from "@app/services/litcal";
+import { useLanguage } from "@app/i18n/useLanguage";
+import { getThemeStyleVars } from "@app/utils/theme-utils";
 
 function App() {
+  const { locale, translations } = useLanguage();
   const [currentSeason, setCurrentSeason] = useState<SeasonKey | null>(null);
   const [feastName, setFeastName] = useState<string | undefined>(undefined);
   const [anchorElement, setAnchorElement] = useState<HTMLElement | null>(null);
   const [isLoading, setIsLoading] = useState(true);
+  const activeTheme = seasons[currentSeason ?? "ORDINARY"];
+
+  useEffect(() => {
+    const rootStyle = document.documentElement.style;
+
+    Object.entries(getThemeStyleVars(activeTheme)).forEach(([name, value]) => {
+      rootStyle.setProperty(name, String(value));
+    });
+  }, [activeTheme]);
 
   useEffect(() => {
     let isMounted = true;
 
-    fetchApiLiturgicalSeason()
+    fetchApiLiturgicalSeason(new Date(), undefined, locale)
       .then(({ season, name }) => {
         if (isMounted) {
           setCurrentSeason(season as SeasonKey);
@@ -52,7 +59,7 @@ function App() {
     return () => {
       isMounted = false;
     };
-  }, []);
+  }, [locale]);
 
   const handleOpen = (event: MouseEvent<HTMLElement>) => {
     setAnchorElement(event.currentTarget);
@@ -65,35 +72,30 @@ function App() {
     handleClose();
   };
 
-  const menuThemeStyle = {
-    "--primary-main": seasons.ORDINARY.palette.primary.main,
-    "--secondary-main": seasons.ORDINARY.palette.secondary.main,
-  } as CSSProperties;
-
   return (
     <>
       {isLoading && <LoadingScreen isFading={Boolean(currentSeason)} />}
 
-      <ThemeProvider theme={seasons[currentSeason ?? "ORDINARY"]}>
+      <ThemeProvider theme={activeTheme}>
         <CssBaseline />
 
-        <Box component="main" style={menuThemeStyle}>
+        <Box component="main">
           <Navbar />
           <Hero />
 
-          <Box id="about">
+          <Box>
             <About />
           </Box>
 
-          <Box id="experience">
+          <Box>
             <Experience />
           </Box>
 
-          <Box id="projects">
+          <Box>
             <Projects />
           </Box>
 
-          <Box id="contact" component="footer">
+          <Box component="footer">
             <Contact />
           </Box>
         </Box>
@@ -135,7 +137,7 @@ function App() {
                       fontSize: "0.65rem",
                     }}
                   >
-                    Today's Feast
+                    {translations.feast}
                   </Typography>
                   <Typography
                     variant="subtitle2"
@@ -143,7 +145,9 @@ function App() {
                       fontFamily: "Cinzel, serif",
                       fontWeight: 700,
                       fontSize: "0.9rem",
-                      color: seasons[currentSeason ?? "ORDINARY"].palette.primary.dark,
+                      color:
+                        seasons[currentSeason ?? "ORDINARY"].palette.primary
+                          .dark,
                       lineHeight: 1.2,
                       mt: 0.5,
                     }}
@@ -181,7 +185,7 @@ function App() {
                     },
                   }}
                 >
-                  {key}
+                  {translations.seasons[key]}
                 </MenuItem>
               );
             })}

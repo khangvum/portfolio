@@ -1,4 +1,4 @@
-import { useState, useEffect, type CSSProperties } from "react";
+import { useState, useEffect, type MouseEvent } from "react";
 import {
   AppBar,
   Toolbar,
@@ -11,9 +11,14 @@ import {
   ListItem,
   ListItemButton,
   ListItemText,
+  Menu,
+  MenuItem,
 } from "@mui/material";
 import { useTheme } from "@mui/material/styles";
 import MenuIcon from "@mui/icons-material/Menu";
+
+import { useLanguage } from "@app/i18n/useLanguage";
+import { getLocalePath, supportedLocales, type Locale } from "@app/i18n/config";
 
 import "./Navbar.css";
 import coatOfArms from "@app/assets/coat-of-arms.png";
@@ -21,27 +26,33 @@ import coatOfArms from "@app/assets/coat-of-arms.png";
 const Navbar = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [showLogo, setShowLogo] = useState(false);
+  const [languageAnchor, setLanguageAnchor] = useState<HTMLElement | null>(
+    null,
+  );
   const theme = useTheme();
-
-  const styleVars = {
-    "--primary-main": theme.palette.primary.main,
-    "--secondary-main": theme.palette.secondary.main,
-    "--nav-text":
-      theme.palette.primary.main === "#f2efde"
-        ? theme.palette.primary.dark
-        : "#ffffff",
-    backgroundColor: "var(--primary-main)",
-  } as CSSProperties;
+  const { locale, translations, setLocale } = useLanguage();
 
   const navItems = [
-    { label: "About", id: "about" },
-    { label: "Experience", id: "experience" },
-    { label: "Projects", id: "projects" },
-    { label: "Contact", id: "contact" },
+    { label: translations.nav.about, id: "about" },
+    { label: translations.nav.experience, id: "experience" },
+    { label: translations.nav.projects, id: "projects" },
+    { label: translations.nav.contact, id: "contact" },
   ];
 
   const handleDrawerToggle = () => {
     setMobileOpen(!mobileOpen);
+  };
+
+  const handleLanguageOpen = (event: MouseEvent<HTMLElement>) => {
+    setLanguageAnchor(event.currentTarget);
+  };
+
+  const handleLanguageClose = () => setLanguageAnchor(null);
+
+  const selectLanguage = (nextLocale: Locale) => {
+    setLocale(nextLocale);
+    handleLanguageClose();
+    setMobileOpen(false);
   };
 
   useEffect(() => {
@@ -74,7 +85,7 @@ const Navbar = () => {
       color="primary"
       elevation={0}
       className="navbar-root"
-      style={styleVars}
+      sx={{ backgroundColor: "primary.main" }}
     >
       <Box sx={{ width: "100%", px: { xs: 2, md: 4 } }}>
         <Toolbar disableGutters>
@@ -89,7 +100,7 @@ const Navbar = () => {
             {/* Clickable Brand Link - Only wraps logo and text */}
             <Box
               component="a"
-              href="/"
+              href={getLocalePath(locale)}
               sx={{
                 display: "inline-flex",
                 alignItems: "center",
@@ -103,7 +114,7 @@ const Navbar = () => {
               <Box
                 component="img"
                 src={coatOfArms}
-                alt="Coat of Arms"
+                alt={translations.hero.imageAlt}
                 className={`nav-logo${showLogo ? " visible" : ""}`}
               />
               <Typography variant="h6" className="nav-brand">
@@ -127,12 +138,59 @@ const Navbar = () => {
                 {item.label}
               </Button>
             ))}
+            <Typography
+              component="span"
+              aria-hidden="true"
+              sx={{ mx: 1, opacity: 0.55 }}
+            >
+              |
+            </Typography>
+            <Button
+              color="inherit"
+              className="nav-link nav-language"
+              onClick={handleLanguageOpen}
+              aria-label={`${translations.nav.language}: ${locale.toUpperCase()}`}
+              aria-haspopup="menu"
+              aria-expanded={Boolean(languageAnchor)}
+              sx={{ minWidth: 0, px: 2, opacity: 0.75 }}
+            >
+              {locale.toUpperCase()}
+            </Button>
+            <Menu
+              anchorEl={languageAnchor}
+              open={Boolean(languageAnchor)}
+              onClose={handleLanguageClose}
+              slotProps={{
+                paper: {
+                  sx: {
+                    minWidth: 56,
+                    border: "2px solid #B87F0D",
+                    py: 0.5,
+                  },
+                },
+              }}
+            >
+              {supportedLocales.map((supportedLocale) => (
+                <MenuItem
+                  key={supportedLocale}
+                  selected={supportedLocale === locale}
+                  onClick={() => selectLanguage(supportedLocale)}
+                  sx={{
+                    minHeight: 32,
+                    justifyContent: "center",
+                    px: 1.5,
+                    fontSize: "0.85rem",
+                  }}
+                >
+                  {supportedLocale.toUpperCase()}
+                </MenuItem>
+              ))}
+            </Menu>
           </Box>
 
-          {/* Mobile Hamburger */}
           <IconButton
             color="inherit"
-            aria-label="Open Drawer"
+            aria-label={translations.nav.openMenu}
             onClick={handleDrawerToggle}
             sx={{ display: { md: "none" } }}
           >
@@ -172,17 +230,65 @@ const Navbar = () => {
                 >
                   <ListItemText
                     primary={item.label}
-                    sx={{
-                      "& .MuiTypography-root": {
+                    slotProps={{
+                      primary: {
                         className: "nav-link",
-                        textAlign: "center",
-                        variant: "body1",
+                        sx: {
+                          textAlign: "center",
+                        },
                       },
                     }}
                   />
                 </ListItemButton>
               </ListItem>
             ))}
+            <ListItem
+              disablePadding
+              className="mobile-language-switcher"
+              aria-label={translations.nav.language}
+            >
+              {supportedLocales.map((supportedLocale) => (
+                <ListItemButton
+                  key={supportedLocale}
+                  selected={supportedLocale === locale}
+                  className={
+                    supportedLocale === locale
+                      ? "mobile-language-selected"
+                      : undefined
+                  }
+                  onClick={() => selectLanguage(supportedLocale)}
+                  sx={{ minWidth: 0, px: 1.25, py: 0.75 }}
+                >
+                  <ListItemText
+                    primary={
+                      <span
+                        style={{
+                          color:
+                            supportedLocale === locale
+                              ? "var(--secondary-main)"
+                              : "var(--nav-text)",
+                        }}
+                      >
+                        {supportedLocale.toUpperCase()}
+                      </span>
+                    }
+                    slotProps={{
+                      primary: {
+                        className: `nav-link${
+                          supportedLocale === locale
+                            ? " mobile-language-current"
+                            : ""
+                        }`,
+                        sx: {
+                          textAlign: "center",
+                          fontSize: "0.9rem",
+                        },
+                      },
+                    }}
+                  />
+                </ListItemButton>
+              ))}
+            </ListItem>
           </List>
         </Box>
       </Drawer>

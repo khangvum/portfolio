@@ -1,0 +1,155 @@
+{
+  "languageName": "Latina",
+  "documentTitle": "Khang Vu - Portfolium",
+  "metaDescription": "Portfolium Khang Vu: elaboratio programmatum, automatio et infrastructure as code.",
+  "nav": {
+    "about": "De Me",
+    "experience": "Experientia",
+    "projects": "Opera",
+    "contact": "Contactus",
+    "language": "Lingua",
+    "switchTo": "English",
+    "openMenu": "Aperi indicem navigationis"
+  },
+  "seasons": {
+    "ORDINARY": "Per Annum",
+    "ADVENT": "Adventus",
+    "LENT": "Quadragesima",
+    "ROSE": "Rosaceus",
+    "MARTYRDOM": "Martyrium",
+    "SOLEMNITIES": "Sollemnitates"
+  },
+  "hero": {
+    "imageAlt": "Stemma Khang Vu",
+    "subtitle": "Programmator | Automatio | Infrastructure as Code",
+    "button": "Alloquere Me"
+  },
+  "about": {
+    "title": "Genesis",
+    "biography": "Studiosus programmationis et analysis computatoriae in Collegio Fanshawe, in systematibus inceptorum et automatione peculiariter edoctus:",
+    "skills": [
+      "Construere firmas probationum series ope C#, .NET, Selenium et NUnit/MSTest.",
+      "Infrastructuras hybridas designare per Ansible, Terraform, VMware ESXi et Hyper-V.",
+      "Operationes inceptorum melius ordinare ope Microsoft Intune, Entra ID et PowerShell."
+    ],
+    "resume": "Curriculum Vitae",
+    "github": "GitHub",
+    "linkedin": "LinkedIn",
+    "stats": [
+      {
+        "label": "Gradus Mediocris Cumulatus",
+        "detail": "Album Honoris Decani | Aut. 2023, Hiem. 2024, Aut. 2024, Aest. 2025, Hiem. 2026"
+      },
+      {
+        "label": "Tempora Cooperativa",
+        "detail": "Infrastructura et Retia, Operationes, et Probationes Automatae"
+      },
+      {
+        "label": "Linguae",
+        "detail": "Anglica (IELTS 8,0) | Gallica (gradus medius) | Vietnamica (materna)"
+      },
+      {
+        "label": "Praemia Internationalia",
+        "detail": "Praemium Internationale Initii pro Excellentia Linguae Vietnamicae | CA$2,000\nPraemium Internationale Karen L. Monahan | CA$750"
+      }
+    ]
+  },
+  "experience": {
+    "title": "Liber Chronicorum",
+    "example": "e.g.,",
+    "jobs": [
+      {
+        "title": "Elaborator Probationum Automatarum",
+        "company": "CARFAX Canada",
+        "period": "Maius 2026 - Augustus 2026",
+        "location": "Londinium, Ontario",
+        "points": [
+          {
+            "text": "Constructio casuum probationis automatorum per C#, .NET, Selenium WebDriver et NUnit/MSTest"
+          },
+          "Automatio plus quam sexaginta punctorum accessus API in Postman per JWT, Auth0 et tesseras servitiorum interretialium",
+          "Automatio cotidiana programmatum pipelinarum CI/CD et relationum generandarum in Azure Pipelines ad emissionem praeparandam"
+        ]
+      },
+      {
+        "title": "Analysta Subsidii NSC - Gradus I",
+        "company": "Emco Corporation",
+        "period": "Augustus 2025 - December 2025",
+        "location": "Londinium, Ontario",
+        "points": [
+          "Administratio infrastructurae inceptorum per Entra ID (Azure AD), Intune et Exchange",
+          {
+            "text": "Automatio instaurationum Windows per Autopilot et fasciculos responsionum"
+          },
+          "Praebitio subsidii completi Gradus I per systema tesserarum Ivanti"
+        ]
+      },
+      {
+        "title": "Systemata Informationis IoT",
+        "company": "Eramosa - societas CIMA+",
+        "period": "Ianuarius 2025 - Aprilis 2025",
+        "location": "Guelph, Ontario",
+        "points": [
+          {
+            "text": "Constructio ambitus WSL normalis et ad securitatem confirmati"
+          },
+          {
+            "text": "Exsecutio infrastructure as code (IaC) per Ansible et Terraform"
+          },
+          "Moderatio infrastructurae virtualis pluribus locatariis servientis per VMware ESXi et Hyper-V"
+        ]
+      }
+    ]
+  },
+  "projects": {
+    "title": "Stationes Scriptorum",
+    "items": [
+      {
+        "title": "Configuratio Ansible",
+        "description": "Solutio declarativa automationis configurationis per Ansible mota."
+      },
+      {
+        "title": "Provisio Infrastructurae",
+        "description": "Solutio declarativa provisionis infrastructurae per Terraform mota."
+      },
+      {
+        "title": "Collectio Ansible pro Microsoft Hyper-V",
+        "description": "Collectio Ansible per PowerShell mota ad infrastructuram Hyper-V administrandam et configurandam."
+      },
+      {
+        "title": "Fasciculi Responsionum",
+        "description": "Solutio automata instaurationis systematis operativi (OS) per fasciculos responsionum."
+      },
+      {
+        "title": "Configuratio NixOS-WSL",
+        "description": "Configuratio NixOS 26.05 ad usum intra Subsystema Windows pro Linux (WSL) accommodata."
+      },
+      {
+        "title": "Aestimator Expressionum",
+        "description": "Applicatio consolatoria Windows quae expressiones mathematicas pluribus operatoribus et functionibus constantes aestimat."
+      },
+      {
+        "title": "Portfolium",
+        "description": "Portfolium plenum, formationem scholasticam et peritiam technicam demonstrans, ut pagina interretialis per React et Vite dispositum."
+      },
+      {
+        "title": "Automatio Reqnroll",
+        "description": "Solutio automationis probationum in navigatro interretiali per Reqnroll (BDD) et Selenium WebDriver, a compage MSTest acta et secundum exemplar architectonicum Page Object Model (POM) ordinata."
+      },
+      {
+        "title": "Aequator Aequationum Chemicarum",
+        "description": "Programma Python quod aequationes chemicas aequat, coefficientes stoichiometricos rectos cuiusque reagentis et producti determinando."
+      }
+    ]
+  },
+  "contact": {
+    "title": "Scriptum Novissimum",
+    "subtitle": "Sive pro quaestione professionali, sive pro colloquio technico, sive pro collaboratione, semper libenter vobiscum congrediar!",
+    "githubLabel": "Visita Khang Vu in GitHub",
+    "linkedinLabel": "Visita Khang Vu in LinkedIn",
+    "emailLabel": "Mitte epistolam electronicam ad Khang Vu",
+    "copyright": "© 2026 Khang Vu - Londinium, Ontario"
+  },
+  "loading": "Oneratur",
+  "feast": "Festum Hodiernum"
+}

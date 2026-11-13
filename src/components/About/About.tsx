@@ -1,53 +1,48 @@
-import { type CSSProperties } from "react";
 import { Box, Container, Typography, Button } from "@mui/material";
-import { useTheme } from "@mui/material/styles";
+
+import { useLanguage } from "@app/i18n/useLanguage";
+import { aboutStatMetadata } from "@app/data/about";
 
 import "./About.css";
 
-const About = () => {
-  const theme = useTheme();
-  const styleVars = {
-    "--primary-main": theme.palette.primary.main,
-    "--primary-dark": theme.palette.primary.dark,
-    "--secondary-main": theme.palette.secondary.main,
-    "--bg-parchment": theme.palette.background.default,
-    "--text-button":
-      theme.palette.primary.main === "#f2efde"
-        ? "var(--primary-dark)"
-        : "#ffffff",
-  } as CSSProperties;
+const highlightedSkillTerms = [
+  "C#",
+  ".NET",
+  "Selenium",
+  "NUnit/MSTest",
+  "Ansible",
+  "Terraform",
+  "VMware ESXi",
+  "Hyper-V",
+  "Microsoft Intune",
+  "Entra ID",
+  "PowerShell",
+];
 
-  const stats = [
-    {
-      label: "Cumulative GPA",
-      value: "4.20",
-      detail: "Dean's Honour Roll | F2023, W2024, F2024, S2025, W2026",
-    },
-    {
-      label: "Co-op Terms",
-      value: "3",
-      detail: "Infrastructure & Networking, Operations, and Automation Testing",
-    },
-    {
-      label: "Languages",
-      value: "3",
-      detail: "English (IELTS 8.0) | French (Intermediate) | Vietnamese (Native)",
-    },
-    {
-      label: "International Awards",
-      value: "2",
-      detail:
-        "International Vietnam Language Excellence Entrance Award | CA$2,000\nKaren L. Monahan International Award | CA$750",
-    },
-  ];
+const highlightSkillTerms = (skill: string) => {
+  const pattern = new RegExp(
+    `(${highlightedSkillTerms
+      .map((term) => term.replace(/[.*+?^${}()|[\]\\]/g, "\\$&"))
+      .join("|")})`,
+    "g",
+  );
+
+  return skill
+    .split(pattern)
+    .map((part, index) =>
+      highlightedSkillTerms.includes(part) ? (
+        <strong key={`${part}-${index}`}>{part}</strong>
+      ) : (
+        part
+      ),
+    );
+};
+
+const About = () => {
+  const { locale, translations } = useLanguage();
 
   return (
-    <Box
-      component="section"
-      className="about-root"
-      id="about"
-      style={styleVars}
-    >
+    <Box component="section" className="about-root" id="about">
       <Container maxWidth="xl">
         <Box sx={{ py: 1, mx: 4, display: "flex", flexWrap: "wrap", gap: 4 }}>
           {/* Left Column: Biography */}
@@ -61,30 +56,16 @@ const About = () => {
             }}
           >
             <Typography variant="h2" className="about-name">
-              The Genesis
+              {translations.about.title}
             </Typography>
             <Typography variant="body1" className="about-bio">
-              A Computer Programming and Analysis student at Fanshawe College
-              with a specialized background in enterprise systems and
-              automation:
+              {translations.about.biography}
             </Typography>
 
             <Box component="ul" className="about-list">
-              <li>
-                • Engineer robust test suites using <strong>C#</strong>,{" "}
-                <strong>.NET</strong>, <strong>Selenium</strong>, and{" "}
-                <strong>NUnit/MSTest</strong>.
-              </li>
-              <li>
-                • Architect hybrid infrastructure with <strong>Ansible</strong>,{" "}
-                <strong>Terraform</strong>, <strong>VMware ESXi</strong>, and{" "}
-                <strong>Hyper-V</strong>.
-              </li>
-              <li>
-                • Optimize enterprise operations via{" "}
-                <strong>Microsoft Intune</strong>, <strong>Entra ID</strong>,
-                and <strong>PowerShell</strong>.
-              </li>
+              {translations.about.skills.map((skill) => (
+                <li key={skill}>• {highlightSkillTerms(skill)}</li>
+              ))}
             </Box>
 
             <Box className="about-actions">
@@ -95,7 +76,7 @@ const About = () => {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                Resume
+                {translations.about.resume}
               </Button>
               <Button
                 variant="outlined"
@@ -103,7 +84,7 @@ const About = () => {
                 href="https://github.com/khangvum"
                 target="_blank"
               >
-                GitHub
+                {translations.about.github}
               </Button>
               <Button
                 variant="outlined"
@@ -111,7 +92,7 @@ const About = () => {
                 href="https://www.linkedin.com/in/khangvum/"
                 target="_blank"
               >
-                LinkedIn
+                {translations.about.linkedin}
               </Button>
             </Box>
           </Box>
@@ -126,20 +107,32 @@ const About = () => {
             }}
           >
             <Box className="stats-container" sx={{ width: "100%" }}>
-              {stats.map((stat, index) => (
-                <Box key={index} className="stat-card">
-                  <Typography className="stat-value">{stat.value}</Typography>
-                  <Box>
-                    <Typography className="stat-label">{stat.label}</Typography>
-                    <Typography
-                      className="stat-detail"
-                      sx={{ whiteSpace: "pre-line" }}
-                    >
-                      {stat.detail}
+              {translations.about.stats.map((stat, index) => {
+                const metadata = aboutStatMetadata[index];
+                const formattedValue = new Intl.NumberFormat(locale, {
+                  minimumFractionDigits: metadata.minimumFractionDigits,
+                  maximumFractionDigits: metadata.maximumFractionDigits,
+                }).format(metadata.value);
+
+                return (
+                  <Box key={index} className="stat-card">
+                    <Typography className="stat-value">
+                      {formattedValue}
                     </Typography>
+                    <Box>
+                      <Typography className="stat-label">
+                        {stat.label}
+                      </Typography>
+                      <Typography
+                        className="stat-detail"
+                        sx={{ whiteSpace: "pre-line" }}
+                      >
+                        {stat.detail}
+                      </Typography>
+                    </Box>
                   </Box>
-                </Box>
-              ))}
+                );
+              })}
             </Box>
           </Box>
         </Box>

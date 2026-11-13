@@ -1,3 +1,4 @@
+/** @brief Liturgical season identifiers used by the theme system. */
 export type LiturgicalSeason =
   | "SOLEMNITIES"
   | "MARTYRDOM"
@@ -62,6 +63,11 @@ const FIXED_SOLEMNITIES: FixedSolemnity[] = [
   { month: 11, day: 28, theme: "MARTYRDOM" },   // December 28th - The Holy Innocents, Martyrs
 ];
 
+/**
+ * @brief Calculates the date of Easter for a Gregorian calendar year.
+ * @param year - The calendar year.
+ * @returns The date of Easter.
+ */
 export const getEaster = (year: number): Date => {
   const a = year % 19;
   const b = Math.floor(year / 100);
@@ -81,10 +87,9 @@ export const getEaster = (year: number): Date => {
 };
 
 /**
- * Gets the ISO date string (YYYY-MM-DD) for a given date in the specified time zone.
- * @param dateInput - The date input (Date object, timestamp, or string).
- * @param timeZone - The time zone to use for the date.
- * @returns The ISO date string in the specified time zone.
+ * @brief Calculates the liturgical season without making a network request.
+ * @param date - The date to evaluate.
+ * @returns The matching liturgical season.
  */
 export const getStaticLiturgicalSeason = (
   date = new Date(),

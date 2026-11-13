@@ -14,7 +14,11 @@
   object-fit: contain;
   opacity: 0;
   transform: scale(0.8);
-  transition: height 0.3s ease, width 0.3s ease, opacity 0.3s ease, transform 0.3s ease;
+  transition:
+    height 0.3s ease,
+    width 0.3s ease,
+    opacity 0.3s ease,
+    transform 0.3s ease;
   pointer-events: none;
   overflow: hidden; /* Prevents rendering artifacts while collapsing */
 }
@@ -54,9 +58,112 @@
   margin-left: 1rem !important;
 }
 
-/* Fix for Mobile Drawer hover text */
-.MuiListItemButton-root:hover .nav-link {
+.navbar-root .MuiButton-root.nav-language {
+  margin-left: 0 !important;
+}
+
+.navbar-root .MuiButton-root.nav-language:focus {
+  outline: none;
+  box-shadow: none;
+}
+
+.navbar-root .MuiButton-root.nav-language:focus-visible {
+  outline: 2px solid var(--secondary-main);
+  outline-offset: 2px;
+}
+
+.navbar-root .MuiIconButton-root {
+  outline: none !important;
+  box-shadow: none !important;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.navbar-root .MuiIconButton-root:focus,
+.navbar-root .MuiIconButton-root:focus-visible,
+.navbar-root .MuiIconButton-root:active {
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+.MuiDrawer-paper .MuiListItemText-primary {
+  font-family: "Lora", serif !important;
+  color: var(--nav-text) !important;
+  transition: color 0.3s ease-in-out !important;
+}
+
+.MuiDrawer-paper a.MuiListItemButton-root,
+.MuiDrawer-paper a.MuiListItemButton-root:visited {
+  color: var(--nav-text) !important;
+}
+
+.MuiDrawer-paper .MuiListItemButton-root:hover,
+.MuiDrawer-paper .MuiListItemButton-root.Mui-selected:hover {
+  background-color: rgba(184, 127, 13, 0.12) !important;
   color: var(--secondary-main) !important;
+}
+
+.MuiDrawer-paper a.MuiListItemButton-root:hover,
+.MuiDrawer-paper a.MuiListItemButton-root:focus {
+  color: var(--secondary-main) !important;
+}
+
+.MuiDrawer-paper .MuiListItemButton-root:hover .MuiListItemText-primary {
+  color: var(--secondary-main) !important;
+}
+
+.MuiDrawer-paper .MuiListItemButton-root:hover .nav-link {
+  color: var(--secondary-main) !important;
+  background-color: transparent !important;
+}
+
+.mobile-language-switcher {
+  box-sizing: border-box;
+  display: grid !important;
+  grid-template-columns: repeat(3, 1fr);
+  width: 100% !important;
+  margin-right: 0 !important;
+  margin-left: 0 !important;
+  margin-top: 0.75rem;
+  padding: 0 !important;
+  padding-top: 0.75rem !important;
+  border-top: 1px solid rgba(255, 255, 255, 0.25);
+}
+
+.mobile-language-switcher .MuiListItemButton-root {
+  width: 100%;
+  justify-content: center;
+  border-radius: 4px;
+}
+
+.mobile-language-switcher
+  .MuiListItemButton-root.Mui-selected
+  .MuiListItemText-primary {
+  color: var(--secondary-main) !important;
+}
+
+.mobile-language-switcher .MuiListItemButton-root.Mui-selected .nav-link {
+  color: var(--secondary-main) !important;
+}
+
+.mobile-language-current {
+  color: var(--secondary-main) !important;
+}
+
+.mobile-language-switcher .mobile-language-selected {
+  color: var(--secondary-main) !important;
+}
+
+.mobile-language-switcher .mobile-language-selected .MuiListItemText-primary,
+.mobile-language-switcher .mobile-language-selected .nav-link {
+  color: var(--secondary-main) !important;
+}
+
+.mobile-language-switcher .MuiListItemButton-root.Mui-selected {
+  background-color: transparent !important;
+}
+
+.mobile-language-switcher .MuiListItemText-root {
+  margin: 0;
 }
 
 @media (max-width: 600px) {

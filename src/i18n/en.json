@@ -1,0 +1,155 @@
+{
+  "languageName": "English",
+  "documentTitle": "Khang Vu - Portfolio",
+  "metaDescription": "Khang Vu's portfolio: software development, automation, and infrastructure as code.",
+  "nav": {
+    "about": "About",
+    "experience": "Experience",
+    "projects": "Projects",
+    "contact": "Contact",
+    "language": "Language",
+    "switchTo": "Français",
+    "openMenu": "Open navigation menu"
+  },
+  "seasons": {
+    "ORDINARY": "Ordinary",
+    "ADVENT": "Advent",
+    "LENT": "Lent",
+    "ROSE": "Rose",
+    "MARTYRDOM": "Martyrdom",
+    "SOLEMNITIES": "Solemnities"
+  },
+  "hero": {
+    "imageAlt": "Khang Vu coat of arms",
+    "subtitle": "Developer | Automation | Infrastructure as Code",
+    "button": "Get in Touch"
+  },
+  "about": {
+    "title": "The Genesis",
+    "biography": "A Computer Programming and Analysis student at Fanshawe College with a specialized background in enterprise systems and automation:",
+    "skills": [
+      "Engineer robust test suites using C#, .NET, Selenium, and NUnit/MSTest.",
+      "Architect hybrid infrastructure with Ansible, Terraform, VMware ESXi, and Hyper-V.",
+      "Optimize enterprise operations via Microsoft Intune, Entra ID, and PowerShell."
+    ],
+    "resume": "Resume",
+    "github": "GitHub",
+    "linkedin": "LinkedIn",
+    "stats": [
+      {
+        "label": "Cumulative GPA",
+        "detail": "Dean's Honour Roll | F2023, W2024, F2024, S2025, W2026"
+      },
+      {
+        "label": "Co-op Terms",
+        "detail": "Infrastructure & Networking, Operations, and Automation Testing"
+      },
+      {
+        "label": "Languages",
+        "detail": "English (IELTS 8.0) | French (Intermediate) | Vietnamese (Native)"
+      },
+      {
+        "label": "International Awards",
+        "detail": "International Vietnam Language Excellence Entrance Award | CA$2,000\nKaren L. Monahan International Award | CA$750"
+      }
+    ]
+  },
+  "experience": {
+    "title": "The Book of Chronicles",
+    "example": "e.g.,",
+    "jobs": [
+      {
+        "title": "Automation Test Developer",
+        "company": "CARFAX Canada",
+        "period": "May 2026 - Aug 2026",
+        "location": "London, ON",
+        "points": [
+          {
+            "text": "Engineered automated test cases with C#, .NET, Selenium WebDriver, and NUnit/MSTest"
+          },
+          "Automated 60+ API endpoints in Postman using JWT, Auth0, and web service tokens",
+          "Automated daily CI/CD pipeline schedules and report generation in Azure Pipelines for release readiness"
+        ]
+      },
+      {
+        "title": "NSC Support Analyst - Tier 1",
+        "company": "Emco Corporation",
+        "period": "Aug 2025 - Dec 2025",
+        "location": "London, ON",
+        "points": [
+          "Managed enterprise infrastructure with Entra ID (Azure AD), Intune, and Exchange",
+          {
+            "text": "Automated Windows deployments using Autopilot and answer files"
+          },
+          "Provided comprehensive Tier 1 support through the Ivanti ticketing system"
+        ]
+      },
+      {
+        "title": "Information Systems IoT",
+        "company": "Eramosa - A CIMA+ Company",
+        "period": "Jan 2025 - Apr 2025",
+        "location": "Guelph, ON",
+        "points": [
+          {
+            "text": "Engineered a standardized, security-hardened WSL environment"
+          },
+          {
+            "text": "Implemented Infrastructure as Code (IaC) using Ansible and Terraform"
+          },
+          "Orchestrated multi-tenant virtual infrastructure across VMware ESXi and Hyper-V"
+        ]
+      }
+    ]
+  },
+  "projects": {
+    "title": "Stations of the Scripts",
+    "items": [
+      {
+        "title": "Ansible Configuration",
+        "description": "A declarative configuration automation solution powered by Ansible."
+      },
+      {
+        "title": "Infrastructure Provisioning",
+        "description": "A declarative infrastructure provisioning solution powered by Terraform."
+      },
+      {
+        "title": "Ansible Collection for Microsoft Hyper-V",
+        "description": "An Ansible collection powered by PowerShell for managing and configuring Hyper-V infrastructure."
+      },
+      {
+        "title": "Answer Files",
+        "description": "An automated operating system (OS) deployment solution utilizing answer files."
+      },
+      {
+        "title": "NixOS-WSL Configuration",
+        "description": "A NixOS 26.05 configuration tailored for running within Windows Subsystem for Linux (WSL)."
+      },
+      {
+        "title": "Expression Evaluator",
+        "description": "A Windows console application that evaluates mathematical expressions involving multiple operators and functions."
+      },
+      {
+        "title": "Portfolio",
+        "description": "A comprehensive portfolio demonstrating educational background and technical expertise deployed as a webpage using React and Vite."
+      },
+      {
+        "title": "Reqnroll Automation",
+        "description": "A browser-based test automation solution utilizing Reqnroll (BDD) and Selenium WebDriver, driven by the MSTest framework and structured around the Page Object Model (POM) architectural pattern."
+      },
+      {
+        "title": "Chemical Equation Balancer",
+        "description": "A Python program that balances chemical equations by determining the correct stoichiometric coefficients for each reactant and product."
+      }
+    ]
+  },
+  "contact": {
+    "title": "The Final Script",
+    "subtitle": "Whether for a professional inquiry, a technical dialogue, or collaboration, I am always happy to connect!",
+    "githubLabel": "Visit Khang Vu on GitHub",
+    "linkedinLabel": "Visit Khang Vu on LinkedIn",
+    "emailLabel": "Email Khang Vu",
+    "copyright": "© 2026 Khang Vu - London, Ontario"
+  },
+  "loading": "Loading",
+  "feast": "Today's Feast"
+}
