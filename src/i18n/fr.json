@@ -11,6 +11,14 @@
     "switchTo": "English",
     "openMenu": "Ouvrir le menu de navigation"
   },
+  "seasons": {
+    "ORDINARY": "Ordinaire",
+    "ADVENT": "Avent",
+    "LENT": "Carême",
+    "ROSE": "Rose",
+    "MARTYRDOM": "Martyre",
+    "SOLEMNITIES": "Solennités"
+  },
   "hero": {
     "imageAlt": "Armoiries de Khang Vu",
     "subtitle": "Développeur | Automatisation | Infrastructure as Code",

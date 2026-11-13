@@ -11,6 +11,14 @@
     "switchTo": "Français",
     "openMenu": "Open navigation menu"
   },
+  "seasons": {
+    "ORDINARY": "Ordinary",
+    "ADVENT": "Advent",
+    "LENT": "Lent",
+    "ROSE": "Rose",
+    "MARTYRDOM": "Martyrdom",
+    "SOLEMNITIES": "Solemnities"
+  },
   "hero": {
     "imageAlt": "Khang Vu coat of arms",
     "subtitle": "Developer | Automation | Infrastructure as Code",

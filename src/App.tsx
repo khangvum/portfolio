@@ -185,7 +185,7 @@ function App() {
                     },
                   }}
                 >
-                  {key}
+                  {translations.seasons[key]}
                 </MenuItem>
               );
             })}

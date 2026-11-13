@@ -11,6 +11,14 @@
     "switchTo": "English",
     "openMenu": "Aperi indicem navigationis"
   },
+  "seasons": {
+    "ORDINARY": "Per Annum",
+    "ADVENT": "Adventus",
+    "LENT": "Quadragesima",
+    "ROSE": "Rosaceus",
+    "MARTYRDOM": "Martyrium",
+    "SOLEMNITIES": "Sollemnitates"
+  },
   "hero": {
     "imageAlt": "Stemma Khang Vu",
     "subtitle": "Programmator | Automatio | Infrastructure as Code",
