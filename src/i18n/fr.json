@@ -151,5 +151,10 @@
     "copyright": "© 2026 Khang Vu - London, Ontario"
   },
   "loading": "Chargement",
+  "notFound": {
+    "title": "Page introuvable",
+    "message": "La page demandée n'existe pas.",
+    "home": "Retour à l'accueil"
+  },
   "feast": "Fête du jour"
 }

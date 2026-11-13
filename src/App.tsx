@@ -19,9 +19,13 @@ import Navbar from "@app/components/Navbar";
 import Projects from "@app/components/Projects";
 import Contact from "@app/components/Contact";
 import LoadingScreen from "@app/components/LoadingScreen";
+import NotFound from "@app/components/NotFound";
 import { fetchApiLiturgicalSeason } from "@app/services/litcal";
+import { isSupportedLocalePath } from "@app/i18n/config";
 import { useLanguage } from "@app/i18n/useLanguage";
 import { getThemeStyleVars } from "@app/utils/theme-utils";
+
+import "./App.css";
 
 function App() {
   const { locale, translations } = useLanguage();
@@ -30,6 +34,7 @@ function App() {
   const [anchorElement, setAnchorElement] = useState<HTMLElement | null>(null);
   const [isLoading, setIsLoading] = useState(true);
   const activeTheme = seasons[currentSeason ?? "ORDINARY"];
+  const isSupportedPath = isSupportedLocalePath();
 
   useEffect(() => {
     const rootStyle = document.documentElement.style;
@@ -40,6 +45,10 @@ function App() {
   }, [activeTheme]);
 
   useEffect(() => {
+    if (!isSupportedPath) {
+      return;
+    }
+
     let isMounted = true;
 
     fetchApiLiturgicalSeason(new Date(), undefined, locale)
@@ -59,7 +68,7 @@ function App() {
     return () => {
       isMounted = false;
     };
-  }, [locale]);
+  }, [isSupportedPath, locale]);
 
   const handleOpen = (event: MouseEvent<HTMLElement>) => {
     setAnchorElement(event.currentTarget);
@@ -71,6 +80,15 @@ function App() {
     setCurrentSeason(season);
     handleClose();
   };
+
+  if (!isSupportedPath) {
+    return (
+      <ThemeProvider theme={activeTheme}>
+        <CssBaseline />
+        <NotFound />
+      </ThemeProvider>
+    );
+  }
 
   return (
     <>
@@ -100,7 +118,7 @@ function App() {
           </Box>
         </Box>
 
-        <Box sx={{ position: "fixed", bottom: 24, right: 24, zIndex: 999 }}>
+        <Box className="palette-menu-anchor">
           <Fab color="secondary" onClick={handleOpen} size="medium">
             <PaletteIcon />
           </Fab>
@@ -112,46 +130,18 @@ function App() {
             anchorOrigin={{ vertical: "top", horizontal: "right" }}
             slotProps={{
               paper: {
-                sx: {
-                  minWidth: 160,
-                  maxWidth: 240,
-                  width: "auto",
-                  py: 1,
-                  border: "2px solid #B87F0D",
-                },
+                className: "season-menu-paper",
               },
             }}
           >
             {/* Render header & divider only when a valid feast name exists */}
             {feastName && (
               <>
-                <Box sx={{ px: 2, py: 1 }}>
-                  <Typography
-                    variant="caption"
-                    sx={{
-                      fontFamily: "Lora, serif",
-                      textTransform: "uppercase",
-                      letterSpacing: 1,
-                      color: "text.secondary",
-                      display: "block",
-                      fontSize: "0.65rem",
-                    }}
-                  >
+                <Box className="season-feast">
+                  <Typography variant="caption" className="season-feast-label">
                     {translations.feast}
                   </Typography>
-                  <Typography
-                    variant="subtitle2"
-                    sx={{
-                      fontFamily: "Cinzel, serif",
-                      fontWeight: 700,
-                      fontSize: "0.9rem",
-                      color:
-                        seasons[currentSeason ?? "ORDINARY"].palette.primary
-                          .dark,
-                      lineHeight: 1.2,
-                      mt: 0.5,
-                    }}
-                  >
+                  <Typography variant="subtitle2" className="season-feast-name">
                     {feastName}
                   </Typography>
                 </Box>
@@ -167,23 +157,7 @@ function App() {
                   key={key}
                   onClick={() => selectSeason(key)}
                   selected={isSelected}
-                  sx={{
-                    fontFamily: "Cinzel, serif",
-                    fontSize: "0.8rem",
-                    letterSpacing: 1,
-                    transition: "all 0.2s ease-in-out",
-                    // Custom styling for selected state
-                    "&.Mui-selected": {
-                      backgroundColor: "rgba(184, 127, 13, 0.12)",
-                      fontWeight: 700,
-                      color: "#B87F0D",
-                      borderLeft: "4px solid #B87F0D",
-                      pl: 1.5, // Padding to account for left border
-                      "&:hover": {
-                        backgroundColor: "rgba(184, 127, 13, 0.2)",
-                      },
-                    },
-                  }}
+                  className="season-menu-item"
                 >
                   {translations.seasons[key]}
                 </MenuItem>

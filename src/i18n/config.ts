@@ -16,9 +16,7 @@ const translationResources = {
 export type Locale = keyof typeof translationResources;
 
 /** @brief Supported language codes derived from the translation registry. */
-export const supportedLocales = Object.keys(
-  translationResources,
-) as Locale[];
+export const supportedLocales = Object.keys(translationResources) as Locale[];
 
 /** @brief Translation resources indexed by supported locale. */
 export const translations = translationResources;
@@ -44,6 +42,21 @@ export const getLocaleFromPath = (
  */
 export const getLocalePath = (locale: Locale): string =>
   locale === "en" ? "/" : `/${locale}/`;
+
+/**
+ * @brief Determines whether a pathname is a supported locale entry point.
+ * @param pathname - The pathname to inspect.
+ * @returns Whether the pathname identifies a supported locale.
+ */
+export const isSupportedLocalePath = (
+  pathname = window.location.pathname,
+): boolean =>
+  supportedLocales.some((locale) => {
+    const localePath = getLocalePath(locale);
+    return locale === "en"
+      ? pathname === localePath
+      : pathname === localePath || pathname === localePath.slice(0, -1);
+  });
 
 /** @brief Resolves the locale used during the initial application render. */
 export const getInitialLocale = (): Locale => {

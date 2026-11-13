@@ -32,6 +32,9 @@ jobs:
       - name: Production Build Execution
         run: npm run build
 
+      - name: Configure SPA Route Fallback
+        run: cp dist/index.html dist/404.html
+
       - name: Build Artifact Upload
         uses: actions/upload-pages-artifact@v5
         with:
