@@ -6,9 +6,8 @@
 }
 
 .season-menu-paper {
-  min-width: 160px;
-  max-width: 240px;
-  width: auto;
+  width: 240px;
+  max-width: calc(100vw - 48px);
   padding-top: 8px;
   padding-bottom: 8px;
   border: 2px solid var(--secondary-main) !important;
