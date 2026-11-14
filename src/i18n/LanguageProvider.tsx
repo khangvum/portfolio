@@ -14,8 +14,6 @@ import {
 } from "./config";
 import { LanguageContext } from "./LanguageContext";
 
-const LOCALE_STORAGE_KEY = "portfolio-locale";
-
 /**
  * @brief Provides locale state and translated content to the application.
  * @param children - Components that consume the language context.
@@ -41,8 +39,6 @@ export const LanguageProvider = ({ children }: { children: ReactNode }) => {
   const setLocale = useCallback(
     (nextLocale: typeof locale) => {
       if (nextLocale === locale) {
-        window.localStorage.setItem(LOCALE_STORAGE_KEY, nextLocale);
-
         if (window.location.pathname !== getLocalePath(nextLocale)) {
           window.location.assign(getLocalePath(nextLocale));
         }
@@ -51,7 +47,6 @@ export const LanguageProvider = ({ children }: { children: ReactNode }) => {
       }
 
       window.history.pushState({}, "", getLocalePath(nextLocale));
-      window.localStorage.setItem(LOCALE_STORAGE_KEY, nextLocale);
       setLocaleState(nextLocale);
       window.scrollTo({ top: 0 });
     },

@@ -59,17 +59,4 @@ export const isSupportedLocalePath = (
   });
 
 /** @brief Resolves the locale used during the initial application render. */
-export const getInitialLocale = (): Locale => {
-  const pathname = window.location.pathname;
-  const pathLocale = getLocaleFromPath();
-  const pathSegment = pathname.split("/")[1];
-
-  if (supportedLocales.includes(pathSegment as Locale)) {
-    return pathLocale;
-  }
-
-  const storedLocale = window.localStorage.getItem("portfolio-locale");
-  return supportedLocales.includes(storedLocale as Locale)
-    ? (storedLocale as Locale)
-    : pathLocale;
-};
+export const getInitialLocale = (): Locale => getLocaleFromPath();
