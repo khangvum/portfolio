@@ -56,12 +56,12 @@ function App() {
         if (isMounted) {
           setCurrentSeason(season as SeasonKey);
           setFeastName(name); // Will be undefined if API fallback occurred
-          setTimeout(() => setIsLoading(false), 300);
+          setIsLoading(false);
         }
       })
       .catch(() => {
         if (isMounted) {
-          setTimeout(() => setIsLoading(false), 300);
+          setIsLoading(false);
         }
       });
 
@@ -92,28 +92,33 @@ function App() {
 
   return (
     <>
-      {isLoading && <LoadingScreen isFading={Boolean(currentSeason)} />}
+      <LoadingScreen isFading={!isLoading} />
 
       <ThemeProvider theme={activeTheme}>
         <CssBaseline />
 
-        <Box component="main">
+        <Box
+          component="main"
+          className={
+            isLoading ? "page-content page-loading" : "page-content page-loaded"
+          }
+        >
           <Navbar />
           <Hero />
 
-          <Box>
+          <Box className="page-load-item about-section">
             <About />
           </Box>
 
-          <Box>
+          <Box className="page-load-item experience-section">
             <Experience />
           </Box>
 
-          <Box>
+          <Box className="page-load-item projects-section">
             <Projects />
           </Box>
 
-          <Box component="footer">
+          <Box component="footer" className="page-load-item contact-section">
             <Contact />
           </Box>
         </Box>
