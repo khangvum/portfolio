@@ -66,11 +66,6 @@
   font-weight: 700 !important;
 }
 
-/* .about-list li:hover strong {
-  color: var(--secondary-main) !important;
-  transition: color 0.3s ease;
-} */
-
 /* 5. Stats Grid & Cards */
 .stats-container {
   display: flex !important;

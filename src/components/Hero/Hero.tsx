@@ -9,7 +9,7 @@ const Hero = () => {
   const { translations } = useLanguage();
 
   return (
-    <Box component="section" className="hero-root" id="home">
+    <Box component="section" className="hero-root page-load-item" id="home">
       <Container className="hero-container" maxWidth="xl">
         <Grid container spacing={4}>
           {/* Left Column: Coat of Arms */}

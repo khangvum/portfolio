@@ -84,7 +84,7 @@ const Navbar = () => {
       position="sticky"
       color="primary"
       elevation={0}
-      className="navbar-root"
+      className="navbar-root page-load-item"
       sx={{ backgroundColor: "primary.main" }}
     >
       <Box sx={{ width: "100%", px: { xs: 2, md: 4 } }}>

@@ -10,8 +10,9 @@
   left: 0;
   z-index: 9999;
   overflow: hidden;
-  transition: opacity 0.3s ease-in-out;
+  transition: opacity 1.2s ease-in-out;
   opacity: 1;
+  visibility: visible;
 }
 
 .loading-root::after {
@@ -21,7 +22,7 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background-image: url('@app/assets/stained-glass.jpg');
+  background-image: url("@app/assets/stained-glass.jpg");
   background-size: cover;
   opacity: 0.1;
   pointer-events: none;
@@ -30,6 +31,10 @@
 .loading-root.fade-out {
   opacity: 0;
   pointer-events: none;
+  visibility: hidden;
+  transition:
+    opacity 1.2s ease-in-out,
+    visibility 0s linear 1.2s;
 }
 
 .loading-content {
@@ -42,7 +47,7 @@
 }
 
 .loading-title {
-  font-family: 'Cinzel', serif !important;
+  font-family: "Cinzel", serif !important;
   font-weight: 700 !important;
   letter-spacing: 4px;
   text-transform: uppercase;
