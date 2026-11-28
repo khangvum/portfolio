@@ -1,6 +1,8 @@
 import en from "./en.json";
 import fr from "./fr.json";
+import it from "./it.json";
 import la from "./la.json";
+import nl from "./nl.json";
 
 /** @brief The complete shape of a locale translation resource. */
 export type TranslationSet = typeof en;
@@ -9,7 +11,9 @@ export type TranslationSet = typeof en;
 const translationResources = {
   en,
   fr,
+  it,
   la,
+  nl,
 } satisfies Record<string, TranslationSet>;
 
 /** @brief A supported application locale. */

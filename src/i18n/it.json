@@ -1,0 +1,160 @@
+{
+  "languageName": "Italiano",
+  "documentTitle": "Khang Vu - Portfolio",
+  "metaDescription": "Portfolio di Khang Vu: sviluppo software, automazione e infrastructure as code.",
+  "nav": {
+    "about": "Chi sono",
+    "experience": "Esperienza",
+    "projects": "Progetti",
+    "contact": "Contatti",
+    "language": "Lingua",
+    "switchTo": "English",
+    "openMenu": "Apri il menu di navigazione"
+  },
+  "seasons": {
+    "ORDINARY": "Ordinario",
+    "ADVENT": "Avvento",
+    "LENT": "Quaresima",
+    "ROSE": "Rosa",
+    "MARTYRDOM": "Martirio",
+    "SOLEMNITIES": "Solennità"
+  },
+  "hero": {
+    "imageAlt": "Stemma di Khang Vu",
+    "subtitle": "Sviluppatore | Automazione | Infrastructure as Code",
+    "button": "Contattami"
+  },
+  "about": {
+    "title": "La Genesi",
+    "biography": "Studente di Programmazione e Analisi Informatica al Fanshawe College, con una formazione specializzata in sistemi aziendali e automazione:",
+    "skills": [
+      "Progettare suite di test robuste con C#, .NET, Selenium e NUnit/MSTest.",
+      "Progettare l'architettura di infrastrutture ibride con Ansible, Terraform, VMware ESXi e Hyper-V.",
+      "Ottimizzare le operazioni aziendali con Microsoft Intune, Entra ID e PowerShell."
+    ],
+    "resume": "CV",
+    "github": "GitHub",
+    "linkedin": "LinkedIn",
+    "stats": [
+      {
+        "label": "Media cumulativa",
+        "detail": "Elenco d'onore del preside | A2023, I2024, A2024, E2025, I2026"
+      },
+      {
+        "label": "Tirocini cooperativi",
+        "detail": "Infrastruttura e reti, operazioni e test automatizzati"
+      },
+      {
+        "label": "Lingue",
+        "detail": "Inglese (IELTS 8,0) | Francese (intermedio) | Vietnamita (madrelingua)"
+      },
+      {
+        "label": "Premi internazionali",
+        "detail": "Premio d'ingresso internazionale per l'eccellenza nella lingua vietnamita | 2.000 $ CA\nPremio internazionale Karen L. Monahan | 750 $ CA"
+      }
+    ]
+  },
+  "experience": {
+    "title": "Il Libro delle Cronache",
+    "example": "ad es.,",
+    "jobs": [
+      {
+        "title": "Sviluppatore di test automatizzati",
+        "company": "CARFAX Canada",
+        "period": "mag 2026 - ago 2026",
+        "location": "London, Ontario",
+        "points": [
+          {
+            "text": "Sviluppo di casi di test automatizzati con C#, .NET, Selenium WebDriver e NUnit/MSTest"
+          },
+          "Automazione di oltre 60 endpoint API in Postman con JWT, Auth0 e token di servizi web",
+          "Automazione delle pianificazioni giornaliere delle pipeline CI/CD e della generazione di report in Azure Pipelines per la preparazione ai rilasci"
+        ]
+      },
+      {
+        "title": "Analista di supporto NSC - livello 1",
+        "company": "Emco Corporation",
+        "period": "ago 2025 - dic 2025",
+        "location": "London, Ontario",
+        "points": [
+          "Gestione dell'infrastruttura aziendale con Entra ID (Azure AD), Intune ed Exchange",
+          {
+            "text": "Automazione delle distribuzioni di Windows con Autopilot e file di risposte"
+          },
+          "Fornitura di un supporto completo di livello 1 tramite il sistema di ticketing Ivanti"
+        ]
+      },
+      {
+        "title": "Sistemi informativi IoT",
+        "company": "Eramosa - un'azienda di CIMA+",
+        "period": "gen 2025 - apr 2025",
+        "location": "Guelph, Ontario",
+        "points": [
+          {
+            "text": "Progettazione di un ambiente WSL standardizzato e rafforzato dal punto di vista della sicurezza"
+          },
+          {
+            "text": "Implementazione dell'infrastructure as code (IaC) con Ansible e Terraform"
+          },
+          "Orchestrazione di un'infrastruttura virtuale multi-tenant su VMware ESXi e Hyper-V"
+        ]
+      }
+    ]
+  },
+  "projects": {
+    "title": "Le Stazioni degli Script",
+    "items": [
+      {
+        "title": "Configurazione Ansible",
+        "description": "Soluzione dichiarativa di automazione della configurazione basata su Ansible."
+      },
+      {
+        "title": "Provisioning dell'infrastruttura",
+        "description": "Soluzione dichiarativa di provisioning dell'infrastruttura basata su Terraform."
+      },
+      {
+        "title": "Collection Ansible per Microsoft Hyper-V",
+        "description": "Collection Ansible basata su PowerShell per gestire e configurare l'infrastruttura Hyper-V."
+      },
+      {
+        "title": "File di risposte",
+        "description": "Soluzione automatizzata di distribuzione di sistemi operativi (OS) basata su file di risposte."
+      },
+      {
+        "title": "Configurazione NixOS-WSL",
+        "description": "Configurazione NixOS 26.05 pensata per l'esecuzione in Windows Subsystem for Linux (WSL)."
+      },
+      {
+        "title": "Valutatore di espressioni",
+        "description": "Applicazione console Windows che valuta espressioni matematiche con più operatori e funzioni."
+      },
+      {
+        "title": "Portfolio",
+        "description": "Portfolio completo che illustra il percorso formativo e le competenze tecniche, distribuito come pagina web con React e Vite."
+      },
+      {
+        "title": "Automazione Reqnroll",
+        "description": "Soluzione di automazione dei test nel browser basata su Reqnroll (BDD) e Selenium WebDriver, eseguita con il framework MSTest e strutturata secondo il pattern architetturale Page Object Model (POM)."
+      },
+      {
+        "title": "Bilanciatore di equazioni chimiche",
+        "description": "Programma Python che bilancia le equazioni chimiche determinando i corretti coefficienti stechiometrici di ogni reagente e prodotto."
+      }
+    ]
+  },
+  "contact": {
+    "title": "L'Ultimo Script",
+    "subtitle": "Che si tratti di una richiesta professionale, di un confronto tecnico o di una collaborazione, sarò sempre felice di entrare in contatto!",
+    "githubLabel": "Visita il GitHub di Khang Vu",
+    "linkedinLabel": "Visita il LinkedIn di Khang Vu",
+    "emailLabel": "Scrivi un'e-mail a Khang Vu",
+    "copyright": "© 2026 Khang Vu - London, Ontario"
+  },
+  "loading": "Caricamento",
+  "notFound": {
+    "title": "Pagina non trovata",
+    "message": "La pagina richiesta non esiste.",
+    "home": "Torna alla home"
+  },
+  "feast": "Festa del giorno"
+}
