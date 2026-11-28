@@ -1,0 +1,160 @@
+{
+  "languageName": "Nederlands",
+  "documentTitle": "Khang Vu - Portfolio",
+  "metaDescription": "Portfolio van Khang Vu: softwareontwikkeling, automatisering en infrastructure as code.",
+  "nav": {
+    "about": "Over mij",
+    "experience": "Ervaring",
+    "projects": "Projecten",
+    "contact": "Contact",
+    "language": "Taal",
+    "switchTo": "English",
+    "openMenu": "Navigatiemenu openen"
+  },
+  "seasons": {
+    "ORDINARY": "Door het jaar",
+    "ADVENT": "Advent",
+    "LENT": "Vasten",
+    "ROSE": "Roze",
+    "MARTYRDOM": "Martelaarschap",
+    "SOLEMNITIES": "Hoogfeesten"
+  },
+  "hero": {
+    "imageAlt": "Wapenschild van Khang Vu",
+    "subtitle": "Ontwikkelaar | Automatisering | Infrastructure as Code",
+    "button": "Neem contact op"
+  },
+  "about": {
+    "title": "De Genesis",
+    "biography": "Student computerprogrammering en -analyse aan het Fanshawe College, met een gespecialiseerde achtergrond in bedrijfssystemen en automatisering:",
+    "skills": [
+      "Robuuste testsuites ontwikkelen met C#, .NET, Selenium en NUnit/MSTest.",
+      "Hybride infrastructuur ontwerpen met Ansible, Terraform, VMware ESXi en Hyper-V.",
+      "Bedrijfsvoering optimaliseren met Microsoft Intune, Entra ID en PowerShell."
+    ],
+    "resume": "CV",
+    "github": "GitHub",
+    "linkedin": "LinkedIn",
+    "stats": [
+      {
+        "label": "Cumulatieve GPA",
+        "detail": "Eerelijst van de decaan | H2023, W2024, H2024, Z2025, W2026"
+      },
+      {
+        "label": "Co-opperiodes",
+        "detail": "Infrastructuur en netwerken, operations en geautomatiseerd testen"
+      },
+      {
+        "label": "Talen",
+        "detail": "Engels (IELTS 8,0) | Frans (gemiddeld niveau) | Vietnamees (moedertaal)"
+      },
+      {
+        "label": "Internationale prijzen",
+        "detail": "Internationale toelatingsprijs voor uitmuntendheid in de Vietnamese taal | CA$ 2.000\nInternationale Karen L. Monahan-prijs | CA$ 750"
+      }
+    ]
+  },
+  "experience": {
+    "title": "Het Boek der Kronieken",
+    "example": "bijv.,",
+    "jobs": [
+      {
+        "title": "Ontwikkelaar geautomatiseerde tests",
+        "company": "CARFAX Canada",
+        "period": "mei 2026 - aug 2026",
+        "location": "London, Ontario",
+        "points": [
+          {
+            "text": "Geautomatiseerde testcases ontwikkeld met C#, .NET, Selenium WebDriver en NUnit/MSTest"
+          },
+          "Meer dan 60 API-endpoints geautomatiseerd in Postman met JWT, Auth0 en webservicetokens",
+          "Dagelijkse CI/CD-pipelineplanningen en rapportgeneratie geautomatiseerd in Azure Pipelines voor releasegereedheid"
+        ]
+      },
+      {
+        "title": "NSC-supportanalist - niveau 1",
+        "company": "Emco Corporation",
+        "period": "aug 2025 - dec 2025",
+        "location": "London, Ontario",
+        "points": [
+          "Bedrijfsinfrastructuur beheerd met Entra ID (Azure AD), Intune en Exchange",
+          {
+            "text": "Windows-implementaties geautomatiseerd met Autopilot en antwoordbestanden"
+          },
+          "Uitgebreide niveau 1-support geboden via het Ivanti-ticketingsysteem"
+        ]
+      },
+      {
+        "title": "Informatiesystemen IoT",
+        "company": "Eramosa - een CIMA+-bedrijf",
+        "period": "jan 2025 - apr 2025",
+        "location": "Guelph, Ontario",
+        "points": [
+          {
+            "text": "Een gestandaardiseerde, beveiligingsgeharde WSL-omgeving ontwikkeld"
+          },
+          {
+            "text": "Infrastructure as Code (IaC) geïmplementeerd met Ansible en Terraform"
+          },
+          "Multi-tenant virtuele infrastructuur georkestreerd over VMware ESXi en Hyper-V"
+        ]
+      }
+    ]
+  },
+  "projects": {
+    "title": "Staties van de Scripts",
+    "items": [
+      {
+        "title": "Ansible-configuratie",
+        "description": "Een declaratieve oplossing voor configuratieautomatisering, mogelijk gemaakt door Ansible."
+      },
+      {
+        "title": "Infrastructuurprovisioning",
+        "description": "Een declaratieve oplossing voor infrastructuurprovisioning, mogelijk gemaakt door Terraform."
+      },
+      {
+        "title": "Ansible-collectie voor Microsoft Hyper-V",
+        "description": "Een Ansible-collectie op basis van PowerShell voor het beheren en configureren van Hyper-V-infrastructuur."
+      },
+      {
+        "title": "Antwoordbestanden",
+        "description": "Een geautomatiseerde oplossing voor de implementatie van besturingssystemen (OS) met antwoordbestanden."
+      },
+      {
+        "title": "NixOS-WSL-configuratie",
+        "description": "Een NixOS 26.05-configuratie afgestemd op gebruik binnen Windows Subsystem for Linux (WSL)."
+      },
+      {
+        "title": "Expressie-evaluator",
+        "description": "Een Windows-consoletoepassing die wiskundige expressies met meerdere operatoren en functies evalueert."
+      },
+      {
+        "title": "Portfolio",
+        "description": "Een uitgebreid portfolio dat opleidingsachtergrond en technische expertise toont, gepubliceerd als webpagina met React en Vite."
+      },
+      {
+        "title": "Reqnroll-automatisering",
+        "description": "Een browsergebaseerde testautomatiseringsoplossing met Reqnroll (BDD) en Selenium WebDriver, aangedreven door het MSTest-framework en opgebouwd volgens het architectuurpatroon Page Object Model (POM)."
+      },
+      {
+        "title": "Balanceerder voor chemische vergelijkingen",
+        "description": "Een Python-programma dat chemische vergelijkingen balanceert door de juiste stoichiometrische coëfficiënten voor elke reactant en elk product te bepalen."
+      }
+    ]
+  },
+  "contact": {
+    "title": "Het Laatste Script",
+    "subtitle": "Of het nu gaat om een professionele vraag, een technisch gesprek of samenwerking, ik maak graag contact!",
+    "githubLabel": "Bezoek Khang Vu op GitHub",
+    "linkedinLabel": "Bezoek Khang Vu op LinkedIn",
+    "emailLabel": "Mail Khang Vu",
+    "copyright": "© 2026 Khang Vu - London, Ontario"
+  },
+  "loading": "Laden",
+  "notFound": {
+    "title": "Pagina niet gevonden",
+    "message": "De opgevraagde pagina bestaat niet.",
+    "home": "Terug naar home"
+  },
+  "feast": "Feest van de dag"
+}
